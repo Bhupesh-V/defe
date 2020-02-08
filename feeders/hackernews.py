@@ -1,16 +1,13 @@
 from modules.request import get
-
+from concurrent.futures import ThreadPoolExecutor
 # HackerNews Feed
 
-# TODO:
-# 1. Use async feature to render each unique story
 
 API_URL = "https://hacker-news.firebaseio.com/v0"
 
 
 def get_item(item: str):
     story = get(f'{API_URL}/item/{item}.json?print=pretty')
-    # https://hacker-news.firebaseio.com/v0/item/8863.json?print=pretty
 
     return story
 
@@ -19,22 +16,25 @@ def get_top():
     """Get Top stories"""
     top_stories = get(API_URL + "/topstories.json?print=pretty")
 
-    top_stories = [get_item(story) for story in top_stories]
+    with ThreadPoolExecutor(max_workers=31) as executor:
+        results = list(executor.map(get_item, top_stories[:30]))
 
-    print(top_stories)
-
-    return top_stories
+    return results
 
 
 def get_new():
     """Get New stories"""
     new_stories = get(API_URL + "/newstories.json?print=pretty")
+    with ThreadPoolExecutor(max_workers=31) as executor:
+        results = list(executor.map(get_item, new_stories[:30]))
 
-    return new_stories
+    return results
 
 
 def get_ask():
     """Get Ask stories"""
     ask_stories = get(API_URL + "/askstories.json?print=pretty")
+    with ThreadPoolExecutor(max_workers=31) as executor:
+        results = list(executor.map(get_item, ask_stories[:30]))
 
-    return ask_stories
+    return results

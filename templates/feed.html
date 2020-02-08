@@ -1,9 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>devfeed</title>
-</head>
-<body>
-<p>Bruh !</p>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block container %}
+
+<div class="feed-options">
+	<button onlclick="invoke_hn()">Hacker News</button>
+	<button>dev.to</button>
+	<button>Subreddits</button>
+</div>
+
+{% endblock %}

@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>dev.to Feed</title>
-</head>
-<body>
+{% extends 'feed.html' %}
+
+{% block container %}
     {% for article in data %}
       <div class="article">
         <h2>
-          <a href="{{ article['url'] }}">{{article['title'] }}</a>
+          <a href="{{ article['url'] }}">{{ article['title'] }}</a>
         </h2>
+        <h4>{{ article['description'] }}</h4>
       </div>
     {% endfor %}
-</body>
-</html>
+{% endblock %}
