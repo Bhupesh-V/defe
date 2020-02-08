@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>dev.to Feed</title>
+</head>
+<body>
+    {% for article in data %}
+      <div class="article">
+        <h2>
+          <a href="{{ article['url'] }}">{{article['title'] }}</a>
+        </h2>
+      </div>
+    {% endfor %}
+</body>
+</html>

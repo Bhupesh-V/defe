@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hacker News Feed</title>
+</head>
+<body>
+    {% for story in stories %}
+      <div class="article">
+        <h2>
+          <a href="{{ story }}">{{ story }}</a>
+        </h2>
+      </div>
+    {% endfor %}
+</body>
+</html>
