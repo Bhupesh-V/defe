@@ -1,8 +1,8 @@
 import feedparser
 
-url = "https://techcrunch.com/feed/"
+url = "https://www.producthunt.com/feed"
 feed = feedparser.parse(url)
 
 
-def techcrunch():
+def producthunt():
     return feed.entries

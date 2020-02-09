@@ -106,6 +106,40 @@ function invoke_tc() {
         });
 }
 
+function invoke_ph() {
+    removethis();
+
+    const data = {
+        feed: 'producthunt'
+    };
+    fetch('/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            console.log('Success');
+            var mainContainer = document.getElementById("feed");
+
+            for (var i = 0; i < data.length; i++) {
+                var story = document.createElement("div");
+                var link = document.createElement("a");
+                link.setAttribute("href", data[i].link);
+                var title = document.createTextNode(data[i].title);
+                link.appendChild(title);
+                story.appendChild(link);
+
+                mainContainer.appendChild(story);
+            }
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+}
+
 function reddit(sub) {
     removethis();
 
