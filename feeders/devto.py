@@ -7,6 +7,4 @@ API_URL = "https://dev.to/api"
 def get_articles():
     articles = get(API_URL + "/articles")
 
-    print(articles)
-
     return articles

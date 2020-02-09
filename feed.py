@@ -1,24 +1,22 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, jsonify, request
 from feeders import hackernews, devto
 
 app = Flask(__name__)
 
 
-@app.route("/", methods=["GET"])
+@app.route("/", methods=["GET", "POST"])
 def feed():
-    return render_template('feed.html')
-
-
-@app.route("/hn", methods=["GET"])
-def hn():
-    stories = hackernews.get_top()
-    return render_template('hackernews.html', stories=stories)
-
-
-@app.route("/devto", methods=["GET"])
-def dev_to():
-    data = devto.get_articles()
-    return render_template('dev.html', data=data)
+    if request.method == "GET":
+        return render_template('feed.html')
+    else:
+        service = request.json
+        print(service)
+        if service["feed"] == "dev":
+            data = devto.get_articles()
+            return jsonify(data)
+        elif service["feed"] == "hackernews":
+            data = hackernews.get_top()
+            return jsonify(data)
 
 
 if __name__ == "__main__":

@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
-
+{% block header %}
+	<div class="feed-options">
+		<button type="button" onclick="invoke_hn()">Hacker News</button>
+		<button type="button" onclick="invoke_dev()">dev.to</button type="button" onclick="invoke_sub()">
+		<button>Subreddits</button>
+	</div>
+{% endblock %}
 {% block container %}
-
-<div class="feed-options">
-	<button onlclick="invoke_hn()">Hacker News</button>
-	<button>dev.to</button>
-	<button>Subreddits</button>
-</div>
-
+<div id="feed"></div>
 {% endblock %}
