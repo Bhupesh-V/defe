@@ -1,5 +1,5 @@
 from flask import Flask, render_template, jsonify, request
-from feeders import hackernews, devto
+from feeders import hackernews, devto, techcrunch, reddit
 
 app = Flask(__name__)
 
@@ -10,12 +10,17 @@ def feed():
         return render_template('feed.html')
     else:
         service = request.json
-        print(service)
         if service["feed"] == "dev":
             data = devto.get_articles()
             return jsonify(data)
         elif service["feed"] == "hackernews":
             data = hackernews.get_top()
+            return jsonify(data)
+        elif service["feed"] == "techcrunch":
+            data = techcrunch.techcrunch()
+            return jsonify(data)
+        elif service["feed"] == "reddit":
+            data = reddit.subreddit(service["sub"])
             return jsonify(data)
 
 

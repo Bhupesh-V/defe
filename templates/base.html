@@ -34,37 +34,6 @@
         {% block container %}
             
         {% endblock %}
-    <script type="text/javascript">
-        function invoke_dev () {
-            const data = { feed: 'dev' };
-            fetch('/', {
-              method: 'POST', // or 'PUT'
-              headers: {
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify(data),
-            })
-            .then((response) => response.json())
-            .then((data) => {
-              console.log('Success:', data);
-              var mainContainer = document.getElementById("feed");
-
-              for (var i = 0; i < data.length; i++) {
-                var article = document.createElement("div");
-                var link = document.createElement("a");
-                link.setAttribute("href", data[i].url);
-                var title = document.createTextNode(data[i].title);
-                link.appendChild(title);
-                article.appendChild(link);
-
-                mainContainer.appendChild(article);
-              }
-            })
-            .catch((error) => {
-              console.error('Error:', error);
-            });
-
-        }
-    </script>
+    <script src="/static/feed.js"></script>
     </body>
 </html>

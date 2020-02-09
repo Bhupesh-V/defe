@@ -2,8 +2,17 @@
 {% block header %}
 	<div class="feed-options">
 		<button type="button" onclick="invoke_hn()">Hacker News</button>
-		<button type="button" onclick="invoke_dev()">dev.to</button type="button" onclick="invoke_sub()">
-		<button>Subreddits</button>
+		<button type="button" onclick="invoke_dev()">dev.to</button>
+		<button type="button" onclick="invoke_tc()">TechCrunch</button>
+		<label for="reddit">SubReddit:</label>
+		<select id="reddit">
+		  <option value="programming" onclick="reddit(this.value)">r/programming</option>
+		  <option value="technology" onclick="reddit(this.value)">r/technology</option>
+		  <option value="cpp" onclick="reddit(this.value)">r/cpp</option>
+		  <option value="python" onclick="reddit(this.value)">r/python</option>
+		</select>
+		<br>
+		<button type="button" onclick="removethis()">Clear Feed</button>
 	</div>
 {% endblock %}
 {% block container %}
