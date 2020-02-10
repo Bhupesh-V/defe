@@ -1,11 +1,14 @@
 {% extends 'base.html' %}
 {% block header %}
 	<div class="feed-options">
-		<button type="button" onclick="invoke_hn()">Hacker News</button>
-		<button type="button" onclick="invoke_dev()">dev.to</button>
-		<button type="button" onclick="invoke_tc()">TechCrunch</button>
-		<button type="button" onclick="invoke_ph()">ProductHunt</button>
-		<label for="reddit">SubReddit:</label>
+		<button type="button" value="hackernews" onclick="invoke_hn()">Hacker News</button>
+		<button type="button" value="dev" onclick="invoke_dev()">dev.to</button>
+		<button type="button" value="techcrunch" onclick="invoke_tc()">TechCrunch</button>
+		<button type="button" value="freecodecamp" onclick="invoke_fcc()">freeCodeCamp</button>
+		<button type="button" value="hackernoon" onclick="invoke_hackernoon()">HackerNoon</button>
+		<button type="button" value="producthunt" onclick="invoke_ph()">ProductHunt</button>
+
+		<label for="reddit">SubReddit</label>
 		<select id="reddit">
 		  <option value="programming" onclick="reddit(this.value)">r/programming</option>
 		  <option value="technology" onclick="reddit(this.value)">r/technology</option>
@@ -24,8 +27,16 @@
 		  <option value="AskTechnology" onclick="reddit(this.value)">r/AskTechnology</option>
 		  <option value="webdev" onclick="reddit(this.value)">r/webdev</option>
 		</select>
+		<label for="reddit-sort">Sort</label>
+		<select id="reddit-sort">
+			<option value="top">Top</option>
+			<option value="new">New</option>
+			<option value="rising">Rising</option>
+			<option value="controversial">Controversial</option>
+		</select>
+
 		<br>
-		<button type="button" onclick="removethis()">Clear Feed</button>
+		<button type="button" onclick="clear_previous_feed()">Clear Feed</button>
 	</div>
 {% endblock %}
 {% block container %}

@@ -17,7 +17,7 @@ def get_top():
     """Get Top stories"""
     top_stories = get(API_URL + "/topstories.json?print=pretty")
 
-    with ThreadPoolExecutor(max_workers=40) as executor:
+    with ThreadPoolExecutor(max_workers=30) as executor:
         results = list(executor.map(get_item, top_stories[:50]))
 
     return results

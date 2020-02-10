@@ -1,5 +1,8 @@
 from flask import Flask, render_template, jsonify, request
-from feeders import hackernews, devto, techcrunch, reddit, producthunt
+from feeders import (
+    hackernews, devto, techcrunch, reddit,
+    producthunt, freecodecamp, hackernoon
+    )
 
 app = Flask(__name__)
 
@@ -17,13 +20,19 @@ def feed():
             data = hackernews.get_top()
             return jsonify(data)
         elif service["feed"] == "techcrunch":
-            data = techcrunch.techcrunch()
+            data = techcrunch.feed()
             return jsonify(data)
         elif service["feed"] == "reddit":
             data = reddit.subreddit(service["sub"])
             return jsonify(data)
         elif service["feed"] == "producthunt":
-            data = producthunt.producthunt()
+            data = producthunt.feed()
+            return jsonify(data)
+        elif service["feed"] == "freecodecamp":
+            data = freecodecamp.feed()
+            return jsonify(data)
+        elif service["feed"] == "hackernoon":
+            data = hackernoon.feed()
             return jsonify(data)
 
 
