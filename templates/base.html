@@ -1,39 +1,81 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
-        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        <meta name='viewport' content="width=device-width,height=device-height, initial-scale=1, shrink-to-fit=yes">
-        <meta name="twitter:title" content="devfeed">
-        <meta property="og:title" content="devfeed" />
-        
-        <meta name="keywords" content="devtools, feed, devfeed, developers">
-        <meta name="description" content="A News aggregator for Developers">
-        <meta property="og:description" content="A News aggregator for Developers"/>
-        <meta name="twitter:description" content="A News aggregator for Developers">
-        
-        <meta name="theme-color" content="#75D608" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="#75D608">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-        
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:creator" content="@bhupeshimself">
-        
-        <meta property="og:url" content="" >
-        <!--     <meta property="og:image" content=""/> -->
-        <meta property="og:image:width" content="640" />
-        <meta property="og:image:height" content="360" />
-        <!--     <meta name="twitter:image" content="">
-        <link rel="shortcut icon" type="image/png" href="images/logo.png"/> -->
-        <title>devfeed</title>
-    </head>
-    <body>
-        {% block header %}{% endblock %}
-        {% block container %}
-            
-        {% endblock %}
+  <head>
+    <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content="width=device-width,height=device-height, initial-scale=1, shrink-to-fit=yes">
+    <meta name="twitter:title" content="devfeed">
+    <meta property="og:title" content="devfeed" />
+    
+    <meta name="keywords" content="devtools, feed, devfeed, developers">
+    <meta name="description" content="A News aggregator for Developers">
+    <meta property="og:description" content="A News aggregator for Developers"/>
+    <meta name="twitter:description" content="A News aggregator for Developers">
+    
+    <meta name="theme-color" content="#75D608" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#75D608">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@bhupeshimself">
+    
+    <meta property="og:url" content="" >
+    <!--     <meta property="og:image" content=""/> -->
+    <meta property="og:image:width" content="640" />
+    <meta property="og:image:height" content="360" />
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+    <!--     <meta name="twitter:image" content="">
+    <link rel="shortcut icon" type="image/png" href="images/logo.png"/> -->
+    <title>devfeed</title>
+  </head>
+  <body>
+    <div class="topnav" id="myTopnav">
+      <a href="#home" class="active">Home</a>
+      <a href="#news">News</a>
+      <a href="#contact">Contact</a>
+      <div class="dropdown">
+        <button class="dropbtn">Dropdown
+        <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div>
+      <a href="#about">About</a>
+      <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
+    {% block header %}{% endblock %}
+    {% block container %}
+      
+    {% endblock %}
     <script src="/static/feed.js"></script>
-    </body>
+    <script>
+    window.onload = function() {
+        registerSW();
+    };
+    async function registerSW() {
+        if ('serviceWorker' in navigator) {
+            try {
+                await navigator.serviceWorker.register('static/sw.js');
+            } catch (e) {
+                //SW registration failed
+            }
+        }
+    }
+
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+    </script>
+  </body>
 </html>
