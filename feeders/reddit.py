@@ -19,10 +19,17 @@ subreddits = [
     "webdev"
 ]
 
+sort = [
+    "hot",
+    "top",
+    "new",
+    "rising"
+]
 
-def subreddit(sub):
-    if sub in subreddits:
-        url = f"https://www.reddit.com/r/{sub}/new.rss"
+
+def subreddit(sub, sort_by):
+    if sub in subreddits and sort_by in sort:
+        url = f"https://www.reddit.com/r/{sub}/{sort_by}.rss"
         feed = feedparser.parse(url)
 
         return feed.entries

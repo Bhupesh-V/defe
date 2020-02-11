@@ -9,22 +9,19 @@ function get_feed(feeder) {
         feed: feeder
     };
     fetch('/', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        })
-        .then((response) => response.json())
-        .then((data) => {
-            console.log('Success');
-            feeder_response_data = data;
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    }).then(response => {
+        return response.json();
+    }).then(data => {
+        result = data;
+    });
+    /*let result = await res.json();*/
 
-    return feeder_response_data;
+    return result;
 }
 
 function invoke_dev() {
@@ -135,19 +132,24 @@ function invoke_hackernoon() {
     }
 }
 
-function reddit(sub) {
+function reddit() {
     clear_previous_feed();
 
-    const data = {
+    selected_reddit = document.getElementById("reddit").value;
+    sort_by = document.getElementById("reddit-sort").value;
+
+    const cdata = {
         feed: 'reddit',
-        sub: sub
+        sub: selected_reddit,
+        sort: sort_by
     };
+
     fetch('/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(data),
+            body: JSON.stringify(cdata),
         })
         .then((response) => response.json())
         .then((data) => {
@@ -164,8 +166,5 @@ function reddit(sub) {
 
                 mainContainer.appendChild(story);
             }
-        })
-        .catch((error) => {
-            console.error('Error:', error);
         });
 }

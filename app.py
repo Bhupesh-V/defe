@@ -13,6 +13,7 @@ def feed():
         return render_template("feed.html")
     else:
         service = request.json
+        print(service)
         if service["feed"] == "dev":
             data = devto.get_articles()
             return jsonify(data)
@@ -21,18 +22,23 @@ def feed():
             return jsonify(data)
         elif service["feed"] == "techcrunch":
             data = techcrunch.feed()
+            print(data)
             return jsonify(data)
         elif service["feed"] == "reddit":
-            data = reddit.subreddit(service["sub"])
+            print(service)
+            data = reddit.subreddit(service["sub"], service["sort"])
             return jsonify(data)
         elif service["feed"] == "producthunt":
             data = producthunt.feed()
+            print(data)
             return jsonify(data)
         elif service["feed"] == "freecodecamp":
             data = freecodecamp.feed()
+            print(data)
             return jsonify(data)
         elif service["feed"] == "hackernoon":
             data = hackernoon.feed()
+            print(data)
             return jsonify(data)
 
 
