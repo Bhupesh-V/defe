@@ -1,8 +1,5 @@
 from flask import Flask, render_template, jsonify, request
-from feeders import (
-    hackernews, devto, techcrunch, reddit,
-    producthunt, freecodecamp, hackernoon
-    )
+from feeders import devto, reddit, feeder
 
 app = Flask(__name__)
 
@@ -10,34 +7,20 @@ app = Flask(__name__)
 @app.route("/", methods=["GET", "POST"])
 def feed():
     if request.method == "GET":
-        return render_template("feed.html")
+        data = feeder.all_feed()
+        return render_template("feed.html", allfeed=data)
     else:
         service = request.json
         print(service)
         if service["feed"] == "dev":
             data = devto.get_articles()
             return jsonify(data)
-        elif service["feed"] == "hackernews":
-            data = hackernews.get_top()
-            return jsonify(data)
-        elif service["feed"] == "techcrunch":
-            data = techcrunch.feed()
-            print(data)
-            return jsonify(data)
         elif service["feed"] == "reddit":
             print(service)
             data = reddit.subreddit(service["sub"], service["sort"])
             return jsonify(data)
-        elif service["feed"] == "producthunt":
-            data = producthunt.feed()
-            print(data)
-            return jsonify(data)
-        elif service["feed"] == "freecodecamp":
-            data = freecodecamp.feed()
-            print(data)
-            return jsonify(data)
-        elif service["feed"] == "hackernoon":
-            data = hackernoon.feed()
+        else:
+            data = feeder.feed(service["feed"])
             print(data)
             return jsonify(data)
 

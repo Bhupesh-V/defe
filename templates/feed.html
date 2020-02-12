@@ -7,25 +7,24 @@
 		<button type="button" value="freecodecamp" onclick="invoke_fcc()">freeCodeCamp</button>
 		<button type="button" value="hackernoon" onclick="invoke_hackernoon()">HackerNoon</button>
 		<button type="button" value="producthunt" onclick="invoke_ph()">ProductHunt</button>
-
 		<label for="reddit">Reddit</label>
 		<select id="reddit">
-		  <option value="programming" onclick="reddit()">r/programming</option>
-		  <option value="technology" onclick="reddit()">r/technology</option>
-		  <option value="cpp" onclick="reddit()">r/cpp</option>
-		  <option value="python" onclick="reddit()">r/python</option>
-		  <option value="javascript" onclick="reddit()">r/javascript</option>
-		  <option value="Android" onclick="reddit()">r/Android</option>
-		  <option value="learnprogramming" onclick="reddit()">r/learnprogramming</option>
-		  <option value="software" onclick="reddit()">r/software</option>
-		  <option value="startups" onclick="reddit()">r/startups</option>
-		  <option value="tech" onclick="reddit()">r/tech</option>
-		  <option value="web_design" onclick="reddit()">r/web_design</option>
-		  <option value="linux" onclick="reddit()">r/linux</option>
-		  <option value="computing" onclick="reddit()">r/computing</option>
-		  <option value="coding" onclick="reddit()">r/coding</option>
-		  <option value="AskTechnology" onclick="reddit()">r/AskTechnology</option>
-		  <option value="webdev" onclick="reddit()">r/webdev</option>
+			<option value="programming" onclick="reddit()">r/programming</option>
+			<option value="technology" onclick="reddit()">r/technology</option>
+			<option value="cpp" onclick="reddit()">r/cpp</option>
+			<option value="python" onclick="reddit()">r/python</option>
+			<option value="javascript" onclick="reddit()">r/javascript</option>
+			<option value="Android" onclick="reddit()">r/Android</option>
+			<option value="learnprogramming" onclick="reddit()">r/learnprogramming</option>
+			<option value="software" onclick="reddit()">r/software</option>
+			<option value="startups" onclick="reddit()">r/startups</option>
+			<option value="tech" onclick="reddit()">r/tech</option>
+			<option value="web_design" onclick="reddit()">r/web_design</option>
+			<option value="linux" onclick="reddit()">r/linux</option>
+			<option value="computing" onclick="reddit()">r/computing</option>
+			<option value="coding" onclick="reddit()">r/coding</option>
+			<option value="AskTechnology" onclick="reddit()">r/AskTechnology</option>
+			<option value="webdev" onclick="reddit()">r/webdev</option>
 		</select>
 		<label for="reddit-sort">Sort</label>
 		<select id="reddit-sort">
@@ -34,11 +33,25 @@
 			<option value="new" onclick="reddit()">New 🕦</option>
 			<option value="rising" onclick="reddit()">Rising 📈</option>
 		</select>
-
 		<br>
 		<button type="button" onclick="clear_previous_feed()">Clear Feed</button>
 	</div>
 {% endblock %}
 {% block container %}
-<div id="feed"></div>
+	<div id="feed">
+		{% if allfeed %}
+			{% for feed in allfeed %}
+				{% for item in feed %}
+					<div id="feed-card">
+						<a href="{{ item['link']}}">{{ item["title"] }}</a>
+						<h4>Author: {{ item["author"] }}</h4>
+						<details>
+						<summary>Summary</summary>
+						{{ item["summary"] }}
+						</details>
+					</div>
+				{% endfor %}
+			{% endfor %}
+		{% endif %}
+	</div>
 {% endblock %}
