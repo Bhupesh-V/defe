@@ -27,6 +27,7 @@
     <meta property="og:image:height" content="360" />
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" type="text/css" href="static/style.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <!--     <meta name="twitter:image" content="">
     <link rel="shortcut icon" type="image/png" href="images/logo.png"/> -->
     <title>devfeed</title>
@@ -74,6 +75,16 @@
             x.className += " responsive";
         } else {
             x.className = "topnav";
+        }
+    }
+    function share(title, link) {
+        if (navigator.share) {
+            navigator.share({
+            title: title,
+            url: link,
+            })
+            .then(() => console.log('Successful Share'))
+            .catch((error) => console.log('Error sharing', error));
         }
     }
     </script>

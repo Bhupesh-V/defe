@@ -38,20 +38,26 @@
 	</div>
 {% endblock %}
 {% block container %}
+	<center>
 	<div id="feed">
 		{% if allfeed %}
 			{% for feed in allfeed %}
 				{% for item in feed %}
 					<div id="feed-card">
 						<a href="{{ item['link']}}">{{ item["title"] }}</a>
-						<h4>Author: {{ item["author"] }}</h4>
+						<h4>By {{ item["author"] }}</h4>
 						<details>
 						<summary>Summary</summary>
-						{{ item["summary"] }}
+						<div id="feed-summary">
+							{{ item["summary"] }}
+						</div>
 						</details>
+						<p><blockquote>{{ item["published"] }}</blockquote></p>
+						<button class="fa fa-share-alt" id="shareIcon" onclick='share("{{ tutorial.title }}","{{ tutorial.link }}")'></button>
 					</div>
 				{% endfor %}
 			{% endfor %}
 		{% endif %}
 	</div>
+	</center>
 {% endblock %}
