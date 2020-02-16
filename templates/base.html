@@ -51,6 +51,22 @@
       <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
     </div>
     {% block header %}{% endblock %}
+    <div id="filter-feed">
+        <h3>Filter </h1>
+        <input id="feed-input" list="filter" placeholder="Filter By Website">
+        <datalist id="filter">
+            <option value="HackerNoon">
+            <option value="freeCodeCamp">
+            <option value="itsfoss">
+            <option value="TechCrunch">
+            <option value="ProductHunt">
+            <option value="opensource.com">
+            <option value="dev.to">
+            <option value="Reddit">
+        </datalist>
+        <button type="button" id="fetchfeed" onclick="fetch_feed()" >Filter</button>
+
+    </div>
     {% block container %}
       
     {% endblock %}
@@ -87,6 +103,40 @@
             .catch((error) => console.log('Error sharing', error));
         }
     }
+    </script>
+    <script type="text/javascript">
+        var input = document.getElementById("feed-input");
+        input.addEventListener("keyup", function(event) {
+          if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById("fetchfeed").click();
+          }
+        });
+        var filter_by = document.getElementById("feed-input");
+        filter_by.addEventListener("input", function(event) {
+            console.log("datalist workin");
+            console.log(filter_by.value);
+            if (filter_by.value == "Reddit"){
+                container1 = document.getElementById("filter-feed");
+                //var subreddit = document.createElement("div");
+                var input = document.createElement("input");
+                input.setAttribute("name", "subreddit");
+                input.setAttribute("list", "subreddit");
+                data_list = document.createElement("datalist");
+                data_list.setAttribute("id", "subreddit");
+                input.appendChild(data_list);
+    /*          <input name="subreddit" list="subreddit" />
+                <datalist id="subreddit"></datalist> */
+                container1.appendChild(input);
+                var subreddit_options = ["programming", "Android", "webdev", "technology", "python", "javascript", "learnprogramming", "software", "startups", "tech", "web_design", "linux", "computing", "coding", "AskTechnology"];
+                var options = '';
+
+                for(var i = 0; i < subreddit_options.length; i++)
+                    options += '<option value="'+subreddit_options[i]+'" />';
+
+                document.getElementById('subreddit').innerHTML = options;
+            }
+        });
     </script>
   </body>
 </html>

@@ -53,7 +53,7 @@
 						</div>
 						</details>
 						<p><blockquote>{{ item["published"] }}</blockquote></p>
-						<button class="fa fa-share-alt" id="shareIcon" onclick='share("{{ tutorial.title }}","{{ tutorial.link }}")'></button>
+						<button class="fa fa-share-alt" id="shareIcon" onclick='share("{{ item["title"] }}","{{ item["link"] }}")'></button>
 					</div>
 				{% endfor %}
 			{% endfor %}

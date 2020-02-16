@@ -1,3 +1,24 @@
+function fetch_feed (argument) {
+    var feed = document.getElementById("feed-input").value;
+    console.log(feed);
+
+    clear_previous_feed();
+
+    data = get_feed(feed);
+    var mainContainer = document.getElementById("feed");
+
+    for (var i = 0; i < data.length; i++) {
+        var story = document.createElement("div");
+        var link = document.createElement("a");
+        link.setAttribute("href", data[i].link);
+        var title = document.createTextNode(data[i].title);
+        link.appendChild(title);
+        story.appendChild(link);
+
+        mainContainer.appendChild(story);
+    }
+}
+
 function clear_previous_feed() {
     // remove all childs of "feed"
     const feed_div = document.getElementById("feed");
@@ -32,6 +53,7 @@ function invoke_dev() {
 
     for (var i = 0; i < data.length; i++) {
         var article = document.createElement("div");
+        article.setAttribute("id", "feed-card");
         var link = document.createElement("a");
         link.setAttribute("href", data[i].url);
         var title = document.createTextNode(data[i].title);
@@ -58,113 +80,4 @@ function invoke_hn() {
 
         mainContainer.appendChild(story);
     }
-}
-
-function invoke_tc() {
-    clear_previous_feed();
-
-    data = get_feed("techcrunch");
-    var mainContainer = document.getElementById("feed");
-
-    for (var i = 0; i < data.length; i++) {
-        var story = document.createElement("div");
-        var link = document.createElement("a");
-        link.setAttribute("href", data[i].link);
-        var title = document.createTextNode(data[i].title);
-        link.appendChild(title);
-        story.appendChild(link);
-
-        mainContainer.appendChild(story);
-    }
-}
-
-function invoke_ph() {
-    clear_previous_feed();
-
-    data = get_feed("producthunt");
-    var mainContainer = document.getElementById("feed");
-
-    for (var i = 0; i < data.length; i++) {
-        var story = document.createElement("div");
-        var link = document.createElement("a");
-        link.setAttribute("href", data[i].link);
-        var title = document.createTextNode(data[i].title);
-        link.appendChild(title);
-        story.appendChild(link);
-
-        mainContainer.appendChild(story);
-    }
-}
-
-function invoke_fcc() {
-    clear_previous_feed();
-
-    data = get_feed("freecodecamp");
-    var mainContainer = document.getElementById("feed");
-
-    for (var i = 0; i < data.length; i++) {
-        var article = document.createElement("div");
-        var link = document.createElement("a");
-        link.setAttribute("href", data[i].link);
-        var title = document.createTextNode(data[i].title);
-        link.appendChild(title);
-        article.appendChild(link);
-
-        mainContainer.appendChild(article);
-    }
-}
-
-function invoke_hackernoon() {
-    clear_previous_feed();
-
-    data = get_feed("hackernoon");
-    var mainContainer = document.getElementById("feed");
-
-    for (var i = 0; i < data.length; i++) {
-        var article = document.createElement("div");
-        var link = document.createElement("a");
-        link.setAttribute("href", data[i].link);
-        var title = document.createTextNode(data[i].title);
-        link.appendChild(title);
-        article.appendChild(link);
-
-        mainContainer.appendChild(article);
-    }
-}
-
-function reddit() {
-    clear_previous_feed();
-
-    selected_reddit = document.getElementById("reddit").value;
-    sort_by = document.getElementById("reddit-sort").value;
-
-    const cdata = {
-        feed: 'reddit',
-        sub: selected_reddit,
-        sort: sort_by
-    };
-
-    fetch('/', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(cdata),
-        })
-        .then((response) => response.json())
-        .then((data) => {
-            console.log('Success');
-            var mainContainer = document.getElementById("feed");
-
-            for (var i = 0; i < data.length; i++) {
-                var story = document.createElement("div");
-                var link = document.createElement("a");
-                link.setAttribute("href", data[i].link);
-                var title = document.createTextNode(data[i].title);
-                link.appendChild(title);
-                story.appendChild(link);
-
-                mainContainer.appendChild(story);
-            }
-        });
 }
