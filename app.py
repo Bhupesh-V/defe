@@ -16,12 +16,10 @@ def feed():
             data = devto.get_articles()
             return jsonify(data)
         elif service["feed"] == "reddit":
-            print(service)
             data = reddit.subreddit(service["sub"], service["sort"])
             return jsonify(data)
         else:
             data = feeder.feed(service["feed"])
-            print(data)
             return jsonify(data)
 
 

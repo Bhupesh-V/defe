@@ -33,26 +33,9 @@
     <title>devfeed</title>
   </head>
   <body>
-    <div class="topnav" id="myTopnav">
-      <a href="#home" class="active">Home</a>
-      <a href="#news">News</a>
-      <a href="#contact">Contact</a>
-      <div class="dropdown">
-        <button class="dropbtn">Dropdown
-        <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
-        </div>
-      </div>
-      <a href="#about">About</a>
-      <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
-    </div>
     {% block header %}{% endblock %}
     <div id="filter-feed">
-        <h3>Filter </h1>
+        <label for="feed-input">Filter Feed</label>
         <input id="feed-input" list="filter" placeholder="Filter By Website">
         <datalist id="filter">
             <option value="HackerNoon">
@@ -63,14 +46,17 @@
             <option value="opensource.com">
             <option value="dev.to">
             <option value="Reddit">
+            <option value="HackerNews">
+            <option value="dev.to">
         </datalist>
         <button type="button" id="fetchfeed" onclick="fetch_feed()" >Filter</button>
+        <div id="subreddit-div"></div>
 
     </div>
     {% block container %}
       
     {% endblock %}
-    <script src="/static/feed.js"></script>
+    <script src="/static/script.js"></script>
     <script>
     window.onload = function() {
         registerSW();
@@ -84,59 +70,21 @@
             }
         }
     }
+    
+    var input = document.getElementById("feed-input");
+    input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("fetchfeed").click();
+      }
+    });
 
-    function myFunction() {
-        var x = document.getElementById("myTopnav");
-        if (x.className === "topnav") {
-            x.className += " responsive";
-        } else {
-            x.className = "topnav";
+    var filter_by = document.getElementById("feed-input");
+    filter_by.addEventListener("input", function(event) {
+        if (filter_by.value == "Reddit"){
+            show_subreddits();
         }
-    }
-    function share(title, link) {
-        if (navigator.share) {
-            navigator.share({
-            title: title,
-            url: link,
-            })
-            .then(() => console.log('Successful Share'))
-            .catch((error) => console.log('Error sharing', error));
-        }
-    }
-    </script>
-    <script type="text/javascript">
-        var input = document.getElementById("feed-input");
-        input.addEventListener("keyup", function(event) {
-          if (event.keyCode === 13) {
-            event.preventDefault();
-            document.getElementById("fetchfeed").click();
-          }
-        });
-        var filter_by = document.getElementById("feed-input");
-        filter_by.addEventListener("input", function(event) {
-            console.log("datalist workin");
-            console.log(filter_by.value);
-            if (filter_by.value == "Reddit"){
-                container1 = document.getElementById("filter-feed");
-                //var subreddit = document.createElement("div");
-                var input = document.createElement("input");
-                input.setAttribute("name", "subreddit");
-                input.setAttribute("list", "subreddit");
-                data_list = document.createElement("datalist");
-                data_list.setAttribute("id", "subreddit");
-                input.appendChild(data_list);
-    /*          <input name="subreddit" list="subreddit" />
-                <datalist id="subreddit"></datalist> */
-                container1.appendChild(input);
-                var subreddit_options = ["programming", "Android", "webdev", "technology", "python", "javascript", "learnprogramming", "software", "startups", "tech", "web_design", "linux", "computing", "coding", "AskTechnology"];
-                var options = '';
-
-                for(var i = 0; i < subreddit_options.length; i++)
-                    options += '<option value="'+subreddit_options[i]+'" />';
-
-                document.getElementById('subreddit').innerHTML = options;
-            }
-        });
+    });
     </script>
   </body>
 </html>

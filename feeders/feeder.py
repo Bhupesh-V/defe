@@ -1,5 +1,6 @@
 import feedparser
 from concurrent.futures import ThreadPoolExecutor
+from . import hackernews, devto
 
 feeder_site_urls = {
     "hackernoon": "https://hackernoon.com/feed",
@@ -20,6 +21,10 @@ def get_feed(url):
 def feed(feeder_site: str):
     if feeder_site in feeder_site_urls:
         return get_feed(feeder_site_urls[feeder_site])
+    elif feeder_site == "hackernews":
+        return hackernews.get_top()
+    elif feeder_site == "dev.to":
+        return devto.get_articles()
     else:
         return {"error": "Feeder Site Not Available"}
 
