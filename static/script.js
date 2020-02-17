@@ -1,22 +1,42 @@
+/*function attachsummary () {
+    feed_cards = document.getElementsByClassName("feed-card").childNodes;
+    console.log("Herere");
+    for (var i = 0; i < feed_cards.length; i++) {
+        console.log(feed_cards[i].details);
+    }
+    //console.log(feed_cards[0].children.tagName);
+    //update summary here
+}*/
+
 function append_feed(data) {
     var mainContainer = document.getElementById("feed");
 
     for (var i = 0; i < data.length; i++) {
-        var story = document.createElement("div");
+
+        feed_card = document.createElement("div");
+        feed_card.setAttribute("id", "feed-card");
+        h4 = document.createElement("h4");
+        h4.textContent = data[i].title;
+        blockquote = document.createElement("blockquote");
+        blockquote.textContent = data[i].published;
+
         var link = document.createElement("a");
+
         link.setAttribute("href", data[i].link);
         var title = document.createTextNode(data[i].title);
-        link.appendChild(title);
-        story.appendChild(link);
 
-        mainContainer.appendChild(story);
+        link.appendChild(title);
+
+        feed_card.appendChild(link);
+        feed_card.appendChild(h4);
+        feed_card.appendChild(blockquote);
+
+        mainContainer.appendChild(feed_card);
     }
 }
 
 function fetch_feed(argument) {
     var feed = document.getElementById("feed-input").value;
-    console.log(feed);
-
     clear_previous_feed();
 
     get_feed(feed.toLowerCase());
@@ -41,7 +61,7 @@ function get_feed(feeder) {
     }).then(response => {
         return response.json();
     }).then(data => {
-        setTimeout(append_feed, 400, data);
+        setTimeout(append_feed, 500, data);
     });
 }
 

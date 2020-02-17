@@ -8,21 +8,20 @@
 	<center>
 	<div id="feed">
 		{% if allfeed %}
-			{% for feed in allfeed %}
-				{% for item in feed %}
-					<div id="feed-card">
-						<a href="{{ item['link']}}">{{ item["title"] }}</a>
-						<h4>By {{ item["author"] }}</h4>
-						<details>
-						<summary>Summary</summary>
-						<div id="feed-summary">
-							{{ item["summary"] }}
-						</div>
-						</details>
-						<p><blockquote>{{ item["published"] }}</blockquote></p>
-						<button class="fa fa-share-alt" id="shareIcon" onclick='share("{{ item["title"] }}","{{ item["link"] }}")'></button>
+			{% for item in allfeed %}
+				<div class="feed-card">
+					<a href="{{ item['link']}}">{{ item["title"] }}</a>
+					<h4>By {{ item["author"] }}</h4>
+					<details>
+					<summary>Summary</summary>
+					<div id="feed-summary">
+						{{ item["summary"] }}
 					</div>
-				{% endfor %}
+					</details>
+					<blockquote>{{ item["published"] }}</blockquote>
+					<span id="feeder-site">{{ item["feeder_site"] }}</span>
+					<button class="fa fa-share-alt" id="shareIcon" onclick='share("{{ item["title"] }}","{{ item["link"] }}")'></button>
+				</div>
 			{% endfor %}
 		{% endif %}
 	</div>

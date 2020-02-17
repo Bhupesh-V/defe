@@ -104,7 +104,7 @@ body {margin:0;font-family:Arial}
 }
 
 
-#feed-card {
+.feed-card {
   background-image: linear-gradient(90deg, rgb(236, 237, 227) 100%, rgb(0, 212, 255) 100%);
   border-radius: 20px;
   font-weight: bold;
@@ -116,4 +116,18 @@ body {margin:0;font-family:Arial}
   padding: 1.25rem;
   max-width: 600px;
   margin: 10px;
+}
+
+#feeder-site {
+  align-items: center;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  display: inline-flex;
+  height: 2em;
+  justify-content: center;
+  line-height: 1.5;
+  padding-left: .75em;
+  padding-right: .75em;
+  white-space: nowrap;
+  margin: 8px;
 }

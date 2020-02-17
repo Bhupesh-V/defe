@@ -33,6 +33,7 @@
     <title>devfeed</title>
   </head>
   <body>
+    <h2>devfeed</h2>
     {% block header %}{% endblock %}
     <div id="filter-feed">
         <label for="feed-input">Filter Feed</label>
@@ -44,10 +45,10 @@
             <option value="TechCrunch">
             <option value="ProductHunt">
             <option value="opensource.com">
-            <option value="dev.to">
             <option value="Reddit">
             <option value="HackerNews">
             <option value="dev.to">
+            <option value="changelog">
         </datalist>
         <button type="button" id="fetchfeed" onclick="fetch_feed()" >Filter</button>
         <div id="subreddit-div"></div>
@@ -60,6 +61,7 @@
     <script>
     window.onload = function() {
         registerSW();
+        setTimeout(attachsummary, 700);
     };
     async function registerSW() {
         if ('serviceWorker' in navigator) {

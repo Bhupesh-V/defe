@@ -1,6 +1,9 @@
 import feedparser
 from concurrent.futures import ThreadPoolExecutor
+from urllib.parse import urlparse
 from . import hackernews, devto
+import itertools
+import random
 
 feeder_site_urls = {
     "hackernoon": "https://hackernoon.com/feed",
@@ -18,6 +21,12 @@ def get_feed(url):
     return site_feed.entries
 
 
+def get_domain(link):
+    domain = urlparse(link).netloc
+
+    return domain
+
+
 def feed(feeder_site: str):
     if feeder_site in feeder_site_urls:
         return get_feed(feeder_site_urls[feeder_site])
@@ -33,4 +42,11 @@ def all_feed():
     with ThreadPoolExecutor(max_workers=7) as executor:
         results = list(executor.map(get_feed, feeder_site_urls.values()))
 
-    return results
+    feed_result = [i for i in itertools.chain.from_iterable(results)]
+
+    random.shuffle(feed_result)
+
+    for f in feed_result:
+        f["feeder_site"] = get_domain(f["link"])
+
+    return feed_result
