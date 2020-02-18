@@ -32,3 +32,16 @@ body {margin:0;font-family:Arial}
   display: block;
   font-size: 20px;
 }
+
+.feed-card img {
+  width: 100%;
+  min-height: 100%;
+}
+
+#story-count {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
