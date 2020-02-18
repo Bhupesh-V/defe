@@ -12,7 +12,9 @@ feeder_site_urls = {
     "freecodecamp": "https://www.freecodecamp.org/news/rss/",
     "opensource": "https://opensource.com/feed",
     "changelog": "https://changelog.com/feed",
-    "itsfoss": "https://itsfoss.com/category/news/feed"
+    "itsfoss": "https://itsfoss.com/category/news/feed",
+    "thenewstack": "https://thenewstack.io/feed",
+    "theverge": "https://www.theverge.com/tech/rss/index.xml"
 }
 
 
