@@ -8,7 +8,7 @@ app = Flask(__name__)
 def feed():
     if request.method == "GET":
         data = feeder.all_feed()
-        return render_template("feed.html", allfeed=data)
+        return render_template("feed.html", allfeed=data, feeder_sites=feeder.feeder_site_urls.keys())
     else:
         service = request.json
         print(service)

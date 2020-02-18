@@ -18,7 +18,9 @@
 						{{ item["summary"] }}
 					</div>
 					</details>
-					<blockquote>{{ item["published"] }}</blockquote>
+					<blockquote>
+					{{ item["published_parsed"].tm_mday }}-{{ item["published_parsed"].tm_mon }}-{{ item["published_parsed"].tm_year }}
+					</blockquote>
 					<span id="feeder-site">{{ item["feeder_site"] }}</span>
 					<button class="fa fa-share-alt" id="shareIcon" onclick='share("{{ item["title"] }}","{{ item["link"] }}")'></button>
 				</div>

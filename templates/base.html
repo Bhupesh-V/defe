@@ -39,16 +39,11 @@
         <label for="feed-input">Filter Feed</label>
         <input id="feed-input" list="filter" placeholder="Filter By Website">
         <datalist id="filter">
-            <option value="HackerNoon">
-            <option value="freeCodeCamp">
-            <option value="itsfoss">
-            <option value="TechCrunch">
-            <option value="ProductHunt">
-            <option value="opensource.com">
-            <option value="Reddit">
-            <option value="HackerNews">
-            <option value="dev.to">
-            <option value="changelog">
+            {% block feeders %}
+                {% for feeder in feeder_sites %}
+                    <option value="{{ feeder }}">
+                {% endfor %}
+            {% endblock %}
         </datalist>
         <button type="button" id="fetchfeed" onclick="fetch_feed()" >Filter</button>
         <div id="subreddit-div"></div>
