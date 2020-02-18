@@ -1,12 +1,19 @@
-/*function attachsummary () {
-    feed_cards = document.getElementsByClassName("feed-card").childNodes;
-    console.log("Herere");
-    for (var i = 0; i < feed_cards.length; i++) {
-        console.log(feed_cards[i].details);
+function storycount(argument) {
+    feed_cards = document.getElementsByClassName("feed-card");
+    var ff = document.getElementById("filter-feed");
+    var scount = document.createElement("div");
+    scount.setAttribute("id", "story-count");
+    scount.innerHTML = feed_cards.length + " stories fetched";
+    // attach after div="filter-feed"
+    ff.parentNode.insertBefore(scount, ff.nextSibling);
+}
+
+function rewrite_summary (argument) {
+    fs = document.getElementsByClassName("feed-summary");
+    for (var i = 0; i < fs.length; i++) {
+        fs[i].innerHTML = fs[i].textContent;
     }
-    //console.log(feed_cards[0].children.tagName);
-    //update summary here
-}*/
+}
 
 function append_feed(data) {
     var mainContainer = document.getElementById("feed");
@@ -46,6 +53,8 @@ function clear_previous_feed() {
     // remove all childs of "feed"
     const feed_div = document.getElementById("feed");
     feed_div.innerHTML = '';
+    const story_count = document.getElementById("story-count");
+    story_count.innerHTML = '';
 }
 
 function get_feed(feeder) {

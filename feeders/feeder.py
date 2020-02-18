@@ -39,7 +39,7 @@ def feed(feeder_site: str):
 
 
 def all_feed():
-    with ThreadPoolExecutor(max_workers=7) as executor:
+    with ThreadPoolExecutor(max_workers=20) as executor:
         results = list(executor.map(get_feed, feeder_site_urls.values()))
 
     feed_result = [i for i in itertools.chain.from_iterable(results)]

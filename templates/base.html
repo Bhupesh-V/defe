@@ -61,7 +61,8 @@
     <script>
     window.onload = function() {
         registerSW();
-        setTimeout(attachsummary, 700);
+        setTimeout(storycount, 700);
+        setTimeout(rewrite_summary, 700);
     };
     async function registerSW() {
         if ('serviceWorker' in navigator) {
