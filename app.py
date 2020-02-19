@@ -23,5 +23,17 @@ def feed():
             return jsonify(data)
 
 
+@app.route("/podcasts", methods=["GET"])
+def podcast():
+    data = feeder.podcasts_feeds()
+    return render_template("podcast.html", podcast_feed=data)
+
+
+@app.route("/newsletters", methods=["GET"])
+def newsletter():
+    data = feeder.newsletters_feeds()
+    return render_template("newsletter.html", newsletter_feed=data)
+
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080)

@@ -7,40 +7,25 @@
 {% block container %}
 	<center>
 	<div id="feed">
-		{% if allfeed %}
-			{% for item in allfeed %}
+		{% if podcast_feed %}
+			{% for item in podcast_feed %}
 				<div class="feed-card">
 					<a href="{{ item['link']}}">{{ item["title"] }}</a>
-					<h4>By {{ item["author"] }}</h4>
 					<details>
 					<summary>Summary</summary>
 					<div class="feed-summary">
 						{{ item["summary"] }}
 					</div>
 					</details>
+					<audio controls src="{{ item.links[1].href }}">
+				        Your browser does not support the element.
+				    </audio>
 					<blockquote>
 					{{ item["published_parsed"].tm_mday }}-{{ item["published_parsed"].tm_mon }}-{{ item["published_parsed"].tm_year }}
 					</blockquote>
-					<span id="feeder-site">{{ item["feeder_site"] }}</span>
 					<button class="fa fa-share-alt" id="shareIcon" onclick='share("{{ item["title"] }}","{{ item["link"] }}")'></button>
 				</div>
 			{% endfor %}
-		{% elif podcast_feed %}
-				<div class="feed-card">
-					<a href="{{ item['link']}}">{{ item["title"] }}</a>
-					<h4>By {{ item["author"] }}</h4>
-					<details>
-					<summary>Summary</summary>
-					<div class="feed-summary">
-						{{ item["summary"] }}
-					</div>
-					</details>
-					<blockquote>
-					{{ item["published_parsed"].tm_mday }}-{{ item["published_parsed"].tm_mon }}-{{ item["published_parsed"].tm_year }}
-					</blockquote>
-					<span id="feeder-site">{{ item["feeder_site"] }}</span>
-					<button class="fa fa-share-alt" id="shareIcon" onclick='share("{{ item["title"] }}","{{ item["link"] }}")'></button>
-				</div>
 		{% endif %}
 	</div>
 	</center>
