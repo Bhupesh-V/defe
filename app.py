@@ -26,13 +26,13 @@ def feed():
 @app.route("/podcasts", methods=["GET"])
 def podcast():
     data = feeder.podcasts_feeds()
-    return render_template("podcast.html", podcast_feed=data)
+    return render_template("podcast.html", podcast_feed=data, feeder_sites=feeder.podcasts.keys())
 
 
 @app.route("/newsletters", methods=["GET"])
 def newsletter():
     data = feeder.newsletters_feeds()
-    return render_template("newsletter.html", newsletter_feed=data)
+    return render_template("newsletter.html", newsletter_feed=data, feeder_sites=feeder.newsletters.keys())
 
 
 if __name__ == "__main__":
