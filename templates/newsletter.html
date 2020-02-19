@@ -1,9 +1,4 @@
 {% extends 'base.html' %}
-{% block header %}
-	<div class="feed-options">
-		<button type="button" onclick="clear_previous_feed()">Clear Feed</button>
-	</div>
-{% endblock %}
 {% block container %}
 	<center>
 	<div id="feed">
@@ -17,9 +12,6 @@
 						{{ item["summary"] }}
 					</div>
 					</details>
-					<blockquote>
-					{{ item["published_parsed"].tm_mday }}-{{ item["published_parsed"].tm_mon }}-{{ item["published_parsed"].tm_year }}
-					</blockquote>
 					<button class="fa fa-share-alt" id="shareIcon" onclick='share("{{ item["title"] }}","{{ item["link"] }}")'></button>
 				</div>
 			{% endfor %}

@@ -1,4 +1,3 @@
-
 function storycount(argument) {
     feed_cards = document.getElementsByClassName("feed-card");
     var ff = document.getElementById("filter-feed");
@@ -16,7 +15,15 @@ function rewrite_summary(argument) {
     }
 }
 
+function rewrite_description(argument) {
+    fs = document.getElementsByClassName("feed-description");
+    for (var i = 0; i < fs.length; i++) {
+        fs[i].innerHTML = fs[i].textContent;
+    }
+}
+
 function append_feed(data) {
+    deleteLoadSVG();
     var mainContainer = document.getElementById("feed");
 
     for (var i = 0; i < data.length; i++) {
@@ -25,8 +32,8 @@ function append_feed(data) {
         feed_card.setAttribute("class", "feed-card");
         h4 = document.createElement("h4");
         h4.textContent = data[i].title;
-/*        blockquote = document.createElement("blockquote");
-        blockquote.textContent = data[i].published_parsed.tm_day;*/
+        /*        blockquote = document.createElement("blockquote");
+                blockquote.textContent = data[i].published_parsed.tm_day;*/
 
         var link = document.createElement("a");
 
@@ -45,6 +52,7 @@ function append_feed(data) {
 
 function fetch_feed(argument) {
     var feed = document.getElementById("feed-input").value;
+    addLoadSVG();
     clear_previous_feed();
 
     get_feed(feed.toLowerCase());
