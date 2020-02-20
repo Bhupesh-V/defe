@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block container %}
+	<center>
+	<div id="feed-site-info">
+		<h1>Feeders</h1>
+		{% if feed_sites %}
+			<h3>Feed Sites</h3>
+			<ul>
+				{% for item in feed_sites %}
+					<li><a href="{{ feed_sites[item] }}">{{ item }}</a></li>
+				{% endfor %}
+			</ul>
+		{% endif %}
+		{% if podcasts_sites %}
+			<h3>Podcasts</h3>
+			<ul>
+				{% for item in podcasts_sites %}
+					<li><a href="{{ podcasts_sites[item] }}">{{ item }}</a></li>
+				{% endfor %}
+			</ul>
+		{% endif %}
+		{% if newsletter_feeds %}
+			<h3>Newsletters</h3>
+			<ul>
+				{% for item in newsletter_feeds %}
+					<li><a href="{{ newsletter_feeds[item] }}">{{ item }}</a></li>
+				{% endfor %}
+			</ul>
+		{% endif %}
+	</div>
+	</center>
+{% endblock %}

@@ -32,5 +32,12 @@ def newsletter():
     return render_template("newsletter.html", newsletter_feed=data, feeder_sites=feeder.newsletters.keys())
 
 
+@app.route("/feeders", methods=["GET"])
+def feeder_sites_info():
+    print("jpjpfdjfjdf")
+    return render_template("feeders.html", feed_sites=feeder.feeder_site_urls,
+                           podcasts_sites=feeder.podcasts, newsletter_feeds=feeder.newsletters)
+
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080)

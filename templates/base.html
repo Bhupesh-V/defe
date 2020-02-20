@@ -41,18 +41,18 @@
     <div class="feed-options">
         <button type="button" onclick="clear_previous_feed()">Clear Feed</button>
     </div>
+    {% block feeders %}
     <div id="filter-feed">
         <label for="feed-input">Filter Feed</label>
         <input id="feed-input" list="filter" placeholder="Filter By Website">
         <datalist id="filter">
-            {% block feeders %}
-                {% for feeder in feeder_sites %}
-                    <option value="{{ feeder }}">
-                {% endfor %}
-            {% endblock %}
+            {% for feeder in feeder_sites %}
+                <option value="{{ feeder }}">
+            {% endfor %}
         </datalist>
         <button type="button" id="fetchfeed" onclick="fetch_feed()" >Filter</button>
         <div id="subreddit-div"></div>
+    {% endblock %}
 
     </div>
     <div id="load"></div>
