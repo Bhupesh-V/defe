@@ -1,5 +1,5 @@
 from flask import Flask, render_template, jsonify, request
-from feeders import devto, reddit, feeder
+from feeders import reddit, feeder
 
 app = Flask(__name__)
 
@@ -12,10 +12,7 @@ def feed():
     else:
         service = request.json
         print(service)
-        if service["feed"] == "dev":
-            data = devto.get_articles()
-            return jsonify(data)
-        elif service["feed"] == "reddit":
+        if service["feed"] == "reddit":
             data = reddit.subreddit(service["sub"], service["sort"])
             return jsonify(data)
         else:

@@ -55,7 +55,7 @@ function fetch_feed(argument) {
     addLoadSVG();
     clear_previous_feed();
 
-    get_feed(feed.toLowerCase());
+    get_feed(feed);
 }
 
 function clear_previous_feed() {
