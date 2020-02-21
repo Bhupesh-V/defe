@@ -1,5 +1,5 @@
 from flask import Flask, render_template, jsonify, request
-from feeders import reddit, feeder
+from feeders import feeder
 
 app = Flask(__name__)
 
@@ -12,12 +12,8 @@ def feed():
     else:
         service = request.json
         print(service)
-        if service["feed"] == "reddit":
-            data = reddit.subreddit(service["sub"], service["sort"])
-            return jsonify(data)
-        else:
-            data = feeder.feed(service["feed"])
-            return jsonify(data)
+        data = feeder.feed(service["feed"])
+        return jsonify(data)
 
 
 @app.route("/news", methods=["GET"])
@@ -40,10 +36,9 @@ def newsletter():
 
 @app.route("/feeders", methods=["GET"])
 def feeder_sites_info():
-    print("jpjpfdjfjdf")
     return render_template("feeders.html", feed_sites=feeder.feeder_site_urls,
                            podcasts_sites=feeder.podcasts, newsletter_feeds=feeder.newsletters)
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8080)
+    app.run()
