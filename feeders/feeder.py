@@ -42,7 +42,7 @@ podcasts = {
     "Weekly Dev Tips": "https://feeds.simplecast.com/W8bGHhCA",
     "cpp.chat": "https://feeds.fireside.fm/cppchat/rss",
     "devpath.fm": "https://feeds.transistor.fm/devpath-fm",
-    "synatx.fm": "feed.syntax.fm/rss",
+    "synatx.fm": "https://feed.syntax.fm/rss",
     "Talk Python": "https://talkpython.fm/episodes/rss"
 }
 

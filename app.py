@@ -34,10 +34,15 @@ def newsletter():
     return render_template("newsletter.html", newsletter_feed=data, feeder_sites=feeder.newsletters.keys())
 
 
-@app.route("/feeders", methods=["GET"])
+@app.route("/feeders")
 def feeder_sites_info():
     return render_template("feeders.html", feed_sites=feeder.feeder_site_urls,
                            podcasts_sites=feeder.podcasts, newsletter_feeds=feeder.newsletters)
+
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
 
 
 if __name__ == "__main__":

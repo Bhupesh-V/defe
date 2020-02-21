@@ -7,14 +7,16 @@
 				<div class="feed-card">
 					<a href="{{ item['link']}}">{{ item["title"] }}</a>
 					<h4>By {{ item["author"] }}</h4>
+					{% if item["summary"] %}
 					<details>
-					<summary>Summary</summary>
-					<div class="feed-summary">
-						{{ item["summary"] }}
-					</div>
-					</details>
+						<summary>Summary</summary>
+						<div class="feed-summary">
+							{{ item["summary"] }}
+						</div>
+						</details>
+					{% endif %}
 					<blockquote>
-					{{ item["published_parsed"].tm_mday }}-{{ item["published_parsed"].tm_mon }}-{{ item["published_parsed"].tm_year }}
+						{{ item["published_parsed"].tm_mday }}-{{ item["published_parsed"].tm_mon }}-{{ item["published_parsed"].tm_year }}
 					</blockquote>
 					<span id="feeder-site">{{ item["feeder_site"] }}</span>
 					<button class="fa fa-share-alt" id="shareIcon" onclick='share("{{ item["title"] }}","{{ item["link"] }}")'></button>
