@@ -20,6 +20,12 @@ def feed():
             return jsonify(data)
 
 
+@app.route("/news", methods=["GET"])
+def news_feed():
+    data = feeder.news()
+    return render_template("news.html", news_feed_data=data, feeder_sites=feeder.news_feed_sites.keys())
+
+
 @app.route("/podcasts", methods=["GET"])
 def podcast():
     data = feeder.podcasts_feeds()

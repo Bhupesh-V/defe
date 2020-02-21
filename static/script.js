@@ -23,7 +23,6 @@ function rewrite_description(argument) {
 }
 
 function append_feed(data) {
-    deleteLoadSVG();
     var mainContainer = document.getElementById("feed");
 
     for (var i = 0; i < data.length; i++) {
@@ -52,7 +51,6 @@ function append_feed(data) {
 
 function fetch_feed(argument) {
     var feed = document.getElementById("feed-input").value;
-    addLoadSVG();
     clear_previous_feed();
 
     get_feed(feed);
@@ -92,33 +90,4 @@ function share(title, link) {
             .then(() => console.log('Successful Share'))
             .catch((error) => console.log('Error sharing', error));
     }
-}
-
-function show_subreddits(argument) {
-    container1 = document.getElementById("filter-feed");
-    var input = document.createElement("input");
-    input.setAttribute("name", "subreddit");
-    input.setAttribute("list", "subreddit");
-
-    label = document.createElement("label");
-    label.setAttribute("for", "subreddit");
-    label.innerHTML = "Select Subreddit";
-
-    data_list = document.createElement("datalist");
-    data_list.setAttribute("id", "subreddit");
-
-    input.appendChild(data_list);
-    var sub_div = document.getElementById("subreddit-div");
-    sub_div.appendChild(label);
-    sub_div.appendChild(input);
-    /*          <input name="subreddit" list="subreddit" />
-                <datalist id="subreddit"></datalist> */
-    container1.appendChild(sub_div);
-    var subreddit_options = ["programming", "Android", "webdev", "technology", "python", "javascript", "learnprogramming", "software", "startups", "tech", "web_design", "linux", "computing", "coding", "AskTechnology", "cpp"];
-    var options = '';
-
-    for (var i = 0; i < subreddit_options.length; i++)
-        options += '<option value="' + subreddit_options[i] + '" />';
-
-    document.getElementById('subreddit').innerHTML = options;
 }

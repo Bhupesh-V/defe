@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block container %}
+	<center>
+	<div id="feed">
+		{% if news_feed_data %}
+			{% for item in news_feed_data %}
+				<div class="feed-card">
+					<a href="{{ item['link']}}">{{ item["title"] }}</a>
+					<h4>By {{ item["author"] }}</h4>
+					<details>
+					<summary>Summary</summary>
+					<div class="feed-summary">
+						{{ item["summary"] }}
+					</div>
+					</details>
+					<blockquote>
+					{{ item["published_parsed"].tm_mday }}-{{ item["published_parsed"].tm_mon }}-{{ item["published_parsed"].tm_year }}
+					</blockquote>
+					<span id="feeder-site">{{ item["feeder_site"] }}</span>
+					<button class="fa fa-share-alt" id="shareIcon" onclick='share("{{ item["title"] }}","{{ item["link"] }}")'></button>
+				</div>
+			{% endfor %}
+		{% endif %}
+	</div>
+	</center>
+{% endblock %}

@@ -6,6 +6,7 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content="width=device-width,height=device-height, initial-scale=1, shrink-to-fit=yes">
     <meta name="twitter:title" content="devfeed">
+    <meta name="author" content="Bhupesh Varshney" />
     <meta property="og:title" content="devfeed" />
     
     <meta name="keywords" content="devtools, feed, devfeed, developers">
@@ -35,6 +36,8 @@
   <body>
     <h2 class="devfeed-heading"><a href="/">devfeed</a></h2>
     <div id="feed-menu">
+        <a href="/">General</a>
+        <a href="/news">News</a>
         <a href="/podcasts">Podcasts</a>
         <a href="/newsletters">Newsletters</a>
     </div>
@@ -51,28 +54,26 @@
             {% endfor %}
         </datalist>
         <button type="button" id="fetchfeed" onclick="fetch_feed()" >Filter</button>
-        <div id="subreddit-div"></div>
     {% endblock %}
 
     </div>
-    <div id="load"></div>
     {% block container %}
       
     {% endblock %}
-    <script src="/static/script.js"></script>
+    <script defer src="/static/script.js"></script>
     <script>
     window.onload = function() {
         registerSW();
-        setTimeout(storycount, 700);
-        setTimeout(rewrite_summary, 700);
-        setTimeout(rewrite_description, 700);
+        setTimeout(storycount, 200);
+        setTimeout(rewrite_summary, 200);
+        setTimeout(rewrite_description, 200);
     };
     async function registerSW() {
         if ('serviceWorker' in navigator) {
             try {
                 await navigator.serviceWorker.register('static/sw.js');
             } catch (e) {
-                //SW registration failed
+                //SW registration failed, oh no :(
             }
         }
     }

@@ -7,7 +7,6 @@ import random
 feeder_site_urls = {
     "HackerNoon": "https://hackernoon.com/feed",
     "Producthunt": "https://www.producthunt.com/feed",
-    "TechCrunch": "https://techcrunch.com/feed/",
     "freeCodeCsamp": "https://www.freecodecamp.org/news/rss/",
     "opensource": "https://opensource.com/feed",
     "changelog": "https://changelog.com/feed",
@@ -15,9 +14,18 @@ feeder_site_urls = {
     "thenewstack": "https://thenewstack.io/feed",
     "theverge": "https://www.theverge.com/tech/rss/index.xml",
     "dev.to": "https://dev.to/feed",
-    "HackerNews": "https://news.ycombinator.com/rss",
     "CSS Tricks": "https://css-tricks.com/feed/",
-    "Tech meme": "https://www.techmeme.com/feed.xml"
+
+}
+
+news_feed_sites = {
+    "TechCrunch": "https://techcrunch.com/feed/",
+    "HackerNews": "https://news.ycombinator.com/rss",
+    "Tech meme": "https://www.techmeme.com/feed.xml",
+    "GeekWire": "https://www.geekwire.com/feed/",
+    "Technology Org": "https://www.technology.org/feed/",
+    "Geek.com": "https://www.geek.com/tech/feed/",
+    "Technology Intelligence": "https://www.telegraph.co.uk/technology/rss.xml"
 }
 
 podcasts = {
@@ -48,6 +56,7 @@ newsletters = {
     "Mobile Dev Weekly": "https://mobiledevweekly.com/rss",
     "Javascript Weekly": "https://javascriptweekly.com/rss",
     "Frontend Focus": "https://frontendfoc.us/rss",
+    "StatusCode Weekly": "http://webopsweekly.com/rss",
     "Postgres Weekly": "https://postgresweekly.com/rss",
     "Android Weekly": "http://us2.campaign-archive1.com/feed?u=887caf4f48db76fd91e20a06d&id=4eb677ad19",
     "PyCoder": "https://pycoders.com/feed",
@@ -78,7 +87,11 @@ newsletters = {
     "artificial intelligence digest": "https://feeds.feedburner.com/digest-ai",
     "Inside AI": "https://inside.com/ai/rss",
     "TLDR": "https://www.tldrnewsletter.com/rss",
-    "Barista Tech News": "https://www.barista.io/feeds/tech/latest.rss"
+    "Barista Tech News": "https://www.barista.io/feeds/tech/latest.rss",
+    "Security Newsletter": "https://securitynewsletter.co/issues?format=rss",
+    "Better Dev Link": "https://betterdev.link/rss.xml",
+    "DiscoverDev": "https://www.discoverdev.io/rss.xml",
+    "DevOps Weekly": "https://us2.campaign-archive.com/feed?u=b6635e37e35fa5eff0c2a947a&id=a63f24d068"
 }
 
 
@@ -110,6 +123,20 @@ def newsletters_feeds():
         results = list(executor.map(get_latest_feed, newsletters.values()))
 
     return results
+
+
+def news():
+    with ThreadPoolExecutor(max_workers=20) as executor:
+        results = list(executor.map(get_feed, news_feed_sites.values()))
+
+    feed_result = [i for i in itertools.chain.from_iterable(results)]
+
+    random.shuffle(feed_result)
+
+    for f in feed_result:
+        f["feeder_site"] = get_domain(f["link"])
+
+    return feed_result
 
 
 def feed(feeder_site: str):
