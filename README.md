@@ -2,16 +2,7 @@
 
 > A News feed Aggregator for Developers.
 
-- Available Feeders:
-	1. Hacker News
-	2. DEV.to
-	3. Reddit*
-	4. ProductHunt
-	5. TechCrunch
-	6. freeCodeCamp
-	7. HackerNoon
 
-*(*) Only Subreddits related to developers, create an issue to request more*
 
 ## Development
 
@@ -39,6 +30,10 @@ black --check --diff .
 5. Run the Development Server
 ```bash
 flask run
+```
+6. To Use **defe** - devfeed CLI
+```bash
+python -m defe .
 ```
 
 

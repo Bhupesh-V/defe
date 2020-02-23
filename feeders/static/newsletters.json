@@ -1,0 +1,184 @@
+{
+    "newsletters": [
+        {
+            "name": "Golang Weekly",
+            "link": "https://golangweekly.com/rss"
+        },
+        {
+            "name": "Ruby Weekly",
+            "link": "https://rubyweekly.com/rss"
+        },
+        {
+            "name": "Node Weekly",
+            "link": "https://nodeweekly.com/rss",
+        },
+        {
+            "name": "PHP Weekly",
+            "link": "http://www.phpweekly.com/rss.xml"
+        },
+        {
+            "name": "CSS Weekly",
+            "link": "https://feeds.feedburner.com/CSS-Weekly"
+        },
+        {
+            "name": "Database Weekly",
+            "link": "https://dbweekly.com/rss"
+        },
+        {
+            "name": "Mobile Dev Weekly",
+            "link": "https://mobiledevweekly.com/rss"
+        },
+        {
+            "name": "Javascript Weekly",
+            "link": "https://javascriptweekly.com/rss"
+        },
+        {
+            "name": "Frontend Focus",
+            "link": "https://frontendfoc.us/rss"
+        },
+        {
+            "name": "StatusCode Weekly",
+            "link": "http://webopsweekly.com/rss"
+        },
+        {
+            "name": "Postgres Weekly",
+            "link": "https://postgresweekly.com/rss"
+        },
+        {
+            "name": "Android Weekly",
+            "link": "http://us2.campaign-archive1.com/feed?u=887caf4f48db76fd91e20a06d&id=4eb677ad19"
+        },
+        {
+            "name": "PyCoder",
+            "link": "https://pycoders.com/feed"
+        },
+        {
+            "name": "Awesome Android",
+            "link": "https://android.libhunt.com/newsletter/feed"
+        },
+        {
+            "name": "Awesome C++",
+            "link": "https://cpp.libhunt.com/newsletter/feed"
+        },
+        {
+            "name": "Awesome Go",
+            "link": "https://go.libhunt.com/newsletter/feed"
+        },
+        {
+            "name": "Awesome Javascript",
+            "link": "https://js.libhunt.com/newsletter/feed"
+        },
+        {
+            "name": "Awesome Python",
+            "link": "https://python.libhunt.com/newsletter/feed"
+        },
+        {
+            "name": "Awesome .NET",
+            "link": "https://dotnet.libhunt.com/newsletter/feed"
+        },
+        {
+            "name": "Awesome php" ,
+            "link": "https://php.libhunt.com/newsletter/feed"
+        },
+        {
+            "name": "Awesome Rust",
+            "link": "https://rust.libhunt.com/newsletter/feed"
+        },
+        {
+            "name": "Awesome Ruby",
+            "link": "https://ruby.libhunt.com/newsletter/feed"
+        },
+        {
+            "name": "Awesome Swift",
+            "link": "https://swift.libhunt.com/newsletter/feed"
+        },
+        {
+            "name": "Awesome Scala",
+            "link": "https://scala.libhunt.com/newsletter/feed"
+        },
+        {
+            "name": "Awesome Nodejs",
+            "link": "https://nodejs.libhunt.com/newsletter/feed"
+        },
+        {
+            "name": "Awesome Kotlin",
+            "link": "https://kotlin.libhunt.com/newsletter/feed"
+        },
+        {
+            "name": "Awesome Elixir",
+            "link": "https://elixir.libhunt.com/newsletter/feed"
+        },
+        {
+            "name": "Awesome iOS",
+            "link": "https://ios.libhunt.com/newsletter/feed"
+        },
+        {
+            "name": "Awesome Java",
+            "link": "https://java.libhunt.com/newsletter/feed"
+        },
+        {
+            "name": "Awesome Sysadmin",
+            "link": "https://sysadmin.libhunt.com/newsletter/feed"
+        },
+        {
+            "name": "Web Development Reading List (WDRL)",
+            "link": "https://wdrl.info/feed"
+        },
+        {
+            "name": "Pony Foo Weekly",
+            "link": "https://feeds.feedburner.com/ponyfooweekly"
+        },
+        {
+            "name": "R Weekly",
+            "link": "https://rweekly.org/atom.xml"
+        },
+        {
+            "name":  "mongoDB Memo",
+            "link": "https://mongodb.email/rss"
+        },
+        {
+            "name": "Azure Weekly",
+            "link": "https://azureweekly.info/rss.xml"
+        },
+        {
+            "name": "Serverless Status",
+            "link": "https://serverless.email/rss"
+        },
+        {
+            "name": "Last Week in AWS" ,
+            "link": "https://www.lastweekinaws.com/newsletter/feed"
+        },
+        {
+            "name": "artificial intelligence digest",
+            "link": "https://feeds.feedburner.com/digest-ai"
+        },
+        {
+            "name": "Inside AI",
+            "link": "https://inside.com/ai/rss"
+        },
+        {
+            "name": "TLDR" ,
+            "link": "https://www.tldrnewsletter.com/rss"
+        },
+        {
+            "name": "Barista Tech News",
+            "link": "https://www.barista.io/feeds/tech/latest.rss"
+        },
+        {
+            "name": "Security Newsletter",
+            "link": "https://securitynewsletter.co/issues?format=rss"
+        },
+        {
+            "name": "Better Dev Link" ,
+            "link": "https://betterdev.link/rss.xml"
+        },
+        {
+            "name": "DiscoverDev",
+            "link": "https://www.discoverdev.io/rss.xml"
+        },
+        {
+            "name": "DevOps Weekly",
+            "link": "https://us2.campaign-archive.com/feed?u=b6635e37e35fa5eff0c2a947a&id=a63f24d068"
+        }
+    ]
+}

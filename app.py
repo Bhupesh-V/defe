@@ -8,7 +8,9 @@ app = Flask(__name__)
 def feed():
     if request.method == "GET":
         data = feeder.all_feed()
-        return render_template("feed.html", allfeed=data, feeder_sites=feeder.feeder_site_urls.keys())
+        return render_template(
+            "feed.html", allfeed=data, feeder_sites=feeder.feeder_site_urls.keys()
+        )
     else:
         service = request.json
         print(service)
@@ -19,25 +21,35 @@ def feed():
 @app.route("/news", methods=["GET"])
 def news_feed():
     data = feeder.news()
-    return render_template("news.html", news_feed_data=data, feeder_sites=feeder.news_feed_sites.keys())
+    return render_template(
+        "news.html", news_feed_data=data, feeder_sites=feeder.news_feed_sites.keys()
+    )
 
 
 @app.route("/podcasts", methods=["GET"])
 def podcast():
     data = feeder.podcasts_feeds()
-    return render_template("podcast.html", podcast_feed=data, feeder_sites=feeder.podcasts.keys())
+    return render_template(
+        "podcast.html", podcast_feed=data, feeder_sites=feeder.podcasts.keys()
+    )
 
 
 @app.route("/newsletters", methods=["GET"])
 def newsletter():
     data = feeder.newsletters_feeds()
-    return render_template("newsletter.html", newsletter_feed=data, feeder_sites=feeder.newsletters.keys())
+    return render_template(
+        "newsletter.html", newsletter_feed=data, feeder_sites=feeder.newsletters.keys()
+    )
 
 
 @app.route("/feeders")
 def feeder_sites_info():
-    return render_template("feeders.html", feed_sites=feeder.feeder_site_urls,
-                           podcasts_sites=feeder.podcasts, newsletter_feeds=feeder.newsletters)
+    return render_template(
+        "feeders.html",
+        feed_sites=feeder.feeder_site_urls,
+        podcasts_sites=feeder.podcasts,
+        newsletter_feeds=feeder.newsletters,
+    )
 
 
 @app.route("/about")

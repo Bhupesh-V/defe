@@ -1,0 +1,65 @@
+{
+    "podcasts":[
+        {
+            "name": "Software Enginerring Daily",
+            "link": "https://softwareengineeringdaily.com/feed/podcast/"
+        },
+        {
+            "name": "Simple Programmer",
+            "link": "http://simpleprogrammer.libsyn.com/rss"
+        },
+        {
+            "name": "Software Enginerring Radio",
+            "link": "http://feeds.feedburner.com/se-radio"
+        },
+        {
+            "name": "The Changelog",
+            "link": "https://changelog.com/podcast/feed"
+        },
+        {
+            "name": "Full Stack Radio",
+            "link": "https://rss.simplecast.com/podcasts/279/rss"
+        },
+        {
+            "name": "codenewbie",
+            "link": "http://feeds.codenewbie.org/cnpodcast.xml"
+        },
+        {
+            "name": "Coding Blocks",
+            "link": "https://www.codingblocks.net/feed/podcast/"
+        },
+        {
+            "name": "Coder Radio",
+            "link": "https://feeds.fireside.fm/coder/rss"
+        },
+        {
+            "name": "Test and Code",
+            "link": "https://feeds.fireside.fm/testandcode/rss"
+        },
+        {
+            "name": "Stackoverflow Podcast",
+            "link": "https://feeds.simplecast.com/XA_851k3"
+        },
+        {
+            "name": "Weekly Dev Tips",
+            "link": "https://feeds.simplecast.com/W8bGHhCA"
+        },
+        {
+            "name": "cpp.chat",
+            "link": "https://feeds.fireside.fm/cppchat/rss"
+        },
+        {
+            "name": "devpath.fm",
+            "link": "https://feeds.transistor.fm/devpath-fm"
+        },
+        {
+            "name": "synatx.fm",
+            "link": "https://feed.syntax.fm/rss"
+        },
+        {
+            "name": "Talk Python",
+            "link": "https://talkpython.fm/episodes/rss"
+        }
+
+    ]
+}

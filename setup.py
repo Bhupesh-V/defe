@@ -9,7 +9,7 @@ setuptools.setup(
     author="Bhupesh Varshney",
     author_email="varsheybhupesh@gmail.com",
     description="A News feed Aggregator for Developers.",
-    keywords='',
+    keywords="",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/Bhupesh-V/defe",
@@ -20,11 +20,7 @@ setuptools.setup(
         "Say Thanks!": "https://github.com/Bhupesh-V/defe/issues/new?assignees=&labels=&template=---say-thank-you.md&title=",
     },
     packages=setuptools.find_packages(),
-    install_requires=[
-        'PyInquirer',
-        'colorama',
-        'toml',
-    ],
+    install_requires=["PyInquirer", "colorama", "toml",],
     classifiers=[
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
@@ -41,5 +37,5 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     entry_points={"console_scripts": ["defe=defe.__main__:main"]},
-    python_requires='>=3.6',
+    python_requires=">=3.6",
 )

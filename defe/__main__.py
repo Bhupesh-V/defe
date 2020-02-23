@@ -4,7 +4,7 @@ Main CLI
 
 import sys
 from feeders import feeder
-from . formatter import defy
+from .formatter import defy
 
 
 def print_help():
