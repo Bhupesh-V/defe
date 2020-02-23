@@ -25,6 +25,9 @@ news_feed_sites = {
     "GeekWire": "https://www.geekwire.com/feed/",
     "Technology Org": "https://www.technology.org/feed/",
     "Geek.com": "https://www.geek.com/tech/feed/",
+    "ZDNet": "https://www.zdnet.com/rss.xml",
+    "MIT Technology Review": "https://www.technologyreview.com/topnews.rss",
+    "Gigabit Magazine": "https://www.gigabitmagazine.com/rss.xml",
     "Technology Intelligence": "https://www.telegraph.co.uk/technology/rss.xml"
 }
 
