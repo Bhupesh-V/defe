@@ -6,32 +6,17 @@ import sys
 from feeders import feeder
 from .formatter import defy
 from colorama import Back, Fore, Style, init
+import argparse
 
 
-def print_help():
-    print(
-        """
-A News feed Aggregator for Developers.
+contact = """
 
-Usage:
-------
+Feed Type
+---------
 
-Show General feed
-
-    $ defe feed
-
-Show Podcasts feed
-
-    $ defe podcasts
-
-Show News feed
-
-    $ defe news
-
-Available options are:
-
-    -h, --help         Show this text
-
+1. general  [defe general <max_feed_count>]
+2. news     [defe news <max_feed_count>]
+3. podcasts [defe podcasts <max_feed_count>]
 
 Contact:
 --------
@@ -44,22 +29,12 @@ More information is available at:
 - Source : https://github.com/Bhupesh-V/devfeed
 
 """
-    )
-
-
-def print_error():
-    print(
-        """
-Wrong Command 😤, use defe --help for usage
-
-"""
-    )
 
 
 def home():
     init(autoreset=True)
     print(
-        """
+"""
      888           .d888
      888          d88P"
      888          888
@@ -79,24 +54,30 @@ Y88b 888 Y8b.     888   Y8b.
 
 
 def main():
+    parser = argparse.ArgumentParser(
+        prog='defe',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        description='A News feed aggregator for developers',
+        epilog=contact
+        )
+    parser.add_argument("feed", type=str, help="Category of feed")
+    parser.add_argument("max_feed_count", nargs='?', type=int, default=7, help="No of feed items to show")
 
-    if len(sys.argv) == 2:
-        if sys.argv[1] == "feed":
-            for item in feeder.all_feed()[:7]:
-                defy(item["title"], item["link"])
-        elif sys.argv[1] == "news":
-            for item in feeder.news_feed()[:7]:
-                defy(item["title"], item["link"])
-        elif sys.argv[1] == "podcasts":
-            for item in feeder.podcasts_feeds()[:7]:
-                defy(item["title"], item.links[1].href)
-        elif sys.argv[1] in ("--help", "-h"):
-            print_help()
-        else:
-            feed_count = int(sys.argv[1])
-            for item in feeder.all_feed()[:feed_count]:
-                defy(item["title"], item["link"])
-        return
+    if len(sys.argv) == 1:
+        home()
+        sys.exit(1)
+
+    args = parser.parse_args()
+
+    if args.feed == "general":
+        for item in feeder.all_feed()[:args.max_feed_count]:
+            defy(item["title"], item["link"])
+    if args.feed == "news":
+        for item in feeder.news_feed()[:args.max_feed_count]:
+            defy(item["title"], item["link"])
+    if args.feed == "podcasts":
+        for item in feeder.podcasts_feeds()[:args.max_feed_count]:
+            defy(item["title"], item.links[1].href)
     else:
         home()
 
