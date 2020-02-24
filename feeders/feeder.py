@@ -5,42 +5,27 @@ import itertools
 import random
 import json
 import os
-feeder_site_urls = {
-    "HackerNoon": "https://hackernoon.com/feed",
-    "Producthunt": "https://www.producthunt.com/feed",
-    "freeCodeCsamp": "https://www.freecodecamp.org/news/rss/",
-    "opensource": "https://opensource.com/feed",
-    "changelog": "https://changelog.com/feed",
-    "itsfoss": "https://itsfoss.com/category/news/feed",
-    "thenewstack": "https://thenewstack.io/feed",
-    "theverge": "https://www.theverge.com/tech/rss/index.xml",
-    "dev.to": "https://dev.to/feed",
-    "CSS Tricks": "https://css-tricks.com/feed/",
-}
-
-news_feed_sites = {
-    "TechCrunch": "https://techcrunch.com/feed/",
-    "HackerNews": "https://news.ycombinator.com/rss",
-    "Tech meme": "https://www.techmeme.com/feed.xml",
-    "GeekWire": "https://www.geekwire.com/feed/",
-    "Technology Org": "https://www.technology.org/feed/",
-    "Geek.com": "https://www.geek.com/tech/feed/",
-    "ZDNet": "https://www.zdnet.com/rss.xml",
-    "MIT Technology Review": "https://www.technologyreview.com/topnews.rss",
-    "Gigabit Magazine": "https://www.gigabitmagazine.com/rss.xml",
-    "Technology Intelligence": "https://www.telegraph.co.uk/technology/rss.xml",
-}
 
 
 def read_data(feed_type=None):
-    if feed_type == "podcasts":
+    if feed_type == "podcast":
         podcast_file = os.path.join(os.getcwd(), "feeders/static", "podcasts.json")
         with open(podcast_file) as json_file:
             data = json.load(json_file)
         return data["podcasts"]
+    elif feed_type == "news":
+        news_file = os.path.join(os.getcwd(), "feeders/static", "news.json")
+        with open(news_file) as json_file:
+            data = json.load(json_file)
+        return data["news"]
+    elif feed_type == "general":
+        general_file = os.path.join(os.getcwd(), "feeders/static", "general.json")
+        with open(general_file) as json_file:
+            data = json.load(json_file)
+        return data["general"]
     elif feed_type == "newsletter":
         newsletter_file = os.path.join(os.getcwd(), "feeders/static", "newsletters.json")
-        with open(podcast_file) as json_file:
+        with open(newsletter_file) as json_file:
             data = json.load(json_file)
         return data["newsletters"]
 
@@ -62,7 +47,7 @@ def get_domain(link):
 
 
 def podcasts_feeds():
-    podcasts = read_data("podcasts")
+    podcasts = read_data("podcast")
     with ThreadPoolExecutor(max_workers=20) as executor:
         results = list(executor.map(get_latest_feed, [key["link"] for key in podcasts]))
 
@@ -70,15 +55,17 @@ def podcasts_feeds():
 
 
 def newsletters_feeds():
+    newsletters = read_data("newsletter")
     with ThreadPoolExecutor(max_workers=20) as executor:
-        results = list(executor.map(get_latest_feed, newsletters.values()))
+        results = list(executor.map(get_latest_feed, [key["link"] for key in newsletters]))
 
     return results
 
 
-def news():
+def news_feed():
+    news = read_data("news")
     with ThreadPoolExecutor(max_workers=20) as executor:
-        results = list(executor.map(get_feed, news_feed_sites.values()))
+        results = list(executor.map(get_feed, [key["link"] for key in news]))
 
     feed_result = [i for i in itertools.chain.from_iterable(results)]
 
@@ -90,16 +77,17 @@ def news():
     return feed_result
 
 
-def feed(feeder_site: str):
-    if feeder_site in feeder_site_urls:
-        return get_feed(feeder_site_urls[feeder_site])
-    else:
-        return {"error": "Feeder Site Not Available"}
+# def feed(feeder_site: str):
+#     if feeder_site in feeder_site_urls:
+#         return get_feed(feeder_site_urls[feeder_site])
+#     else:
+#         return {"error": "Feeder Site Not Available"}
 
 
 def all_feed():
+    general = read_data("general")
     with ThreadPoolExecutor(max_workers=30) as executor:
-        results = list(executor.map(get_feed, feeder_site_urls.values()))
+        results = list(executor.map(get_feed, [key["link"] for key in general]))
 
     feed_result = [i for i in itertools.chain.from_iterable(results)]
 

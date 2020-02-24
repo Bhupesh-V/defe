@@ -20,7 +20,7 @@ def feed():
 
 @app.route("/news", methods=["GET"])
 def news_feed():
-    data = feeder.news()
+    data = feeder.news_feed()
     return render_template(
         "news.html", news_feed_data=data, feeder_sites=feeder.news_feed_sites.keys()
     )

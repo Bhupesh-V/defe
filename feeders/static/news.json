@@ -1,8 +1,44 @@
 {
 	"news": [
 		{
-			"name": ,
-			"link":
+			"name": "TechCrunch",
+			"link": "https://techcrunch.com/feed/"
+		},
+		{
+			"name": "HackerNews",
+			"link": "https://news.ycombinator.com/rss"
+		},
+		{
+			"name": "Tech meme",
+			"link": "https://www.techmeme.com/feed.xml"
+		},
+		{
+			"name": "GeekWire",
+			"link": "https://www.geekwire.com/feed/"
+		},
+		{
+			"name": "Technology Org",
+			"link": "https://www.technology.org/feed/"
+		},
+		{
+			"name": "Geek.com",
+			"link": "https://www.geek.com/tech/feed/"
+		},
+		{
+			"name": "ZDNet",
+			"link": "https://www.zdnet.com/rss.xml"
+		},
+		{
+			"name": "MIT Technology Review",
+			"link": "https://www.technologyreview.com/topnews.rss"
+		},
+		{
+			"name": "Gigabit Magazine",
+			"link": "https://www.gigabitmagazine.com/rss.xml"
+		},
+		{
+			"name": "Technology Intelligence",
+			"link": "https://www.telegraph.co.uk/technology/rss.xml"
 		}
 	]
 }
