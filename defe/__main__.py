@@ -2,11 +2,14 @@
 Main CLI
 """
 
-import sys
-from feeders import feeder
-from .formatter import defy
-from colorama import Fore, Style, init
 import argparse
+import sys
+
+from colorama import Fore, Style, init
+
+from feeders import feeder
+
+from .formatter import defy
 
 contact = """
 
@@ -36,8 +39,9 @@ More information is available at:
 def home():
     init(autoreset=True)
     print(
-    Fore.RED + Style.BRIGHT +
-    """
+        Fore.RED
+        + Style.BRIGHT
+        + """
          888           .d888
          888          d88P"
          888          888
@@ -49,7 +53,9 @@ def home():
 
     """
     )
-    print(Fore.GREEN + Style.BRIGHT + "A News feed Aggregator for Developers.", end="\n\n")
+    print(
+        Fore.GREEN + Style.BRIGHT + "A News feed Aggregator for Developers.", end="\n\n"
+    )
     print(Style.BRIGHT + "Welcome to defe 👋", end="\n")
     print("Use", end="")
     print(Style.BRIGHT + " defe --help ", end="")
@@ -59,13 +65,19 @@ def home():
 def main():
     init(autoreset=True)
     parser = argparse.ArgumentParser(
-        prog='defe',
+        prog="defe",
         formatter_class=argparse.RawDescriptionHelpFormatter,
-        description='A News feed aggregator for developers',
-        epilog=contact
-        )
+        description="A News feed aggregator for developers",
+        epilog=contact,
+    )
     parser.add_argument("feed", type=str, help="Feed Category")
-    parser.add_argument("max_feed_count", nargs='?', type=int, default=7, help="No of feed items to show")
+    parser.add_argument(
+        "max_feed_count",
+        nargs="?",
+        type=int,
+        default=7,
+        help="No of feed items to show",
+    )
 
     if len(sys.argv) == 1:
         home()
@@ -74,29 +86,35 @@ def main():
     args = parser.parse_args()
 
     if args.feed == "general":
-        for item in feeder.all_feed()[:args.max_feed_count]:
+        for item in feeder.all_feed()[: args.max_feed_count]:
             defy(item["title"], item["link"])
     if args.feed == "news":
-        for item in feeder.news_feed()[:args.max_feed_count]:
+        for item in feeder.news_feed()[: args.max_feed_count]:
             defy(item["title"], item["link"])
     if args.feed == "newsletters":
-        for item in feeder.newsletters_feeds()[:args.max_feed_count]:
+        for item in feeder.newsletters_feeds()[: args.max_feed_count]:
             defy(item["title"], item["link"])
     if args.feed == "podcasts":
-        for item in feeder.podcasts_feeds()[:args.max_feed_count]:
+        for item in feeder.podcasts_feeds()[: args.max_feed_count]:
             defy(item["title"], item.links[1].href)
     if args.feed == "feeders":
         feeds = ["general", "news", "podcast"]
-        print("\n" + Style.BRIGHT + "defe fetches feeds of these popular sites", end="\n\n")
+        print(
+            "\n" + Style.BRIGHT + "defe fetches feeds of these popular sites",
+            end="\n\n",
+        )
         for f in feeds:
             print("\n" + Fore.BLUE + Style.BRIGHT + f.capitalize(), end="\n\n")
             data = feeder.read_data(f)
             for item in data:
-                print(Style.BRIGHT + str(data.index(item)+1), end=". ")
+                print(Style.BRIGHT + str(data.index(item) + 1), end=". ")
                 print(Fore.GREEN + Style.BRIGHT + item["name"])
 
         print("\n\n" + Style.BRIGHT + "Want to add more ? 🤔")
-        print(Style.BRIGHT + "Open a PR at https://github.com/Bhupesh-V/devfeed", end="\n\n")
+        print(
+            Style.BRIGHT + "Open a PR at https://github.com/Bhupesh-V/devfeed",
+            end="\n\n",
+        )
 
 
 if __name__ == "__main__":
