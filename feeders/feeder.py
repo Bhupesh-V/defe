@@ -5,6 +5,7 @@ import itertools
 import random
 import json
 import os
+from tqdm import tqdm
 
 
 def read_data(feed_type=None):
@@ -49,7 +50,7 @@ def get_domain(link):
 def podcasts_feeds():
     podcasts = read_data("podcast")
     with ThreadPoolExecutor(max_workers=20) as executor:
-        results = list(executor.map(get_latest_feed, [key["link"] for key in podcasts]))
+        results = list(tqdm(executor.map(get_latest_feed, [key["link"] for key in podcasts]), total=len(podcasts)))
 
     return results
 
@@ -57,7 +58,7 @@ def podcasts_feeds():
 def newsletters_feeds():
     newsletters = read_data("newsletter")
     with ThreadPoolExecutor(max_workers=20) as executor:
-        results = list(executor.map(get_latest_feed, [key["link"] for key in newsletters]))
+        results = list(tqdm(executor.map(get_latest_feed, [key["link"] for key in newsletters]), total=len(newsletters)))
 
     return results
 
@@ -65,7 +66,7 @@ def newsletters_feeds():
 def news_feed():
     news = read_data("news")
     with ThreadPoolExecutor(max_workers=20) as executor:
-        results = list(executor.map(get_feed, [key["link"] for key in news]))
+        results = list(tqdm(executor.map(get_feed, [key["link"] for key in news]), total=len(news)))
 
     feed_result = [i for i in itertools.chain.from_iterable(results)]
 
@@ -87,7 +88,7 @@ def news_feed():
 def all_feed():
     general = read_data("general")
     with ThreadPoolExecutor(max_workers=30) as executor:
-        results = list(executor.map(get_feed, [key["link"] for key in general]))
+        results = list(tqdm(executor.map(get_feed, [key["link"] for key in general]), total=len(general)))
 
     feed_result = [i for i in itertools.chain.from_iterable(results)]
 

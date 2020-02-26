@@ -10,7 +10,7 @@
         },
         {
             "name": "Node Weekly",
-            "link": "https://nodeweekly.com/rss",
+            "link": "https://nodeweekly.com/rss"
         },
         {
             "name": "PHP Weekly",
@@ -159,10 +159,6 @@
         {
             "name": "TLDR" ,
             "link": "https://www.tldrnewsletter.com/rss"
-        },
-        {
-            "name": "Barista Tech News",
-            "link": "https://www.barista.io/feeds/tech/latest.rss"
         },
         {
             "name": "Security Newsletter",

@@ -43,7 +43,7 @@ def podcast():
 @app.route("/newsletters", methods=["GET"])
 def newsletter():
     data = feeder.newsletters_feeds()
-    data_keys = feeder.read_data("newsletters")
+    data_keys = feeder.read_data("newsletter")
     data_keys = [item["name"] for item in data_keys]
     return render_template(
         "newsletter.html", newsletter_feed=data, feeder_sites=data_keys

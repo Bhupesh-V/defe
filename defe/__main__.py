@@ -5,9 +5,8 @@ Main CLI
 import sys
 from feeders import feeder
 from .formatter import defy
-from colorama import Back, Fore, Style, init
+from colorama import Fore, Style, init
 import argparse
-
 
 contact = """
 
@@ -17,6 +16,7 @@ Available Feed Categories
 1. general  [defe general <max_feed_count>]
 2. news     [defe news <max_feed_count>]
 3. podcasts [defe podcasts <max_feed_count>]
+4. newsletters [defe podcasts <max_feed_count>]
 
 * Use [defe feeders] to list available feeders
 
@@ -78,6 +78,9 @@ def main():
             defy(item["title"], item["link"])
     if args.feed == "news":
         for item in feeder.news_feed()[:args.max_feed_count]:
+            defy(item["title"], item["link"])
+    if args.feed == "newsletters":
+        for item in feeder.newsletters_feeds()[:args.max_feed_count]:
             defy(item["title"], item["link"])
     if args.feed == "podcasts":
         for item in feeder.podcasts_feeds()[:args.max_feed_count]:
