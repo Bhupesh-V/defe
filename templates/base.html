@@ -35,29 +35,96 @@
     <title>devfeed</title>
   </head>
   <body>
-    <h2 class="devfeed-heading"><a href="/">devfeed</a></h2>
-    <div id="feed-menu">
-        <a href="/">General</a>
-        <a href="/news">News</a>
-        <a href="/podcasts">Podcasts</a>
-        <a href="/newsletters">Newsletters</a>
-    </div>
-    <div class="feed-options">
-        <button class="button is-primary" type="button" onclick="clear_previous_feed()">Clear Feed</button>
-    </div>
-    {% block feeders %}
-    <div id="filter-feed">
-        <label for="feed-input">Filter Feed</label>
-        <input class="input" id="feed-input" list="filter" placeholder="Filter By Website">
-        <datalist id="filter">
-            {% for feeder in feeder_sites %}
-                <option value="{{ feeder }}">
-            {% endfor %}
-        </datalist>
-        <button class="button is-primary" type="button" id="fetchfeed" onclick="fetch_feed()" >Filter</button>
-    {% endblock %}
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <h2 class="devfeed-heading">devfeed</h2>
+        </a>
 
-    </div> 
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item">
+            Home
+          </a>
+
+          <a class="navbar-item" href="/feeders">
+            Feeders
+          </a>
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              More
+            </a>
+
+            <div class="navbar-dropdown">
+                <a class="navbar-item is-hidden-widescreen" href="https://github.com/Bhupesh-V/devfeed" target="_blank">
+                <span>
+                  <span class="icon" style="color: #333;">
+                    <svg class="svg-inline--fa fa-github-alt fa-w-15 fa-lg" aria-hidden="true" data-prefix="fab" data-icon="github-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512" data-fa-i2svg=""><path fill="currentColor" d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"></path></svg><!-- <i class="fab fa-lg fa-github-alt"></i> -->
+                  </span>
+                  <strong>GitHub</strong>
+                  <br>
+                  The official repository
+                </span>
+              </a>
+              <a class="navbar-item" href="/about">
+                About
+              </a>
+              <a class="navbar-item">
+                Report a bug 🐞
+              </a>
+              <hr class="navbar-divider">
+              <a class="navbar-item">
+                <img src="static/images/pwa-dark.svg">
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="Try devfeed" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              <a href="https://www.patreon.com/bePatron?u=18082750" data-patreon-widget-type="become-patron-button">Become a Patron!</a><script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section class="section">
+        <div id="feed-menu">
+            <a href="/">General</a>
+            <a href="/news">News</a>
+            <a href="/podcasts">Podcasts</a>
+            <a href="/newsletters">Newsletters</a>
+        </div>
+        <div class="feed-options">
+            <button class="button is-primary" type="button" onclick="clear_previous_feed()">Clear Feed</button>
+        </div>
+    </section>
+
+    <section class="section">
+        {% block feeders %}
+        <div id="filter-feed">
+            <label class="title is-6" for="feed-input">Filter Feed</label>
+            <input class="input" id="feed-input" list="filter" placeholder="Filter By Website">
+            <datalist id="filter">
+                {% for feeder in feeder_sites %}
+                    <option value="{{ feeder }}">
+                {% endfor %}
+            </datalist>
+            <button class="button is-primary" type="button" id="fetchfeed" onclick="fetch_feed()" >Filter</button>
+        </div> 
+        {% endblock %}
+    </section>
+
     <section class="section">
     <div class="container">
             {% block container %}{% endblock %}
@@ -67,6 +134,31 @@
     <script defer src="/static/script.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script>
+      document.addEventListener('DOMContentLoaded', () => {
+
+      // Get all "navbar-burger" elements
+      const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+      // Check if there are any navbar burgers
+      if ($navbarBurgers.length > 0) {
+
+        // Add a click event on each of them
+        $navbarBurgers.forEach( el => {
+          el.addEventListener('click', () => {
+
+            // Get the target from the "data-target" attribute
+            const target = el.dataset.target;
+            const $target = document.getElementById(target);
+
+            // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+            el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+
+          });
+        });
+      }
+
+    });
     window.onload = function() {
         registerSW();
         setTimeout(storycount, 200);

@@ -4,7 +4,7 @@
 	<div id="feed">
 		{% if podcast_feed %}
 			{% for item in podcast_feed %}
-				<div class="feed-card">
+				<div class="box feed-card">
 					<a href="{{ item['link']}}">{{ item["title"] }}</a>
 					<details><br>
 					<summary>Summary</summary>

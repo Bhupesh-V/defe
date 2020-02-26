@@ -48,9 +48,10 @@ def newsletter():
 def feeder_sites_info():
     return render_template(
         "feeders.html",
-        feed_sites=feeder.feeder_site_urls,
-        podcasts_sites=feeder.podcasts,
-        newsletter_feeds=feeder.newsletters,
+        feed_sites=feeder.read_data("general"),
+        news_sites=feeder.read_data("news"),
+        podcasts_sites=feeder.read_data("podcast"),
+        newsletter_feeds=feeder.read_data("newsletter"),
     )
 
 
