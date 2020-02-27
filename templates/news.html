@@ -4,8 +4,8 @@
 	<div id="feed">
 		{% if news_feed_data %}
 			{% for item in news_feed_data %}
-				<div class="box feed-card">
-					<a class="title is-4" href="{{ item['link']}}">{{ item["title"] }}</a>
+				<div class="feed-card">
+					<a href="{{ item['link']}}">{{ item["title"] }}</a>
 					<h4>By {{ item["author"] }}</h4>
 					{% if item["summary"] %}
 					<details>

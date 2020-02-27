@@ -2,9 +2,9 @@
 {% block container %}
 	<center>
 	<div id="feed-site-info">
-		<h1 class="title">Feeders</h1>
+		<h1>Feeders</h1>
 		{% if feed_sites %}
-			<h3 class="title is-3">General</h3>
+			<h3>General</h3>
 			<ul>
 				{% for item in feed_sites %}
 					<li><a href="{{ item['link'] }}">{{ item["name"] }}</a></li>
@@ -12,7 +12,7 @@
 			</ul>
 		{% endif %}
 		{% if podcasts_sites %}
-			<h3 class="title is-3">Podcasts</h3>
+			<h3>Podcasts</h3>
 			<ul>
 				{% for item in podcasts_sites %}
 					<li><a href="{{ item['link'] }}">{{ item["name"] }}</a></li>
@@ -20,7 +20,7 @@
 			</ul>
 		{% endif %}
 		{% if newsletter_feeds %}
-			<h3 class="title is-3">Newsletters</h3>
+			<h3>Newsletters</h3>
 			<ul>
 				{% for item in newsletter_feeds %}
 					<li><a href="{{ item['link'] }}">{{ item["name"] }}</a></li>
@@ -28,7 +28,7 @@
 			</ul>
 		{% endif %}
 		{% if news_sites %}
-			<h3 class="title is-3">News</h3>
+			<h3>News</h3>
 			<ul>
 				{% for item in news_sites %}
 					<li><a href="{{ item['link'] }}">{{ item["name"] }}</a></li>
