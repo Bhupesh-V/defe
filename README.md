@@ -1,7 +1,15 @@
 # devfeed
 
-> A News feed Aggregator for Developers.
+> A Tech feed Aggregator for Developers.
 
+
+## Installation
+
+Install **defe CLI** using `pip` from PyPI
+
+```bash
+pip install defe
+```
 
 
 ## Development

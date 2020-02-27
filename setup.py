@@ -8,7 +8,7 @@ setuptools.setup(
     version="1.0.0",
     author="Bhupesh Varshney",
     author_email="varsheybhupesh@gmail.com",
-    description="A News feed Aggregator for Developers.",
+    description="A Tech feed Aggregator for Developers.",
     keywords="",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -25,7 +25,7 @@ setuptools.setup(
         # include any *.json files found in the "feeders" package
         "feeders": ["static/*.json"],
     },
-    install_requires=["feedparser", "colorama"],
+    install_requires=["feedparser", "colorama", "tqdm"],
     classifiers=[
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",

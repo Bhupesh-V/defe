@@ -50,7 +50,7 @@ def get_domain(link):
     return domain
 
 
-def podcasts_feeds():
+def podcasts_feeds(show_progress=False):
     podcasts = read_data("podcast")
     with ThreadPoolExecutor(max_workers=20) as executor:
         results = list(
@@ -58,27 +58,31 @@ def podcasts_feeds():
                 executor.map(get_latest_feed, [key["link"] for key in podcasts]),
                 desc="Fetching Feeders",
                 total=len(podcasts),
+                disable=show_progress,
+                leave=False
             )
         )
 
     return results
 
 
-def newsletters_feeds():
+def newsletters_feeds(show_progress=False):
     newsletters = read_data("newsletter")
-    with ThreadPoolExecutor(max_workers=20) as executor:
+    with ThreadPoolExecutor(max_workers=30) as executor:
         results = list(
             tqdm(
                 executor.map(get_latest_feed, [key["link"] for key in newsletters]),
                 desc="Fetching Feeders",
                 total=len(newsletters),
+                disable=show_progress,
+                leave=False
             )
         )
 
     return results
 
 
-def news_feed():
+def news_feed(show_progress=False):
     news = read_data("news")
     with ThreadPoolExecutor(max_workers=20) as executor:
         results = list(
@@ -86,6 +90,8 @@ def news_feed():
                 executor.map(get_feed, [key["link"] for key in news]),
                 desc="Fetching Feeders",
                 total=len(news),
+                disable=show_progress,
+                leave=False
             )
         )
 
@@ -106,14 +112,16 @@ def news_feed():
 #         return {"error": "Feeder Site Not Available"}
 
 
-def all_feed():
+def all_feed(show_progress=False):
     general = read_data("general")
-    with ThreadPoolExecutor(max_workers=30) as executor:
+    with ThreadPoolExecutor(max_workers=20) as executor:
         results = list(
             tqdm(
                 executor.map(get_feed, [key["link"] for key in general]),
                 desc="Fetching Feeders",
                 total=len(general),
+                disable=show_progress,
+                leave=False
             )
         )
 

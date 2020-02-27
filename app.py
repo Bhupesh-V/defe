@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route("/", methods=["GET", "POST"])
 def feed():
     if request.method == "GET":
-        data = feeder.all_feed()
+        data = feeder.all_feed(True)
         data_keys = feeder.read_data("general")
         data_keys = [item["name"] for item in data_keys]
         return render_template("feed.html", allfeed=data, feeder_sites=data_keys)
@@ -20,7 +20,7 @@ def feed():
 
 @app.route("/news", methods=["GET"])
 def news_feed():
-    data = feeder.news_feed()
+    data = feeder.news_feed(True)
     data_keys = feeder.read_data("news")
     data_keys = [item["name"] for item in data_keys]
     return render_template("news.html", news_feed_data=data, feeder_sites=data_keys)
@@ -28,7 +28,7 @@ def news_feed():
 
 @app.route("/podcasts", methods=["GET"])
 def podcast():
-    data = feeder.podcasts_feeds()
+    data = feeder.podcasts_feeds(True)
     data_keys = feeder.read_data("podcast")
     data_keys = [item["name"] for item in data_keys]
     return render_template("podcast.html", podcast_feed=data, feeder_sites=data_keys)
@@ -36,7 +36,7 @@ def podcast():
 
 @app.route("/newsletters", methods=["GET"])
 def newsletter():
-    data = feeder.newsletters_feeds()
+    data = feeder.newsletters_feeds(True)
     data_keys = feeder.read_data("newsletter")
     data_keys = [item["name"] for item in data_keys]
     return render_template(

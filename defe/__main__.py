@@ -16,11 +16,12 @@ contact = """
 Available Feed Categories
 -------------------------
 
-1. general  [defe general <max_feed_count>]
-2. news     [defe news <max_feed_count>]
-3. podcasts [defe podcasts <max_feed_count>]
-4. newsletters [defe podcasts <max_feed_count>]
+1. general      [defe general <max_feed_count>]
+2. news         [defe news <max_feed_count>]
+3. podcasts     [defe podcasts <max_feed_count>]
+4. newsletters  [defe newsletters <max_feed_count>]
 
+* By Default defe shows only 7 feed items
 * Use [defe feeders] to list available feeders
 
 Contact:
@@ -30,9 +31,9 @@ Contact:
 
 More information is available at:
 
-- Home : https://pypi.org/project/defe/
-- Source : https://github.com/Bhupesh-V/devfeed
-
+- Home      : https://pypi.org/project/defe/
+- Source    : https://github.com/Bhupesh-V/devfeed
+- Support   : https://www.patreon.com/bePatron?u=18082750,
 """
 
 
@@ -54,11 +55,10 @@ def home():
     """
     )
     print(
-        Fore.GREEN + Style.BRIGHT + "A News feed Aggregator for Developers.", end="\n\n"
+        Fore.GREEN + Style.BRIGHT + "A Tech feed Aggregator for Developers.", end="\n\n"
     )
     print(Style.BRIGHT + "Welcome to defe 👋", end="\n")
-    print("Use", end="")
-    print(Style.BRIGHT + " defe --help ", end="")
+    print("Use" + Style.BRIGHT + " defe --help ", end="")
     print("to see available commands", end="\n\n")
 
 
@@ -67,7 +67,7 @@ def main():
     parser = argparse.ArgumentParser(
         prog="defe",
         formatter_class=argparse.RawDescriptionHelpFormatter,
-        description="A News feed aggregator for developers",
+        description="A Tech feed aggregator for developers",
         epilog=contact,
     )
     parser.add_argument("feed", type=str, help="Feed Category")
@@ -90,7 +90,7 @@ def main():
             defy(item["title"], item["link"])
     if args.feed == "news":
         for item in feeder.news_feed()[: args.max_feed_count]:
-            defy(item["title"], item["link"])
+            defy(item["title"], item["link"], item["feeder_site"])
     if args.feed == "newsletters":
         for item in feeder.newsletters_feeds()[: args.max_feed_count]:
             defy(item["title"], item["link"])
