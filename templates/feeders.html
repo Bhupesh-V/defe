@@ -3,35 +3,37 @@
 	<center>
 	<div id="feed-site-info">
 		<h1>Feeders</h1>
+		<h5>Feeders are sites which devfeed uses to fetch content, RSS feeds of all the below sites are fetched to deliver content on devfeed</h5>
+		<div class="card-panel grey lighten-4"><h6>You can request more feeders by opening a <a href="https://github.com/Bhupesh-V/devfeed/pulls" class="waves-effect waves-light btn"><i class="fa fa-code-fork" aria-hidden="true"></i> Pull Request</a></h6></div>
 		{% if feed_sites %}
 			<h3>General</h3>
-			<ul>
+			<ul class="collection">
 				{% for item in feed_sites %}
-					<li><a href="{{ item['link'] }}">{{ item["name"] }}</a></li>
+					<li class="collection-item"><a href="{{ item['link'] }}">{{ item["name"] }}</a></li>
 				{% endfor %}
 			</ul>
 		{% endif %}
 		{% if podcasts_sites %}
 			<h3>Podcasts</h3>
-			<ul>
+			<ul class="collection">
 				{% for item in podcasts_sites %}
-					<li><a href="{{ item['link'] }}">{{ item["name"] }}</a></li>
+					<li class="collection-item"><a href="{{ item['link'] }}">{{ item["name"] }}</a></li>
 				{% endfor %}
 			</ul>
 		{% endif %}
 		{% if newsletter_feeds %}
 			<h3>Newsletters</h3>
-			<ul>
+			<ul class="collection">
 				{% for item in newsletter_feeds %}
-					<li><a href="{{ item['link'] }}">{{ item["name"] }}</a></li>
+					<li class="collection-item"><a href="{{ item['link'] }}">{{ item["name"] }}</a></li>
 				{% endfor %}
 			</ul>
 		{% endif %}
 		{% if news_sites %}
 			<h3>News</h3>
-			<ul>
+			<ul class="collection">
 				{% for item in news_sites %}
-					<li><a href="{{ item['link'] }}">{{ item["name"] }}</a></li>
+					<li class="collection-item"><a href="{{ item['link'] }}">{{ item["name"] }}</a></li>
 				{% endfor %}
 			</ul>
 		{% endif %}

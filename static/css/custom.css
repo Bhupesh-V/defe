@@ -23,6 +23,10 @@ nav {
   background-color: rgba(137, 55, 204, 0.91);
 }
 
+img {
+  height: 100%;
+  width: 100%;
+}
 #shareIcon {
   display: none;
 }

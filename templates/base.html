@@ -9,10 +9,10 @@
     <meta name="author" content="Bhupesh Varshney" />
     <meta property="og:title" content="devfeed" />
     
-    <meta name="keywords" content="devtools, feed, devfeed, developers">
-    <meta name="description" content="A News aggregator for Developers">
-    <meta property="og:description" content="A News aggregator for Developers"/>
-    <meta name="twitter:description" content="A News aggregator for Developers">
+    <meta name="keywords" content="devtools, feed, devfeed, developers, podcasts, newsletters, tech news">
+    <meta name="description" content="A Tech aggregator for Developers">
+    <meta property="og:description" content="A Tech aggregator for Developers"/>
+    <meta name="twitter:description" content="A Tech aggregator for Developers">
     
     <meta name="theme-color" content="#75D608" />
     <meta name="apple-mobile-web-app-status-bar-style" content="#75D608">
@@ -30,6 +30,8 @@
     <link type="text/css" rel="stylesheet" href="static/css/materialize.min.css"  media="screen,projection"/>
     <link rel="stylesheet" type="text/css" href="static/css/custom.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="screen" />
+    <script defer src="https://use.fontawesome.com/releases/v4.7.0/js/all.js"></script>
     <!--     <meta name="twitter:image" content="">
     <link rel="shortcut icon" type="image/png" href="images/logo.png"/> -->
     <title>devfeed</title>
@@ -40,22 +42,18 @@
         <a href="#!" class="brand-logo">devfeed</a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-          <li><a href="/">General</a></li>
-          <li><a href="/news">News</a></li>
-          <li><a href="/podcasts">Podcasts</a></li>
-          <li><a href="/newsletters">Newsletters</a></li>
-          <li><a href="/about">About</a></li>
+          <li><a href="/">Home</a></li>
           <li><a href="/feeders">Feeders</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/support">Support</a></li>
         </ul>
       </div>
     </nav>
     <ul class="sidenav" id="mobile-demo">
-      <li><a href="/">General</a></li>
-      <li><a href="/news">News</a></li>
-      <li><a href="/podcasts">Podcasts</a></li>
-      <li><a href="/newsletters">Newsletters</a></li>
-      <li><a href="/about">About</a></li>
+      <li><a href="/">Home</a></li>
       <li><a href="/feeders">Feeders</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/support">Support</a></li>
     </ul>
     <div class="feed-options">
       <button class="waves-effect waves-light btn" type="button" onclick="clear_previous_feed()">Clear Feed</button>
@@ -78,8 +76,8 @@
         {% block container %}{% endblock %}
       </div>
       <div class="fixed-action-btn">
-        <a class="btn-floating btn-large red">
-          <i class="large material-icons">mode_edit</i>
+        <a class="btn-floating btn-large" style="background-color: rgba(137, 55, 204, 0.91)">
+          <i class="large material-icons">menu</i>
         </a>
         <ul>
           <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
@@ -89,7 +87,6 @@
         </ul>
       </div>
       <script defer src="/static/script.js"></script>
-      <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
       <script type="text/javascript" src="static/js/materialize.min.js"></script>
       <script type="text/javascript">
       document.addEventListener('DOMContentLoaded', function() {
