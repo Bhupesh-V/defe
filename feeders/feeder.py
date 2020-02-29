@@ -5,7 +5,6 @@ import random
 from concurrent.futures import ThreadPoolExecutor
 from urllib.parse import urlparse
 
-import feedparser
 from tqdm import tqdm
 from modules.feed import get_feed, get_latest_feed
 

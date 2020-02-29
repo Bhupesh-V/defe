@@ -5,7 +5,6 @@ import feedparser
 def __manage_cache(url: str):
     cache = Cache(".feedcache")
     if url in cache:
-        print("hit")
         data = cache.get(url)
     else:
         parsed_feed = feedparser.parse(url)
