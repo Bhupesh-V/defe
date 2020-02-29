@@ -1,0 +1,23 @@
+from diskcache import Cache
+import feedparser
+
+
+def __manage_cache(url: str):
+    cache = Cache(".feedcache")
+    if url in cache:
+        print("hit")
+        data = cache.get(url)
+    else:
+        parsed_feed = feedparser.parse(url)
+        cache.add(url, parsed_feed, expire=3600)
+        data = parsed_feed
+    cache.close()
+    return data
+
+
+def get_feed(url: str):
+    return __manage_cache(url).entries
+
+
+def get_latest_feed(url: str):
+    return __manage_cache(url).entries[0]

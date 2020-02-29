@@ -1,14 +1,14 @@
-body {margin:0;font-family:Arial}
-
+body {margin:0;font-family:"Lato", sans-serif}
+html { scroll-behavior: smooth; }
 nav {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 10;
-  background-color: black;
+  background-color: #36393F;
 }
 .sidenav {
-  background-color: black;
+  background-color: #36393F;
 }
 .sidenav li > a {
     color: rgb(253, 253, 253);
@@ -17,7 +17,7 @@ nav {
     background-color: rgba(137, 55, 204, 0.91);
 }
 .btn {
-  background: black;
+  background: #36393F;
 }
 .btn:hover {
   background-color: rgba(137, 55, 204, 0.91);
@@ -35,6 +35,9 @@ img {
     display: inline;
   }
 }
-
+.patreon-logo {
+  height: 50px;
+  width: 200px;
+}
 
 
