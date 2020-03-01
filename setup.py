@@ -7,12 +7,12 @@ setuptools.setup(
     name="defe",
     version="1.0.0",
     author="Bhupesh Varshney",
-    author_email="varsheybhupesh@gmail.com",
+    author_email="varshneybhupesh@gmail.com",
     description="A Tech feed Aggregator for Developers.",
     keywords="",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    packages=['defe', 'feeders'],
+    packages=['defe', 'feeders', 'modules'],
     url="https://github.com/Bhupesh-V/devfeed",
     project_urls={
         "Documentation": "https://defe.readthedocs.io/en/latest/",
@@ -25,7 +25,9 @@ setuptools.setup(
         # include any *.json files found in the "feeders" package
         "feeders": ["static/*.json"],
     },
-    install_requires=["feedparser", "colorama", "tqdm"],
+    install_requires=[
+        "feedparser", "colorama", "tqdm", "diskcache"
+    ],
     classifiers=[
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",

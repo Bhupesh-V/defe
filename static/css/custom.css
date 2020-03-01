@@ -39,11 +39,7 @@ img {
   height: 50px;
   width: 200px;
 }
-.telegram-logo {
-    height: 50px;
-    width: 50px;
-}
-.twitter-logo {
+.social-logo {
     height: 50px;
     width: 50px;
 }
@@ -62,4 +58,7 @@ img {
 #dropdown1 li > a {
   background: #36393F;
   color: rgb(210, 134, 253);
+}
+.dropdown-content li > a, .dropdown-content li > span {
+    font-size: 14px;
 }
