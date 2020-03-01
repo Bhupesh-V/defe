@@ -1,26 +1,37 @@
 {% extends 'base.html' %}
-{% include 'feed-filter.html' %}
+{% block filterfeed %}
+	{% include 'feed-filter.html' %}
+{% endblock %}
 {% block container %}
 	<center>
 	<div id="feed">
 		{% if news_feed_data %}
 			{% for item in news_feed_data %}
 				<div class="feed-card">
-					<a href="{{ item['link']}}">{{ item["title"] }}</a>
-					<h4>By {{ item["author"] }}</h4>
-					{% if item["summary"] %}
-					<details>
-						<summary>Summary</summary>
-						<div class="feed-summary">
-							{{ item["summary"] }}
+					<div class="row card-panel">
+						<div class="card blue-grey darken-1">
+							<div class="card-content white-text">
+								<a class="card-title" href="{{ item['link']}}">{{ item["title"] }}</a>
+								<a href="//{{ item['feeder_site'] }}">
+									<span id="feeder-site">{{ item["feeder_site"] }}</span>
+								</a>
+							</div>
 						</div>
-						</details>
-					{% endif %}
-					<blockquote>
-						{{ item["published_parsed"].tm_mday }}-{{ item["published_parsed"].tm_mon }}-{{ item["published_parsed"].tm_year }}
-					</blockquote>
-					<span id="feeder-site">{{ item["feeder_site"] }}</span>
-					<button class="fa fa-share-alt" id="shareIcon" onclick='share("{{ item["title"] }}","{{ item["link"] }}")'></button>
+						<p>
+							<i class="material-icons">date_range</i>
+						{{ item["published_parsed"].tm_mday }}-{{ item["published_parsed"].tm_mon }}-{{ item["published_parsed"].tm_year }}</p>
+						<ul class="collapsible">
+							<li>
+								<div class="collapsible-header">Read More</div>
+								<div class="collapsible-body">
+									<div class="feed-summary">
+										{{ item["summary"] }}
+									</div>
+								</div>
+							</li>
+						</ul>
+						<button class="fa fa-share-alt" id="shareIcon" onclick='share("{{ item["title"] }}","{{ item["link"] }}")'></button>
+					</div>
 				</div>
 			{% endfor %}
 		{% endif %}

@@ -39,8 +39,27 @@ img {
   height: 50px;
   width: 200px;
 }
-
+.telegram-logo {
+    height: 50px;
+    width: 50px;
+}
+.twitter-logo {
+    height: 50px;
+    width: 50px;
+}
 .card-title {
     color: white !important;
     font-weight: bold !important;
+}
+#dropdown2 {
+  background:rgb(132, 88, 157) none repeat scroll 0% 0%;
+  border-radius: 25px;
+}
+#dropdown1 {
+  background: #36393F;
+  color: rgb(132, 88, 157);
+}
+#dropdown1 li > a {
+  background: #36393F;
+  color: rgb(210, 134, 253);
 }

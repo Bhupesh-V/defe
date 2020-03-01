@@ -94,18 +94,8 @@ def news_feed(show_progress=False):
                 leave=False
             )
         )
-    # results = list(
-    #         tqdm(
-    #             map(get_feed, [key["link"] for key in news]),
-    #             desc="Fetching Feeders",
-    #             total=len(news),
-    #             disable=show_progress,
-    #             leave=False
-    #         )
-    #     )
 
     feed_result = [i for i in itertools.chain.from_iterable(results)]
-    print(len(feed_result))
 
     random.shuffle(feed_result)
 

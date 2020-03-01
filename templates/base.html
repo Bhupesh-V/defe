@@ -37,12 +37,18 @@
     <title>devfeed</title>
   </head>
   <body>
-    <nav>
+    <nav class="darkmode-ignore">
       <div class="nav-wrapper">
         <a href="#!" class="brand-logo">devfeed</a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-          <li><a href="/">Home</a></li>
+          <li><a class='dropdown-trigger' data-target='dropdown1' href="/">Feed</a></li>
+          <ul id='dropdown1' class='dropdown-content'>
+            <li><a href="/">General</a></li>
+            <li><a href="/news">News</a></li>
+            <li><a href="/podcasts">Podcasts</a></li>
+            <li><a href="/newsletters">Newsletters</a></li>
+          </ul>
           <li><a href="/feeders">Feeders</a></li>
           <li><a href="/about">About</a></li>
           <li><a href="/support">Support</a></li>
@@ -51,7 +57,13 @@
       </div>
     </nav>
     <ul class="sidenav" id="mobile-demo">
-      <li><a href="/">Home</a></li>
+      <li><a class='dropdown-trigger' data-target='dropdown2' href="/">Feed</a></li>
+      <ul id='dropdown2' class='dropdown-content'>
+        <li><a href="/">General</a></li>
+        <li><a href="/news">News</a></li>
+        <li><a href="/podcasts">Podcasts</a></li>
+        <li><a href="/newsletters">Newsletters</a></li>
+      </ul>
       <li><a href="/feeders">Feeders</a></li>
       <li><a href="/about">About</a></li>
       <li><a href="/support">Support</a></li>
@@ -93,6 +105,10 @@
       </script>
 
       <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.dropdown-trigger');
+        var instances = M.Dropdown.init(elems);
+      });
       document.addEventListener('DOMContentLoaded', function() {
       var elems = document.querySelectorAll('select');
       var instances = M.FormSelect.init(elems);

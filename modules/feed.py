@@ -4,13 +4,16 @@ import feedparser
 
 def __manage_cache(url: str):
     cache = Cache(".feedcache")
-    if url in cache:
-        data = cache.get(url)
-    else:
-        parsed_feed = feedparser.parse(url)
-        cache.add(url, parsed_feed, expire=3600)
-        data = parsed_feed
-    cache.close()
+    try:
+        if url in cache:
+            data = cache.get(url)
+        else:
+            parsed_feed = feedparser.parse(url)
+            data = parsed_feed
+            cache.add(url, parsed_feed, expire=3600)
+        cache.close()
+    except ValueError:
+        pass
     return data
 
 

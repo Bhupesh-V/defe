@@ -1,19 +1,37 @@
 {% extends 'base.html' %}
-{% include 'feed-filter.html' %}
+{% block filterfeed %}
+	{% include 'feed-filter.html' %}
+{% endblock %}
 {% block container %}
 	<center>
 	<div id="feed">
 		{% if newsletter_feed %}
 			{% for item in newsletter_feed %}
 				<div class="feed-card">
-					<a href="{{ item['link']}}">{{ item["title"] }}</a>
-					<details>
-					<summary>📖 Read on devfeed 👇</summary>
-					<div class="feed-summary">
-						{{ item["summary"] }}
+					<div class="row card-panel">
+						<div class="card blue-grey darken-1">
+							<div class="card-content white-text">
+								<a class="card-title" href="{{ item['link']}}">{{ item["title"] }}</a>
+								<a href="//{{ item['feeder_site'] }}">
+									<span id="feeder-site">{{ item["feeder_site"] }}</span>
+								</a>
+							</div>
+						</div>
+						<p>
+							<i class="material-icons">date_range</i>
+						{{ item["published_parsed"].tm_mday }}-{{ item["published_parsed"].tm_mon }}-{{ item["published_parsed"].tm_year }}</p>
+						<ul class="collapsible">
+							<li>
+								<div class="collapsible-header">Read More</div>
+								<div class="collapsible-body">
+									<div class="feed-summary">
+										{{ item["summary"] }}
+									</div>
+								</div>
+							</li>
+						</ul>
+						<button class="fa fa-share-alt" id="shareIcon" onclick='share("{{ item["title"] }}","{{ item["link"] }}")'></button>
 					</div>
-					</details>
-					<button class="fa fa-share-alt" id="shareIcon" onclick='share("{{ item["title"] }}","{{ item["link"] }}")'></button>
 				</div>
 			{% endfor %}
 		{% endif %}
