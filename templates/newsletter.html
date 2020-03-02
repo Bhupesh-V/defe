@@ -17,9 +17,11 @@
 								</a>
 							</div>
 						</div>
+						{% if item['published_parsed'] %}
 						<p>
 							<i class="material-icons">date_range</i>
-						{{ item["published_parsed"].tm_mday }}-{{ item["published_parsed"].tm_mon }}-{{ item["published_parsed"].tm_year }}</p>
+						{{ item['published_parsed'].tm_mday }}-{{ item['published_parsed'].tm_mon }}-{{ item['published_parsed'].tm_year }}</p>
+						{% endif %}
 						<ul class="collapsible">
 							<li>
 								<div class="collapsible-header">Read More</div>

@@ -61,7 +61,7 @@ function clear_previous_feed() {
     const feed_div = document.getElementById("feed");
     feed_div.innerHTML = '';
     const story_count = document.getElementById("story-count");
-    if (story_count != null){
+    if (story_count != null) {
         story_count.innerHTML = '';
     }
 }

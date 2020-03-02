@@ -68,7 +68,7 @@ def podcasts_feeds(show_progress=False):
 
 def newsletters_feeds(show_progress=False):
     newsletters = read_data("newsletter")
-    with ThreadPoolExecutor(max_workers=30) as executor:
+    with ThreadPoolExecutor(max_workers=20) as executor:
         results = list(
             tqdm(
                 executor.map(get_latest_feed, [key["link"] for key in newsletters]),

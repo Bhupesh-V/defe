@@ -26,7 +26,7 @@
     <!--     <meta property="og:image" content=""/> -->
     <meta property="og:image:width" content="640" />
     <meta property="og:image:height" content="360" />
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
     <link type="text/css" rel="stylesheet" href="static/css/materialize.min.css"  media="screen,projection"/>
     <link rel="stylesheet" type="text/css" href="static/css/custom.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -97,66 +97,67 @@
           document.documentElement.scrollTop = 0;
         }
         function switch_mode(){
-          const darkmode =  new Darkmode();
-          if (!darkmode.isActivated()) {
-            darkmode.toggle();
+          var options = {
+            time: '0.3s', // default: '0.3s'
+            mixColor: '#fff', // default: '#fff'
+            backgroundColor: '#fff',  // default: '#fff'
+            saveInCookies: true, // default: true,
+            autoMatchOsTheme: true // default: true
           }
+          const darkmode =  new Darkmode(options);
+          darkmode.toggle();
         }
       </script>
 
       <script type="text/javascript">
       document.addEventListener('DOMContentLoaded', function() {
-        var elems = document.querySelectorAll('.dropdown-trigger');
-        var instances = M.Dropdown.init(elems);
-      });
-      document.addEventListener('DOMContentLoaded', function() {
-      var elems = document.querySelectorAll('select');
-      var instances = M.FormSelect.init(elems);
-      });
-      document.addEventListener('DOMContentLoaded', function() {
-      var elems = document.querySelectorAll('.collapsible');
-      var instances = M.Collapsible.init(elems);
-      });
-      document.addEventListener('DOMContentLoaded', function() {
-      var elems = document.querySelectorAll('.sidenav');
-      var instances = M.Sidenav.init(elems, "edge");
-      });
-      document.addEventListener('DOMContentLoaded', function() {
-      var elems = document.querySelectorAll('.fixed-action-btn');
-      var instances = M.FloatingActionButton.init(elems,  {
-      direction: 'left'
-      });
+          var dropdowns = document.querySelectorAll('.dropdown-trigger');
+          var instances = M.Dropdown.init(dropdowns);
+
+          var sidenav = document.querySelectorAll('.sidenav');
+          var instances = M.Sidenav.init(sidenav, "edge");
+
+          var fixedaction = document.querySelectorAll('.fixed-action-btn');
+          var instances = M.FloatingActionButton.init(fixedaction, {
+              direction: 'left'
+          });
+
+          var select_options = document.querySelectorAll('select');
+          var instances = M.FormSelect.init(select_options);
+
+          var collapsible = document.querySelectorAll('.collapsible');
+          var instances = M.Collapsible.init(collapsible);
       });
       </script>
       <script>
       window.onload = function() {
-      registerSW();
-      setTimeout(storycount, 200);
-      setTimeout(rewrite_summary, 200);
-      setTimeout(rewrite_description, 200);
+          registerSW();
+          setTimeout(storycount, 200);
+          setTimeout(rewrite_summary, 200);
+          setTimeout(rewrite_description, 200);
       };
       async function registerSW() {
-      if ('serviceWorker' in navigator) {
-      try {
-      await navigator.serviceWorker.register('static/sw.js');
-      } catch (e) {
-      //SW registration failed, oh no :(
-      }
-      }
+          if ('serviceWorker' in navigator) {
+              try {
+                  await navigator.serviceWorker.register("{{ url_for('static', filename='sw.js') }}");
+              } catch (e) {
+                  //SW registration failed, oh no :(
+              }
+          }
       }
       
       var input = document.getElementById("feed-input");
       input.addEventListener("keyup", function(event) {
-      if (event.keyCode === 13) {
-      event.preventDefault();
-      document.getElementById("fetchfeed").click();
-      }
+          if (event.keyCode === 13) {
+              event.preventDefault();
+              document.getElementById("fetchfeed").click();
+          }
       });
       var filter_by = document.getElementById("feed-input");
       filter_by.addEventListener("input", function(event) {
-      if (filter_by.value == "Reddit"){
-      show_subreddits();
-      }
+          if (filter_by.value == "Reddit") {
+              show_subreddits();
+          }
       });
       </script>
     </body>
