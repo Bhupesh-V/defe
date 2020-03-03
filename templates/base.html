@@ -34,7 +34,7 @@
     <script defer src="https://use.fontawesome.com/releases/v4.7.0/js/all.js"></script>
     <!--     <meta name="twitter:image" content="">
     <link rel="shortcut icon" type="image/png" href="images/logo.png"/> -->
-    <title>devfeed</title>
+    <title>{% block title %}{% endblock %}</title>
   </head>
   <body>
     <nav class="darkmode-ignore">
@@ -135,6 +135,10 @@
           setTimeout(storycount, 200);
           setTimeout(rewrite_summary, 200);
           setTimeout(rewrite_description, 200);
+          var versiondiv = document.getElementById("version");
+          if (versiondiv){
+            get_version_info();
+          }
       };
       async function registerSW() {
           if ('serviceWorker' in navigator) {

@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
+{% block title %}
+	Newsletter Feed
+{% endblock %}
 {% block filterfeed %}
 	{% include 'feed-filter.html' %}
 {% endblock %}
@@ -18,9 +21,9 @@
 							</div>
 						</div>
 						{% if item['published_parsed'] %}
-						<p>
-							<i class="material-icons">date_range</i>
-						{{ item['published_parsed'].tm_mday }}-{{ item['published_parsed'].tm_mon }}-{{ item['published_parsed'].tm_year }}</p>
+							<p>
+								<i class="material-icons">date_range</i>
+							{{ item['published_parsed'].tm_mday }}-{{ item['published_parsed'].tm_mon }}-{{ item['published_parsed'].tm_year }}</p>
 						{% endif %}
 						<ul class="collapsible">
 							<li>

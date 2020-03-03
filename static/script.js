@@ -93,3 +93,14 @@ function share(title, link) {
             .catch((error) => console.log('Error sharing', error));
     }
 }
+
+function get_version_info() {
+    const fetchPromise = fetch('https://api.github.com/repos/Bhupesh-V/tutorialdb/releases');
+    fetchPromise.then(response => {
+        return response.json();
+    }).then(releases => {
+        console.log(releases);
+        version_ref = document.getElementById("version-info");
+        version_ref.innerHTML = releases[0].name;
+    });
+}
