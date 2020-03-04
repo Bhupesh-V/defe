@@ -102,5 +102,7 @@ function get_version_info() {
         console.log(releases);
         version_ref = document.getElementById("version-info");
         version_ref.innerHTML = releases[0].name;
+        version_ref_nav = document.getElementById("version-info-nav");
+        version_ref_nav.innerHTML = releases[0].name;
     });
 }

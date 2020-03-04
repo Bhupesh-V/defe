@@ -39,6 +39,10 @@
 		{
 			"name": "Technology Intelligence",
 			"link": "https://www.telegraph.co.uk/technology/rss.xml"
+		},
+		{
+			"name": "PCWorld News",
+			"link": "https://www.pcworld.com/news.rss"
 		}
 	]
 }

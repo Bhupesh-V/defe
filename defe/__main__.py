@@ -21,7 +21,7 @@ Available Feed Categories
 3. podcasts     [defe podcasts <max_feed_count>]
 4. newsletters  [defe newsletters <max_feed_count>]
 
-* By Default defe shows only 7 feed items
+* By Default defe shows only [7] feed items
 * Use [defe feeders] to list available feeders
 
 Contact:
@@ -55,7 +55,10 @@ def home():
     """
     )
     print(
-        Fore.GREEN + Style.BRIGHT + "A Tech feed Aggregator for Developers.", end="\n\n"
+        Fore.GREEN + Style.BRIGHT + "A Tech feed Aggregator for Developers.", end="\n"
+    )
+    print(
+        Fore.YELLOW + Style.BRIGHT + "Tutorials, News, Podcasts & Newsletters at one place", end="\n\n"
     )
     print(Style.BRIGHT + "Welcome to defe 👋", end="\n")
     print("Use" + Style.BRIGHT + " defe --help ", end="")
