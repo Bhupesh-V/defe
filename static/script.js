@@ -106,3 +106,14 @@ function get_version_info() {
         version_ref_nav.innerHTML = releases[0].name;
     });
 }
+
+function copyToClip(str) {
+    function listener(e) {
+        e.clipboardData.setData("text/html", str);
+        e.clipboardData.setData("text/plain", str);
+        e.preventDefault();
+    }
+    document.addEventListener("copy", listener);
+    document.execCommand("copy");
+    document.removeEventListener("copy", listener);
+};

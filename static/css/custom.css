@@ -62,3 +62,10 @@ img {
 .dropdown-content li > a, .dropdown-content li > span {
     font-size: 14px;
 }
+
+.copybutton {
+  all: initial;
+  * {
+    all: unset;
+  }
+}
