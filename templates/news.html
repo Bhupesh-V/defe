@@ -33,7 +33,7 @@
 								</div>
 							</li>
 						</ul>
-						<img style="height: 50px;" class="copybutton" src="static/images/copy_button.png" onclick='copyToClip("{{ item["link"]}}"); M.toast({html: "Link Copied"})'><br>
+						<img style="height: 50px; cursor: pointer;" class="copybutton" src="static/images/copy_button.png" onclick='copyToClip("{{ item["link"]}}"); M.toast({html: "Link Copied"})'><br>
 						<i class="fa fa-share-alt small" id="shareIcon" onclick='share("{{ item["title"] }}","{{ item["link"] }}")'></i>
 					</div>
 				</div>
