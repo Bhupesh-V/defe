@@ -11,23 +11,23 @@ from core.feed import get_feed, get_latest_feed
 
 def read_data(feed_type=None):
     if feed_type == "podcast":
-        podcast_file = os.path.join(os.getcwd(), "core/static", "podcasts.json")
+        podcast_file = os.path.join(os.getcwd(), "core/feeders", "podcasts.json")
         with open(podcast_file) as json_file:
             data = json.load(json_file)
         return data["podcasts"]
     elif feed_type == "news":
-        news_file = os.path.join(os.getcwd(), "core/static", "news.json")
+        news_file = os.path.join(os.getcwd(), "core/feeders", "news.json")
         with open(news_file) as json_file:
             data = json.load(json_file)
         return data["news"]
     elif feed_type == "general":
-        general_file = os.path.join(os.getcwd(), "core/static", "general.json")
+        general_file = os.path.join(os.getcwd(), "core/feeders", "general.json")
         with open(general_file) as json_file:
             data = json.load(json_file)
         return data["general"]
     elif feed_type == "newsletter":
         newsletter_file = os.path.join(
-            os.getcwd(), "core/static", "newsletters.json"
+            os.getcwd(), "core/feeders", "newsletters.json"
         )
         with open(newsletter_file) as json_file:
             data = json.load(json_file)

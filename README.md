@@ -1,9 +1,25 @@
-# devfeed
+<div align="center">
+  <a href="https://defe-app.herokuapp.com"><img src="static/logo.png" alt="defe logo" height="160"></a>
+  <br>
+  <br>
+  <p>
+    <b>A Tech feed Aggregator for Developers</b>
+  </p>
+  <p>
+     <i>Read Stories which matter</i>
+  </p>
+  <p>
 
-> A Tech feed Aggregator for Developers.
+	![GitHub release (latest by date)](https://img.shields.io/github/v/release/bhupesh-v/defe?logo=GitHub)
+	![GitHubLicense](https://img.shields.io/github/license/bhupesh-v/defe)
+	[![Codacy Badge](https://api.codacy.com/project/badge/Grade/39926b7f89ab404d9d5a491fe2778db6)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Bhupesh-V/defe&amp;utm_campaign=Badge_Grade)
+
+  </p>
+</div>
 
 
-## Installation
+
+## 🔮 Installation
 
 Install **defe CLI** using `pip` from PyPI
 
@@ -14,34 +30,40 @@ pip install defe
 
 ## Development
 
-##### Prerequisites
-- Python 3.6+
-- virtualenv
+1. Clone the repository:
+```bash
+git clone https://github.com/Animesh-Ghosh/TripMoksha-Task.git
+```
+2. Create virtual environment:
+```bash
+python3 -m venv venv
+```
+3. Activate virtual environment:
 
-1. Create virtual environment.
+	**Linux/MacOS**
+	```bash
+	source venv/bin/activate
+	```
+	**Windows**
+	```pwsh
+	.\venv\Scripts\activate
+	```
+4. Install Dependencies.
 ```bash
-virtualenv -p python3 venv && cd venv && source bin/activate
+pip install -r requirements.txt
 ```
-2. Clone the repository.
-```bash
-git https://github.com/Bhupesh-V/devfeed.git
-```
-3. Install Dependencies.
-```bash
-pip install -r requirements-dev.txt
-```
-4. Lint the project with
+5. Lint the project with
 ```bash
 flake8 .
 black --check --diff .
 ```
-5. Run the Development Server
+6. Run the Development Server (for *webapp*)
 ```bash
 flask run
 ```
-6. To Use **defe** - devfeed CLI
+7. To Use **defe CLI**
 ```bash
-python -m defe .
+python -m defe
 ```
 
 
