@@ -7,7 +7,7 @@ import sys
 
 from colorama import Fore, Style, init
 
-from feeders import feeder
+from core import core
 
 from .formatter import defy
 
@@ -89,16 +89,16 @@ def main():
     args = parser.parse_args()
 
     if args.feed == "general":
-        for item in feeder.all_feed()[: args.max_feed_count]:
+        for item in core.all_feed()[: args.max_feed_count]:
             defy(item["title"], item["link"])
     if args.feed == "news":
-        for item in feeder.news_feed()[: args.max_feed_count]:
+        for item in core.news_feed()[: args.max_feed_count]:
             defy(item["title"], item["link"], item["feeder_site"])
     if args.feed == "newsletters":
-        for item in feeder.newsletters_feeds()[: args.max_feed_count]:
+        for item in core.newsletters_feeds()[: args.max_feed_count]:
             defy(item["title"], item["link"])
     if args.feed == "podcasts":
-        for item in feeder.podcasts_feeds()[: args.max_feed_count]:
+        for item in core.podcasts_feeds()[: args.max_feed_count]:
             defy(item["title"], item.links[1].href)
     if args.feed == "feeders":
         feeds = ["general", "news", "podcast"]
@@ -108,7 +108,7 @@ def main():
         )
         for f in feeds:
             print("\n" + Fore.BLUE + Style.BRIGHT + f.capitalize(), end="\n\n")
-            data = feeder.read_data(f)
+            data = core.read_data(f)
             for item in data:
                 print(Style.BRIGHT + str(data.index(item) + 1), end=". ")
                 print(Fore.GREEN + Style.BRIGHT + item["name"])

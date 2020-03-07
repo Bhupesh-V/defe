@@ -12,7 +12,7 @@ setuptools.setup(
     keywords="",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    packages=['defe', 'feeders', 'modules'],
+    packages=['defe', 'core'],
     url="https://github.com/Bhupesh-V/devfeed",
     project_urls={
         "Documentation": "https://defe.readthedocs.io/en/latest/",
@@ -23,7 +23,7 @@ setuptools.setup(
     },
     package_data={
         # include any *.json files found in the "feeders" package
-        "feeders": ["static/*.json"],
+        "core": ["static/*.json"],
     },
     install_requires=[
         "feedparser", "colorama", "tqdm", "diskcache"
