@@ -13,13 +13,13 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     packages=['defe', 'core'],
-    url="https://github.com/Bhupesh-V/devfeed",
+    url="https://github.com/Bhupesh-V/defe",
     project_urls={
         "Documentation": "https://defe.readthedocs.io/en/latest/",
-        "Source Code": "https://github.com/Bhupesh-V/devfeed",
+        "Source Code": "https://github.com/Bhupesh-V/defe",
         "Funding": "https://www.patreon.com/bePatron?u=18082750",
-        "Say Thanks!": "https://github.com/Bhupesh-V/devfeed/issues/new?assignees=&labels=&template=---say-thank-you.md&title=",
-        'Tracker': "https://github.com/Bhupesh-V/devfeed/issues"
+        "Say Thanks!": "https://github.com/Bhupesh-V/defe/issues/new?assignees=&labels=&template=---say-thank-you.md&title=",
+        'Tracker': "https://github.com/Bhupesh-V/defe/issues"
     },
     package_data={
         # include any *.json files found in the "feeders" package

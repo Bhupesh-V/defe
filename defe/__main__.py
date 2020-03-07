@@ -32,7 +32,7 @@ Contact:
 More information is available at:
 
 - Home      : https://pypi.org/project/defe/
-- Source    : https://github.com/Bhupesh-V/devfeed
+- Source    : https://github.com/Bhupesh-V/defe
 - Support   : https://www.patreon.com/bePatron?u=18082750,
 """
 
@@ -101,7 +101,7 @@ def main():
         for item in core.podcasts_feeds()[: args.max_feed_count]:
             defy(item["title"], item.links[1].href)
     if args.feed == "feeders":
-        feeds = ["general", "news", "podcast"]
+        feeds = ["general", "news", "podcast", "newsletter"]
         print(
             "\n" + Style.BRIGHT + "defe fetches feeds of these popular sites",
             end="\n\n",
@@ -115,7 +115,7 @@ def main():
 
         print("\n\n" + Style.BRIGHT + "Want to add more ? 🤔")
         print(
-            Style.BRIGHT + "Open a PR at https://github.com/Bhupesh-V/devfeed",
+            Style.BRIGHT + "Open a PR at https://github.com/Bhupesh-V/defe",
             end="\n\n",
         )
 

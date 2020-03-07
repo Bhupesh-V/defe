@@ -85,7 +85,7 @@
         {% block container %}{% endblock %}
       </div>
       <div class="fixed-action-btn">
-        <a class="btn-floating btn-large" style="background-color: rgba(137, 55, 204, 0.91)">
+        <a class="btn-floating btn-large" style="background: linear-gradient(135deg, rgba(238,237,30,1) 2%, rgba(184,0,255,1) 100%);">
           <i class="large material-icons">menu</i>
         </a>
         <ul>
@@ -105,9 +105,10 @@
         }
         function switch_mode(){
           var options = {
-            time: '0.3s', // default: '0.3s'
+            time: '0.5s', // default: '0.3s'
             mixColor: '#fff', // default: '#fff'
             backgroundColor: '#fff',  // default: '#fff'
+            buttonColorDark: '#3C3B37',
             saveInCookies: true, // default: true,
             autoMatchOsTheme: true // default: true
           }

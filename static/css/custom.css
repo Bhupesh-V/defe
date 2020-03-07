@@ -14,13 +14,13 @@ nav {
     color: rgb(253, 253, 253);
 }
 .sidenav li > a:hover {
-    background-color: rgba(137, 55, 204, 0.91);
+    background: linear-gradient(135deg, rgba(238,237,30,1) 2%, rgba(184,0,255,1) 100%);
 }
 .btn {
   background: #36393F;
 }
 .btn:hover {
-  background-color: rgba(137, 55, 204, 0.91);
+  background: linear-gradient(135deg, rgba(238,237,30,1) 2%, rgba(184,0,255,1) 100%);
 }
 
 img {
@@ -48,7 +48,7 @@ img {
     font-weight: bold !important;
 }
 #dropdown2 {
-  background:rgb(132, 88, 157) none repeat scroll 0% 0%;
+  background: linear-gradient(135deg, rgba(238,237,30,1) 2%, rgba(184,0,255,1) 100%);
   border-radius: 25px;
 }
 #dropdown1 {
@@ -68,4 +68,7 @@ img {
   * {
     all: unset;
   }
+}
+.darkmode--activated {
+  background-color: #282923;
 }
