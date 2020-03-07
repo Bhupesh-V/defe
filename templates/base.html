@@ -40,8 +40,8 @@
     <nav class="darkmode-ignore">
       <div class="nav-wrapper">
         
-        <a href="#!" class="brand-logo">
-          <img src="static/images/logodefe.svg" style="height: 50px;padding-left: 5px;padding-top: 5px; margin-top: 4px; margin-left: 4px;" >
+        <a href="#" class="brand-logo">
+          <img src="static/images/logodefe.png" style="height: 50px;" >
         </a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
@@ -71,9 +71,8 @@
       <li><a href="/about">About</a></li>
       <li><a href="/support">Support</a></li>
       <li><a href="/feedback">Feedback</a></li>
-      <li style="background-color: rgba(137, 55, 204, 0.91)" class="divider" tabindex="-1"></li>
-      <li><a href="https://github.com/Bhupesh-V/devfeed/releases">Version</a>
-        <div style="color: gray; display: block;font-size: 14px; font-weight: 500; line-height: 2px;padding: 0 32px;" id="version-info-nav"></div>
+      <li style="background: linear-gradient(135deg, rgba(238,237,30,1) 2%, rgba(184,0,255,1) 100%);" class="divider" tabindex="-1"></li>
+      <li><a id="version-info-nav" href="https://github.com/Bhupesh-V/devfeed/releases"></a>
       </li>
     </ul>
 
@@ -92,7 +91,6 @@
           <li><a onclick="topFunction()"class="btn-floating red"><i class="material-icons">keyboard_arrow_up</i></a></li>
           <li><a onclick="switch_mode()" class="btn-floating yellow darken-1"><i class="material-icons">brightness_4</i></a></li>
           <li><a onclick="share('devfeed', 'https://defe-app.herokuapp.com')" class="btn-floating green"><i class="material-icons">share</i></a></li>
-<!--           <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li> -->
         </ul>
       </div>
       <script defer src="/static/script.js"></script>
@@ -143,10 +141,7 @@
           setTimeout(storycount, 200);
           setTimeout(rewrite_summary, 200);
           setTimeout(rewrite_description, 200);
-          var versiondiv = document.getElementById("version");
-          if (versiondiv){
-            get_version_info();
-          }
+          get_version_info();
       };
       async function registerSW() {
           if ('serviceWorker' in navigator) {

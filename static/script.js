@@ -101,9 +101,13 @@ function get_version_info() {
     }).then(releases => {
         console.log(releases);
         version_ref = document.getElementById("version-info");
-        version_ref.innerHTML = releases[0].name;
+        if (version_ref != null){
+            version_ref.innerHTML = releases[0].name;
+        }
         version_ref_nav = document.getElementById("version-info-nav");
-        version_ref_nav.innerHTML = releases[0].name;
+        if (version_ref_nav != null) {
+            version_ref_nav.innerHTML = "Version " + releases[0].name;
+        }
     });
 }
 

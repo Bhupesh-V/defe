@@ -7,6 +7,10 @@ nav {
   z-index: 10;
   background-color: #36393F;
 }
+nav ul a:hover {
+  background-color: rgba(0,0,0,0.1);
+  background: linear-gradient(135deg, rgba(238,237,30,1) 2%, rgba(184,0,255,1) 100%);
+}
 .sidenav {
   background-color: #36393F;
 }
@@ -57,7 +61,10 @@ img {
 }
 #dropdown1 li > a {
   background: #36393F;
-  color: rgb(210, 134, 253);
+  color: white;
+}
+#dropdown1 li > a:hover {
+  background: linear-gradient(135deg, rgba(238,237,30,1) 2%, rgba(184,0,255,1) 100%);
 }
 .dropdown-content li > a, .dropdown-content li > span {
     font-size: 14px;
@@ -71,4 +78,15 @@ img {
 }
 .darkmode--activated {
   background-color: #282923;
+}
+.btn:focus {
+  background-color: black;
+}
+
+.card-panel {
+  background: linear-gradient(135deg, rgba(238,237,30,1) 2%, rgba(184,0,255,1) 100%);
+}
+
+.collapsible {
+  background-color: white;
 }
