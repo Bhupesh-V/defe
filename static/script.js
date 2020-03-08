@@ -12,6 +12,7 @@ function rewrite_summary(argument) {
     fs = document.getElementsByClassName("feed-summary");
     for (var i = 0; i < fs.length; i++) {
         fs[i].innerHTML = fs[i].textContent;
+        console.log("rewrite summary")
     }
 }
 
@@ -99,7 +100,6 @@ function get_version_info() {
     fetchPromise.then(response => {
         return response.json();
     }).then(releases => {
-        console.log(releases);
         version_ref = document.getElementById("version-info");
         if (version_ref != null){
             version_ref.innerHTML = releases[0].name;

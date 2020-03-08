@@ -7,7 +7,7 @@ import sys
 
 from colorama import Fore, Style, init
 
-from core import core
+from core import feedcore
 
 from .formatter import defy
 
@@ -58,7 +58,10 @@ def home():
         Fore.GREEN + Style.BRIGHT + "A Tech feed Aggregator for Developers.", end="\n"
     )
     print(
-        Fore.YELLOW + Style.BRIGHT + "Tutorials, News, Podcasts & Newsletters at one place", end="\n\n"
+        Fore.YELLOW
+        + Style.BRIGHT
+        + "Tutorials, News, Podcasts & Newsletters at one place",
+        end="\n\n",
     )
     print(Style.BRIGHT + "Welcome to defe 👋", end="\n")
     print("Use" + Style.BRIGHT + " defe --help ", end="")
@@ -89,16 +92,16 @@ def main():
     args = parser.parse_args()
 
     if args.feed == "general":
-        for item in core.all_feed()[: args.max_feed_count]:
+        for item in feedcore.all_feed()[: args.max_feed_count]:
             defy(item["title"], item["link"])
     if args.feed == "news":
-        for item in core.news_feed()[: args.max_feed_count]:
+        for item in feedcore.news_feed()[: args.max_feed_count]:
             defy(item["title"], item["link"], item["feeder_site"])
     if args.feed == "newsletters":
-        for item in core.newsletters_feeds()[: args.max_feed_count]:
+        for item in feedcore.newsletters_feeds()[: args.max_feed_count]:
             defy(item["title"], item["link"])
     if args.feed == "podcasts":
-        for item in core.podcasts_feeds()[: args.max_feed_count]:
+        for item in feedcore.podcasts_feeds()[: args.max_feed_count]:
             defy(item["title"], item.links[1].href)
     if args.feed == "feeders":
         feeds = ["general", "news", "podcast", "newsletter"]
@@ -108,15 +111,14 @@ def main():
         )
         for f in feeds:
             print("\n" + Fore.BLUE + Style.BRIGHT + f.capitalize(), end="\n\n")
-            data = core.read_data(f)
+            data = feedcore.read_data(f)
             for item in data:
                 print(Style.BRIGHT + str(data.index(item) + 1), end=". ")
                 print(Fore.GREEN + Style.BRIGHT + item["name"])
 
         print("\n\n" + Style.BRIGHT + "Want to add more ? 🤔")
         print(
-            Style.BRIGHT + "Open a PR at https://github.com/Bhupesh-V/defe",
-            end="\n\n",
+            Style.BRIGHT + "Open a PR at https://github.com/Bhupesh-V/defe", end="\n\n",
         )
 
 

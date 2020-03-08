@@ -10,7 +10,7 @@ def __manage_cache(url: str):
         else:
             parsed_feed = feedparser.parse(url)
             data = parsed_feed
-            cache.add(url, parsed_feed, expire=3600)
+            cache.add(url, parsed_feed, expire=1800)
         cache.close()
     except ValueError:
         pass

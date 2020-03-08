@@ -90,3 +90,9 @@ img {
 .collapsible {
   background-color: white;
 }
+
+.audio-container {
+  display: flex;
+  justify-content: center;
+  align-items: center 
+}

@@ -24,14 +24,6 @@
 						<a href="{{ item.links[1].href }}" download="{{ item['title'] }}"><i class="material-icons">cloud_download</i></a>
 						<ul class="collapsible">
 							<li>
-								<div class="collapsible-header">Read More</div>
-								<div class="collapsible-body">
-									<div class="feed-summary">
-										{{ item["summary"] }}
-									</div>
-								</div>
-							</li>
-							<li>
 								<div class="collapsible-header">Description</div>
 								<div class="collapsible-body">
 									<div class="feed-description">
@@ -46,9 +38,11 @@
 							<figcaption>
 							<h5>🔊 Listen on devfeed 🎧</h5>
 							</figcaption><br>
-							<audio controls src="{{ item.links[1].href }}">
+							<div class='audio-container'>
+								<audio controls src="{{ item.links[1].href }}">
 								Your browser does not support audio 😥
 							</audio>
+							</div>
 						</figure>
 					</div>
 				</div>

@@ -16,16 +16,16 @@ class WebAppTest(unittest.TestCase):
         pass
 
     def test_about(self):
-        response = self.app.get('/about', follow_redirects=True)
+        response = self.app.get("/about", follow_redirects=True)
         self.assertEqual(response.status_code, 200)
 
 
 class TestRunGetDomain(unittest.TestCase):
-
     def test_run(self):
-        self.assertEqual(core.get_domain("https://xyz.com"),
-                         "xyz.com", "Something Wrong")
+        self.assertEqual(
+            core.get_domain("https://xyz.com"), "xyz.com", "Something Wrong"
+        )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

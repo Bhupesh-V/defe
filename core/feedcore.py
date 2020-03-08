@@ -26,22 +26,10 @@ def read_data(feed_type=None):
             data = json.load(json_file)
         return data["general"]
     elif feed_type == "newsletter":
-        newsletter_file = os.path.join(
-            os.getcwd(), "core/feeders", "newsletters.json"
-        )
+        newsletter_file = os.path.join(os.getcwd(), "core/feeders", "newsletters.json")
         with open(newsletter_file) as json_file:
             data = json.load(json_file)
         return data["newsletters"]
-
-
-# def get_feed(url):
-#     site_feed = feedparser.parse(url)
-#     return site_feed.entries
-
-
-# def get_latest_feed(url):
-#     site_feed = feedparser.parse(url)
-#     return site_feed.entries[0]
 
 
 def get_domain(link):
@@ -59,7 +47,7 @@ def podcasts_feeds(show_progress=False):
                 desc="Fetching Feeders",
                 total=len(podcasts),
                 disable=show_progress,
-                leave=False
+                leave=False,
             )
         )
 
@@ -75,7 +63,7 @@ def newsletters_feeds(show_progress=False):
                 desc="Fetching Feeders",
                 total=len(newsletters),
                 disable=show_progress,
-                leave=False
+                leave=False,
             )
         )
 
@@ -91,7 +79,7 @@ def news_feed(show_progress=False):
                 desc="Fetching Feeders",
                 total=len(news),
                 disable=show_progress,
-                leave=False
+                leave=False,
             )
         )
 
@@ -121,7 +109,7 @@ def all_feed(show_progress=False):
                 desc="Fetching Feeders",
                 total=len(general),
                 disable=show_progress,
-                leave=False
+                leave=False,
             )
         )
 
