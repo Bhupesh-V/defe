@@ -10,7 +10,7 @@ def feed():
         data = feedcore.all_feed(True)
         data_keys = feedcore.read_data("general")
         data_keys = [item["name"] for item in data_keys]
-        return render_template("feed.html", allfeed=data, feeder_sites=data_keys)
+        return render_template("general.html", allfeed=data, feeder_sites=data_keys)
     else:
         service = request.json
         print(service)

@@ -1,16 +1,16 @@
 {
-  "name": "devfeed",
-  "short_name": "devfeed",
-  "description": "A News feed aggregator for Developers",
+  "name": "defe",
+  "short_name": "defe",
+  "description": "A Tech feed Aggregator for Developers",
   "display": "standalone",
   "start_url": "/",
   "theme_color": "",
   "background_color": "",
   "icons": [
     {
-      "src": "images/logo.png",
+      "src": "static/images/defelogo.svg",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/svg"
     }
   ]
 }

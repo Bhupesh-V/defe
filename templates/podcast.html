@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block title %}
-	Podcast Feed
+	Latest Podcasts
 {% endblock %}
 {% block filterfeed %}
 	{% include 'feed-filter.html' %}
@@ -19,9 +19,11 @@
 							</div>
 						</div>
 						<p>
-							<i class="material-icons">date_range</i>
+							<img style="height: 20px;" src="static/images/calendar.svg">
 						{{ item["published_parsed"].tm_mday }}-{{ item["published_parsed"].tm_mon }}-{{ item["published_parsed"].tm_year }}</p>
-						<a href="{{ item.links[1].href }}" download="{{ item['title'] }}"><i class="material-icons">cloud_download</i></a>
+						<a href="{{ item.links[1].href }}" download="{{ item['title'] }}">
+							<img style="height: 25px;" src="static/images/download.svg">
+						</a>
 						<ul class="collapsible">
 							<li>
 								<div class="collapsible-header">Description</div>
@@ -40,8 +42,8 @@
 							</figcaption><br>
 							<div class='audio-container'>
 								<audio controls src="{{ item.links[1].href }}">
-								Your browser does not support audio 😥
-							</audio>
+									Your browser does not support audio 😥
+								</audio>
 							</div>
 						</figure>
 					</div>

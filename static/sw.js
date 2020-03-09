@@ -6,7 +6,7 @@ self.addEventListener("fetch", fetchEvent => {
   )
 })
 
-const staticdevfeed = "devfeed-site-v1"
+const staticdevfeed = "defe-site-v1"
 const assets = [
   "/",
   "/static/script.js",
