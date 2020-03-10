@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="https://defe-app.herokuapp.com"><img src="static/logo.png" alt="defe logo" height="160"></a>
+  <a href="https://defe-app.herokuapp.com"><img src="static/images/logodefe.svg" alt="defe logo" height="160"></a>
   <br>
   <br>
   <p>
