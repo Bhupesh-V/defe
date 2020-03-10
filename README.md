@@ -1,21 +1,18 @@
-<div align="center">
+<p align="center">
   <a href="https://defe-app.herokuapp.com"><img src="static/images/logodefe.svg" alt="defe logo" height="160"></a>
   <br>
-  <br>
-  <p>
+  <p align="center">
     <b>A Tech feed Aggregator for Developers</b>
   </p>
-  <p>
+  <p align="center">
      <i>Read Stories which matter</i>
   </p>
-  <p>
+</p>
 
-	![GitHub release (latest by date)](https://img.shields.io/github/v/release/bhupesh-v/defe?logo=GitHub)
-	![GitHubLicense](https://img.shields.io/github/license/bhupesh-v/defe)
-	[![Codacy Badge](https://api.codacy.com/project/badge/Grade/39926b7f89ab404d9d5a491fe2778db6)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Bhupesh-V/defe&amp;utm_campaign=Badge_Grade)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/bhupesh-v/defe?logo=GitHub)
+![GitHubLicense](https://img.shields.io/github/license/bhupesh-v/defe)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/39926b7f89ab404d9d5a491fe2778db6)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Bhupesh-V/defe&amp;utm_campaign=Badge_Grade)
 
-  </p>
-</div>
 
 
 
