@@ -9,7 +9,7 @@ from colorama import Fore, Style, init
 
 from core import feedcore
 
-from .formatter import defy
+from .formatter import defy, defy_prompt
 
 contact = """
 
@@ -92,17 +92,30 @@ def main():
     args = parser.parse_args()
 
     if args.feed == "general":
-        for item in feedcore.all_feed()[: args.max_feed_count]:
+        data = feedcore.all_feed()
+        for item in data[: args.max_feed_count]:
+            print(Fore.RED + Style.BRIGHT + str(data.index(item) + 1), end=". ")
             defy(item["title"], item["link"])
+        defy_prompt(data)
+
     if args.feed == "news":
-        for item in feedcore.news_feed()[: args.max_feed_count]:
+        data = feedcore.news_feed()
+        for item in data[: args.max_feed_count]:
+            print(Fore.RED + Style.BRIGHT + str(data.index(item) + 1), end=". ")
             defy(item["title"], item["link"], item["feeder_site"])
+        defy_prompt(data)
     if args.feed == "newsletters":
-        for item in feedcore.newsletters_feeds()[: args.max_feed_count]:
+        data = feedcore.newsletters_feeds()
+        for item in data[: args.max_feed_count]:
+            print(Fore.RED + Style.BRIGHT + str(data.index(item) + 1), end=". ")
             defy(item["title"], item["link"])
+        defy_prompt(data)
     if args.feed == "podcasts":
-        for item in feedcore.podcasts_feeds()[: args.max_feed_count]:
+        data = feedcore.podcasts_feeds()
+        for item in data[: args.max_feed_count]:
+            print(Fore.RED + Style.BRIGHT + str(data.index(item) + 1), end=". ")
             defy(item["title"], item.links[1].href)
+        defy_prompt(data)
     if args.feed == "feeders":
         feeds = ["general", "news", "podcast", "newsletter"]
         print(
@@ -110,7 +123,8 @@ def main():
             end="\n\n",
         )
         for f in feeds:
-            print("\n" + Fore.BLUE + Style.BRIGHT + f.capitalize(), end="\n\n")
+            print("\n" + Fore.BLUE + Style.BRIGHT + f.capitalize(), end=" ")
+            print(Style.BRIGHT + "[defe " + f.lower() + "]", end="\n\n")
             data = feedcore.read_data(f)
             for item in data:
                 print(Style.BRIGHT + str(data.index(item) + 1), end=". ")

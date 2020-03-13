@@ -59,6 +59,10 @@
         {
             "name": "Talk Python",
             "link": "https://talkpython.fm/episodes/rss"
+        },
+        {
+            "name": "Developer Tea",
+            "link": "https://rss.simplecast.com/podcasts/363/rss"
         }
 
     ]
