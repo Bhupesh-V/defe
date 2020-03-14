@@ -1,5 +1,5 @@
 """
-Custom Foramatter for skotty
+Custom Formatter for defe
 """
 from colorama import Fore, Style, init
 import webbrowser
@@ -18,14 +18,15 @@ def defy(title, link, feeder=None):
 
 def defy_prompt(feed):
     init(autoreset=True)
-    try:
-        while 1:
+    while 1:
+        try:
             feed_to_open = str(
-                input(Fore.GREEN + Style.BRIGHT + "Enter Feed ID to open : "))
+                input(Fore.GREEN + Style.BRIGHT + "Enter Feed Index to open : "))
+            print(Style.RESET_ALL)
             print(Style.BRIGHT + "Opening Link in your default browser ...")
             webbrowser.open(feed[int(feed_to_open) - 1].link)
-    except ValueError:
-        pass
-        # add code to reiterate input prompt
-    except KeyboardInterrupt:
-        sys.exit()
+        except ValueError:
+            print(Style.BRIGHT + "Enter Valid Index 😟")
+        except KeyboardInterrupt:
+            # Oh no, run me again :(
+            sys.exit()
