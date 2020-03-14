@@ -119,8 +119,7 @@ def main():
     if args.feed == "feeders":
         feeds = ["general", "news", "podcasts", "newsletters"]
         print(
-            Style.BRIGHT
-            + "\ndefe fetches feeds of these popular & lovely sources 😃",
+            Style.BRIGHT + "\ndefe fetches feeds of these popular & lovely sources 😃",
             end="\n\n",
         )
         for f in feeds:

@@ -93,11 +93,8 @@ def news_feed(show_progress=False):
     return feed_result
 
 
-# def feed(feeder_site: str):
-#     if feeder_site in feeder_site_urls:
-#         return get_feed(feeder_site_urls[feeder_site])
-#     else:
-#         return {"error": "Feeder Site Not Available"}
+def feed(feeder_site_url: str):
+    return get_feed(feeder_site_url)
 
 
 def all_feed(show_progress=False):

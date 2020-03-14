@@ -42,7 +42,7 @@ img {
     display: inline;
   }
   #sharedefeIcon {
-    display: inline;
+    display: inline-block;
   }
 }
 .patreon-logo {

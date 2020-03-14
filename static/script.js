@@ -12,7 +12,6 @@ function rewrite_summary(argument) {
     fs = document.getElementsByClassName("feed-summary");
     for (var i = 0; i < fs.length; i++) {
         fs[i].innerHTML = fs[i].textContent;
-        console.log("rewrite summary")
     }
 }
 
@@ -23,39 +22,6 @@ function rewrite_description(argument) {
     }
 }
 
-function append_feed(data) {
-    var mainContainer = document.getElementById("feed");
-
-    for (var i = 0; i < data.length; i++) {
-
-        feed_card = document.createElement("div");
-        feed_card.setAttribute("class", "feed-card");
-        h4 = document.createElement("h4");
-        h4.textContent = data[i].title;
-        /*        blockquote = document.createElement("blockquote");
-                blockquote.textContent = data[i].published_parsed.tm_day;*/
-
-        var link = document.createElement("a");
-
-        link.setAttribute("href", data[i].link);
-        var title = document.createTextNode(data[i].title);
-
-        link.appendChild(title);
-
-        feed_card.appendChild(link);
-        feed_card.appendChild(h4);
-        //feed_card.appendChild(blockquote);
-
-        mainContainer.appendChild(feed_card);
-    }
-}
-
-function fetch_feed(argument) {
-    var feed = document.getElementById("feed-input").value;
-    clear_previous_feed();
-
-    get_feed(feed);
-}
 
 function clear_previous_feed() {
     // remove all childs of "feed"
@@ -67,22 +33,6 @@ function clear_previous_feed() {
     }
 }
 
-function get_feed(feeder) {
-    const data = {
-        feed: feeder
-    };
-    fetch('/', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-    }).then(response => {
-        return response.json();
-    }).then(data => {
-        setTimeout(append_feed, 500, data);
-    });
-}
 
 function share(title, link) {
     if (navigator.share) {
@@ -101,7 +51,7 @@ function get_version_info() {
         return response.json();
     }).then(releases => {
         version_ref = document.getElementById("version-info");
-        if (version_ref != null){
+        if (version_ref != null) {
             version_ref.innerHTML = releases[0].name;
         }
         version_ref_nav = document.getElementById("version-info-nav");
@@ -121,3 +71,7 @@ function copyToClip(str) {
     document.execCommand("copy");
     document.removeEventListener("copy", listener);
 };
+
+function select_feed(e) {
+    document.getElementById("fetchfeed").href = "/?filter=" + e.target.value;
+}

@@ -7,6 +7,9 @@
 {% endblock %}
 {% block container %}
 	<center>
+	{% if filterfeed %}
+		<h3>Feed from {{ filterfeed }}</h3>
+	{% endif %}
 	<div id="feed">
 		{% if podcast_feed %}
 			{% for item in podcast_feed %}

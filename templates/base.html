@@ -9,10 +9,14 @@
     <meta name="author" content="Bhupesh Varshney" />
     <meta property="og:title" content="devfeed" />
     
-    <meta name="keywords" content="devtools, feed, devfeed, developers, podcasts, newsletters, tech news">
-    <meta name="description" content="A Tech aggregator for Developers">
-    <meta property="og:description" content="A Tech aggregator for Developers"/>
-    <meta name="twitter:description" content="A Tech aggregator for Developers">
+    <meta name="keywords" content="devtools, defe, feed, devfeed, developers, podcasts, newsletters, tech news">
+
+    <link rel="shortcut icon" href="static/images/icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="static/images/icons/favicon.ico" type="image/x-icon">
+
+    <meta name="description" content="A Tech Aggregator for Developers">
+    <meta property="og:description" content="A Tech Aggregator for Developers"/>
+    <meta name="twitter:description" content="A Tech Aggregator for Developers">
     <meta name="apple-mobile-web-app-status-bar-style" content="#75D608">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -20,12 +24,12 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@bhupeshimself">
     
-    <meta property="og:url" content="" >
-    <!--     <meta property="og:image" content=""/> -->
-    <meta property="og:image:width" content="640" />
-    <meta property="og:image:height" content="360" />
+    <meta property="og:url" content="https://defe-app.herokuapp.com" >
+    <meta property="og:image" content="static/images/icons/android-icon-192x192.png"/>
+    <meta name="twitter:image" content="">
+    <meta property="og:image:width" content="192" />
+    <meta property="og:image:height" content="192" />
     
-    <link rel="shortcut icon" type="image/png" href="static/images/icons/favicon.ico"/>
     <link type="text/css" rel="stylesheet" href="static/css/materialize.min.css"  media="screen,projection"/>
     <link rel="stylesheet" type="text/css" href="static/css/custom.css">
 
@@ -52,15 +56,14 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="screen" />
     <script defer src="https://use.fontawesome.com/releases/v4.7.0/js/all.js"></script>
-    <!--     <meta name="twitter:image" content="">
-    <link rel="shortcut icon" type="image/png" href="images/logo.png"/> -->
+    
     <title>{% block title %}{% endblock %}</title>
   </head>
   <body>
     <nav class="darkmode-ignore">
       <div class="nav-wrapper">
         
-        <a href="#" class="brand-logo">
+        <a href="/" class="brand-logo">
           <img alt="defe Logo" class="responsive-img" style="height: 50px;" src="static/images/logodefe.svg">
         </a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
@@ -93,7 +96,7 @@
       <li><a href="/feedback">Feedback</a></li>
       <li style="background: linear-gradient(135deg, rgba(238,237,30,1) 2%, rgba(184,0,255,1) 100%);" class="divider" tabindex="-1"></li>
       <li><a id="version-info-nav" href="https://github.com/Bhupesh-V/devfeed/releases"></a>
-        <img style="height: 50px;" src="static/images/pwa-light.svg">
+        <img style="height: 50px; padding-top: 14px;" src="static/images/pwa-light.svg">
       </li>
     </ul>
 

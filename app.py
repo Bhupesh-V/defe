@@ -1,48 +1,96 @@
-from flask import Flask, render_template, jsonify, request
+from flask import Flask, render_template, request
 from core import feedcore
-from functools import reduce
+
 
 app = Flask(__name__)
 
 
-@app.route("/", methods=["GET", "POST"])
+@app.route("/", methods=["GET"])
 def feed():
-    if request.method == "GET":
+    filter_feed = request.args.get("filter", default="*", type=str)
+    data_keys = feedcore.read_data("general")
+    data_keys = [item["name"] for item in data_keys]
+    if filter_feed == "*":
         data = feedcore.all_feed(True)
-        data_keys = feedcore.read_data("general")
-        data_keys = [item["name"] for item in data_keys]
         return render_template("general.html", allfeed=data, feeder_sites=data_keys)
     else:
-        service = request.json
-        print(service)
-        data = feedcore.feed(service["feed"])
-        return jsonify(data)
+        for item in feedcore.read_data("general"):
+            if item["name"] == filter_feed:
+                data = feedcore.feed(item["link"])
+                return render_template(
+                    "general.html",
+                    allfeed=data,
+                    filterfeed=filter_feed,
+                    feeder_sites=data_keys,
+                )
 
 
 @app.route("/news", methods=["GET"])
 def news_feed():
-    data = feedcore.news_feed(True)
+    filter_feed = request.args.get("filter", default="*", type=str)
     data_keys = feedcore.read_data("news")
     data_keys = [item["name"] for item in data_keys]
-    return render_template("news.html", news_feed_data=data, feeder_sites=data_keys)
+    if filter_feed == "*":
+        data = feedcore.news_feed(True)
+        return render_template("news.html", news_feed_data=data, feeder_sites=data_keys)
+    else:
+        for item in data_keys:
+            if item["name"] == filter_feed:
+                data = feedcore.feed(item["link"])
+                return render_template(
+                    "news.html",
+                    news_feed_data=data,
+                    feeder_sites=data_keys,
+                    filterfeed=filter_feed,
+                )
 
 
 @app.route("/podcasts", methods=["GET"])
 def podcast():
-    data = feedcore.podcasts_feeds(True)
+    filter_feed = request.args.get("filter", default="*", type=str)
+
     data_keys = feedcore.read_data("podcasts")
     data_keys = [item["name"] for item in data_keys]
-    return render_template("podcast.html", podcast_feed=data, feeder_sites=data_keys)
+
+    if filter_feed == "*":
+        data = feedcore.podcasts_feeds(True)
+        return render_template(
+            "podcast.html", podcast_feed=data, feeder_sites=data_keys
+        )
+    else:
+        for item in data_keys:
+            if item["name"] == filter_feed:
+                data = feedcore.feed(item["link"])
+                return render_template(
+                    "podcast.html",
+                    podcast_feed=data,
+                    feeder_sites=data_keys,
+                    filterfeed=filter_feed,
+                )
 
 
 @app.route("/newsletters", methods=["GET"])
 def newsletter():
-    data = feedcore.newsletters_feeds(True)
+    filter_feed = request.args.get("filter", default="*", type=str)
+
     data_keys = feedcore.read_data("newsletters")
     data_keys = [item["name"] for item in data_keys]
-    return render_template(
-        "newsletter.html", newsletter_feed=data, feeder_sites=data_keys
-    )
+
+    if filter_feed == "*":
+        data = feedcore.newsletters_feeds(True)
+        return render_template(
+            "newsletter.html", newsletter_feed=data, feeder_sites=data_keys
+        )
+    else:
+        for item in data_keys:
+            if item["name"] == filter_feed:
+                data = feedcore.feed(item["link"])
+                return render_template(
+                    "newsletter.html",
+                    newsletter_feed=data,
+                    feeder_sites=data_keys,
+                    filterfeed=filter_feed,
+                )
 
 
 @app.route("/feeders")
@@ -57,7 +105,10 @@ def feeder_sites_info():
         news_sites=news_sites,
         podcasts_sites=podcasts_sites,
         newsletter_feeds=newsletter_feeds,
-        total=len(feed_sites) + len(podcasts_sites) + len(newsletter_feeds) + len(news_sites)
+        total=len(feed_sites)
+        + len(podcasts_sites)
+        + len(newsletter_feeds)
+        + len(news_sites),
     )
 
 
