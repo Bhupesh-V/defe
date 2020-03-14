@@ -21,7 +21,8 @@ def defy_prompt(feed):
     while 1:
         try:
             feed_to_open = str(
-                input(Fore.GREEN + Style.BRIGHT + "Enter Feed Index to open : "))
+                input(Fore.GREEN + Style.BRIGHT + "Enter Feed Index to open : ")
+            )
             print(Style.RESET_ALL)
             print(Style.BRIGHT + "Opening Link in your default browser ...")
             webbrowser.open(feed[int(feed_to_open) - 1].link)

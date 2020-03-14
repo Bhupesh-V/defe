@@ -10,7 +10,7 @@ from core.feed import get_feed, get_latest_feed
 
 
 def read_data(feed_type=None):
-    if feed_type == "podcast":
+    if feed_type == "podcasts":
         podcast_file = os.path.join(os.getcwd(), "core/feeders", "podcasts.json")
         with open(podcast_file) as json_file:
             data = json.load(json_file)
@@ -25,7 +25,7 @@ def read_data(feed_type=None):
         with open(general_file) as json_file:
             data = json.load(json_file)
         return data["general"]
-    elif feed_type == "newsletter":
+    elif feed_type == "newsletters":
         newsletter_file = os.path.join(os.getcwd(), "core/feeders", "newsletters.json")
         with open(newsletter_file) as json_file:
             data = json.load(json_file)
@@ -39,7 +39,7 @@ def get_domain(link):
 
 
 def podcasts_feeds(show_progress=False):
-    podcasts = read_data("podcast")
+    podcasts = read_data("podcasts")
     with ThreadPoolExecutor(max_workers=20) as executor:
         results = list(
             tqdm(
@@ -55,7 +55,7 @@ def podcasts_feeds(show_progress=False):
 
 
 def newsletters_feeds(show_progress=False):
-    newsletters = read_data("newsletter")
+    newsletters = read_data("newsletters")
     with ThreadPoolExecutor(max_workers=20) as executor:
         results = list(
             tqdm(

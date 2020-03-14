@@ -117,9 +117,10 @@ def main():
             defy(item["title"], item.links[1].href)
         defy_prompt(data)
     if args.feed == "feeders":
-        feeds = ["general", "news", "podcast", "newsletter"]
+        feeds = ["general", "news", "podcasts", "newsletters"]
         print(
-            "\n" + Style.BRIGHT + "defe fetches feeds of these popular & lovely sites 😃",
+            Style.BRIGHT
+            + "\ndefe fetches feeds of these popular & lovely sources 😃",
             end="\n\n",
         )
         for f in feeds:
