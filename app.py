@@ -22,6 +22,7 @@ def feed():
                     allfeed=data,
                     filterfeed=filter_feed,
                     feeder_sites=data_keys,
+                    filterfeed_link=item["web"]
                 )
 
 
@@ -34,7 +35,7 @@ def news_feed():
         data = feedcore.news_feed(True)
         return render_template("news.html", news_feed_data=data, feeder_sites=data_keys)
     else:
-        for item in data_keys:
+        for item in feedcore.read_data("news"):
             if item["name"] == filter_feed:
                 data = feedcore.feed(item["link"])
                 return render_template(
@@ -42,13 +43,13 @@ def news_feed():
                     news_feed_data=data,
                     feeder_sites=data_keys,
                     filterfeed=filter_feed,
+                    filterfeed_link=item["web"]
                 )
 
 
 @app.route("/podcasts", methods=["GET"])
 def podcast():
     filter_feed = request.args.get("filter", default="*", type=str)
-
     data_keys = feedcore.read_data("podcasts")
     data_keys = [item["name"] for item in data_keys]
 
@@ -58,7 +59,7 @@ def podcast():
             "podcast.html", podcast_feed=data, feeder_sites=data_keys
         )
     else:
-        for item in data_keys:
+        for item in feedcore.read_data("podcasts"):
             if item["name"] == filter_feed:
                 data = feedcore.feed(item["link"])
                 return render_template(
@@ -66,13 +67,13 @@ def podcast():
                     podcast_feed=data,
                     feeder_sites=data_keys,
                     filterfeed=filter_feed,
+                    filterfeed_link=item["web"]
                 )
 
 
 @app.route("/newsletters", methods=["GET"])
 def newsletter():
     filter_feed = request.args.get("filter", default="*", type=str)
-
     data_keys = feedcore.read_data("newsletters")
     data_keys = [item["name"] for item in data_keys]
 
@@ -82,7 +83,7 @@ def newsletter():
             "newsletter.html", newsletter_feed=data, feeder_sites=data_keys
         )
     else:
-        for item in data_keys:
+        for item in feedcore.read_data("newsletters"):
             if item["name"] == filter_feed:
                 data = feedcore.feed(item["link"])
                 return render_template(
@@ -90,6 +91,7 @@ def newsletter():
                     newsletter_feed=data,
                     feeder_sites=data_keys,
                     filterfeed=filter_feed,
+                    filterfeed_link=item["web"]
                 )
 
 

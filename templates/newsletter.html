@@ -8,7 +8,7 @@
 {% block container %}
 	<center>
 	{% if filterfeed %}
-		<h3>Feed from {{ filterfeed }}</h3>
+		<h3>Feed from <a href="{{ filterfeed_link }}">{{ filterfeed }}</a></h3>
 	{% endif %}
 	<div id="feed">
 		{% if newsletter_feed %}

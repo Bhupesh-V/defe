@@ -3,9 +3,11 @@ function storycount(argument) {
     var ff = document.getElementById("filter-feed");
     var scount = document.createElement("div");
     scount.setAttribute("id", "story-count");
-    scount.innerHTML = feed_cards.length + " stories fetched";
+    scount.innerHTML = feed_cards.length + " stories fetched ✨";
     // attach after div="filter-feed"
-    ff.parentNode.insertBefore(scount, ff.nextSibling);
+    if (ff != null){
+        ff.parentNode.insertBefore(scount, ff.nextSibling);
+    }
 }
 
 function rewrite_summary(argument) {
@@ -73,5 +75,7 @@ function copyToClip(str) {
 };
 
 function select_feed(e) {
-    document.getElementById("fetchfeed").href = "/?filter=" + e.target.value;
+    var curr_location = window.location.pathname;
+    console.log(curr_location);
+    document.getElementById("fetchfeed").href = curr_location + "?filter=" + escape(e.target.value);
 }

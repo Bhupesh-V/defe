@@ -102,3 +102,8 @@ img {
   justify-content: center;
   align-items: center 
 }
+#story-count {
+  text-align: center;
+  font-style: italic;
+  font-weight: bolder;
+}

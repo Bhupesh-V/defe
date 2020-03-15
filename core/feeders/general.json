@@ -49,6 +49,11 @@
 			"name": "CSS Tricks",
 			"link": "https://css-tricks.com/feed/",
 			"web": "https://css-tricks.com"
+		},
+		{
+			"name": "GIGAOM",
+			"link": "https://gigaom.com/feed",
+			"web": "https://gigaom.com/"
 		}
 
 	]

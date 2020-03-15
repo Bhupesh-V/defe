@@ -46,7 +46,7 @@
             "web": "https://testandcode.com/"
         },
         {
-            "name": "StackOverflow Podcast",
+            "name": "The StackOverflow Podcast",
             "link": "https://feeds.simplecast.com/XA_851k3",
             "web": "https://stackoverflow.blog/podcast/"
         },
@@ -71,7 +71,7 @@
             "web": "https://syntax.fm/"
         },
         {
-            "name": "Talk Python",
+            "name": "Talk Python To Me",
             "link": "https://talkpython.fm/episodes/rss",
             "web": "https://talkpython.fm/"
         },
@@ -122,7 +122,7 @@
         },
         {
             "name": "Maintainable",
-            "link": "https://feeds.simplecast.com/7y1CbAbNs",
+            "link": "https://feeds.simplecast.com/7y1CbAbN",
             "web": "https://maintainable.fm/"
         },
         {
