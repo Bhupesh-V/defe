@@ -2,47 +2,58 @@
 	"news": [
 		{
 			"name": "TechCrunch",
-			"link": "https://techcrunch.com/feed/"
+			"link": "https://techcrunch.com/feed/",
+			"web": "https://techcrunch.com/"
 		},
 		{
 			"name": "HackerNews",
-			"link": "https://news.ycombinator.com/rss"
+			"link": "https://news.ycombinator.com/rss",
+			"web": "https://news.ycombinator.com"
 		},
 		{
 			"name": "Tech meme",
-			"link": "https://www.techmeme.com/feed.xml"
+			"link": "https://www.techmeme.com/feed.xml",
+			"web": "https://www.techmeme.com"
 		},
 		{
 			"name": "GeekWire",
-			"link": "https://www.geekwire.com/feed/"
+			"link": "https://www.geekwire.com/feed/",
+			"web": "https://www.geekwire.com"
 		},
 		{
 			"name": "Technology Org",
-			"link": "https://www.technology.org/feed/"
+			"link": "https://www.technology.org/feed/",
+			"web": "https://www.technology.org"
 		},
 		{
 			"name": "Geek.com",
-			"link": "https://www.geek.com/tech/feed/"
+			"link": "https://www.geek.com/tech/feed/",
+			"web": "https://www.geek.com/tech/"
 		},
 		{
 			"name": "ZDNet",
-			"link": "https://www.zdnet.com/rss.xml"
+			"link": "https://www.zdnet.com/rss.xml",
+			"web": "https://www.zdnet.com"
 		},
 		{
 			"name": "MIT Technology Review",
-			"link": "https://www.technologyreview.com/topnews.rss"
+			"link": "https://www.technologyreview.com/topnews.rss",
+			"web": "https://www.technologyreview.com"
 		},
 		{
 			"name": "Gigabit Magazine",
-			"link": "https://www.gigabitmagazine.com/rss.xml"
+			"link": "https://www.gigabitmagazine.com/rss.xml",
+			"web": "https://www.gigabitmagazine.com"
 		},
 		{
 			"name": "Technology Intelligence",
-			"link": "https://www.telegraph.co.uk/technology/rss.xml"
+			"link": "https://www.telegraph.co.uk/technology/rss.xml",
+			"web": "https://www.telegraph.co.uk/technology"
 		},
 		{
 			"name": "PCWorld News",
-			"link": "https://www.pcworld.com/news.rss"
+			"link": "https://www.pcworld.com/news.rss",
+			"web": "https://www.pcworld.com"
 		}
 	]
 }

@@ -2,43 +2,53 @@
 	"general": [
 		{
 			"name": "HackerNoon",
-			"link": "https://hackernoon.com/feed"
+			"link": "https://hackernoon.com/feed",
+			"web": "https://www.hackernoon.com/"
 		},
 		{
 			"name": "Producthunt",
-			"link": "https://www.producthunt.com/feed"
+			"link": "https://www.producthunt.com/feed",
+			"web": "https://www.producthunt.com/"
 		},
 		{
 			"name": "freeCodeCamp",
-			"link":  "https://www.freecodecamp.org/news/rss/"
+			"link": "https://www.freecodecamp.org/news/rss/",
+			"web": "https://www.freecodecamp.org/news/"
 		},
 		{
 			"name": "opensource",
-			"link": "https://opensource.com/feed"
+			"link": "https://opensource.com/feed",
+			"web": "https://opensource.com/"
 		},
 		{
 			"name": "changelog",
-			"link": "https://changelog.com/feed"
+			"link": "https://changelog.com/feed",
+			"web": "https://changelog.com/"
 		},
 		{
 			"name": "itsfoss",
-			"link": "https://itsfoss.com/category/news/feed"
+			"link": "https://itsfoss.com/category/news/feed",
+			"web": "https://itsfoss.com/"
 		},
 		{
 			"name": "thenewstack",
-			"link": "https://thenewstack.io/feed"
+			"link": "https://thenewstack.io/feed",
+			"web": "https://thenewstack.io/"
 		},
 		{
 			"name": "theverge" ,
-			"link": "https://www.theverge.com/tech/rss/index.xml"
+			"link": "https://www.theverge.com/tech/rss/index.xml",
+			"web": "https://www.theverge.com/tech"
 		},
 		{
 			"name": "dev.to",
-			"link": "https://dev.to/feed"
+			"link": "https://dev.to/feed",
+			"web": "https://dev.to/"
 		},
 		{
 			"name": "CSS Tricks",
-			"link": "https://css-tricks.com/feed/"
+			"link": "https://css-tricks.com/feed/",
+			"web": "https://css-tricks.com"
 		}
 
 	]

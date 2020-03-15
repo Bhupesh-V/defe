@@ -14,7 +14,7 @@
 			<span class="white-text badge blue" data-badge-caption="">{{ feed_sites|length }}</span><br>
 			<ul class="collection">
 				{% for item in feed_sites %}
-					<li class="collection-item"><a href="{{ item['link'] }}">{{ item["name"] }}</a></li>
+					<li class="collection-item"><a href="{{ item['web'] }}">{{ item["name"] }}</a></li>
 				{% endfor %}
 			</ul>
 		{% endif %}
@@ -23,7 +23,7 @@
 			<span class="white-text badge blue" data-badge-caption="">{{ podcasts_sites|length }}</span><br>
 			<ul class="collection">
 				{% for item in podcasts_sites %}
-					<li class="collection-item"><a href="{{ item['link'] }}">{{ item["name"] }}</a></li>
+					<li class="collection-item"><a href="{{ item['web'] }}">{{ item["name"] }}</a></li>
 				{% endfor %}
 			</ul>
 		{% endif %}
@@ -32,7 +32,7 @@
 			<span class="white-text badge blue" data-badge-caption="">{{ newsletter_feeds|length }}</span><br>
 			<ul class="collection">
 				{% for item in newsletter_feeds %}
-					<li class="collection-item"><a href="{{ item['link'] }}">{{ item["name"] }}</a></li>
+					<li class="collection-item"><a href="{{ item['web'] }}">{{ item["name"] }}</a></li>
 				{% endfor %}
 			</ul>
 		{% endif %}
@@ -41,7 +41,7 @@
 			<span class="white-text badge blue" data-badge-caption="">{{ news_sites|length }}</span><br>
 			<ul class="collection">
 				{% for item in news_sites %}
-					<li class="collection-item"><a href="{{ item['link'] }}">{{ item["name"] }}</a></li>
+					<li class="collection-item"><a href="{{ item['web'] }}">{{ item["name"] }}</a></li>
 				{% endfor %}
 			</ul>
 		{% endif %}

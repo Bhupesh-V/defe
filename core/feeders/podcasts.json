@@ -2,67 +2,83 @@
     "podcasts":[
         {
             "name": "Software Enginerring Daily",
-            "link": "https://softwareengineeringdaily.com/feed/podcast/"
+            "link": "https://softwareengineeringdaily.com/feed/podcast/",
+            "web": "https://softwareengineeringdaily.com"
         },
         {
             "name": "Simple Programmer",
-            "link": "http://simpleprogrammer.libsyn.com/rss"
+            "link": "http://simpleprogrammer.libsyn.com/rss",
+            "web": "http://simpleprogrammer.libsyn.com"
         },
         {
             "name": "Software Enginerring Radio",
-            "link": "http://feeds.feedburner.com/se-radio"
+            "link": "http://feeds.feedburner.com/se-radio",
+            "web": "https://www.se-radio.net/"
         },
         {
             "name": "The Changelog",
-            "link": "https://changelog.com/podcast/feed"
+            "link": "https://changelog.com/podcast/feed",
+            "web": "https://changelog.com"
         },
         {
             "name": "Full Stack Radio",
-            "link": "https://rss.simplecast.com/podcasts/279/rss"
+            "link": "https://rss.simplecast.com/podcasts/279/rss",
+            "web": "http://www.fullstackradio.com/"
         },
         {
             "name": "codenewbie",
-            "link": "http://feeds.codenewbie.org/cnpodcast.xml"
+            "link": "http://feeds.codenewbie.org/cnpodcast.xml",
+            "web": "https://www.codenewbie.org/"
         },
         {
             "name": "Coding Blocks",
-            "link": "https://www.codingblocks.net/feed/podcast/"
+            "link": "https://www.codingblocks.net/feed/podcast/",
+            "web": "https://www.codingblocks.net"
         },
         {
             "name": "Coder Radio",
-            "link": "https://feeds.fireside.fm/coder/rss"
+            "link": "https://feeds.fireside.fm/coder/rss",
+            "web": "https://coder.show/"
         },
         {
             "name": "Test and Code",
-            "link": "https://feeds.fireside.fm/testandcode/rss"
+            "link": "https://feeds.fireside.fm/testandcode/rss",
+            "web": "https://testandcode.com/"
         },
         {
-            "name": "Stackoverflow Podcast",
-            "link": "https://feeds.simplecast.com/XA_851k3"
+            "name": "StackOverflow Podcast",
+            "link": "https://feeds.simplecast.com/XA_851k3",
+            "web": "https://stackoverflow.blog/podcast/"
         },
         {
             "name": "Weekly Dev Tips",
-            "link": "https://feeds.simplecast.com/W8bGHhCA"
+            "link": "https://feeds.simplecast.com/W8bGHhCA",
+            "web": "https://www.weeklydevtips.com/"
         },
         {
             "name": "cpp.chat",
-            "link": "https://feeds.fireside.fm/cppchat/rss"
+            "link": "https://feeds.fireside.fm/cppchat/rss",
+            "web": "https://cpp.chat/"
         },
         {
             "name": "devpath.fm",
-            "link": "https://feeds.transistor.fm/devpath-fm"
+            "link": "https://feeds.transistor.fm/devpath-fm",
+            "web": "https://www.devpath.fm/"
         },
         {
             "name": "synatx.fm",
-            "link": "https://feed.syntax.fm/rss"
+            "link": "https://feed.syntax.fm/rss",
+            "web": "https://syntax.fm/"
         },
         {
             "name": "Talk Python",
-            "link": "https://talkpython.fm/episodes/rss"
+            "link": "https://talkpython.fm/episodes/rss",
+            "web": "https://talkpython.fm/"
         },
         {
             "name": "Developer Tea",
-            "link": "https://rss.simplecast.com/podcasts/363/rss"
+            "link": "https://rss.simplecast.com/podcasts/363/rss",
+            "web": "https://developertea.simplecast.fm/"
         }
 
     ]

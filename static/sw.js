@@ -1,30 +1,39 @@
-self.addEventListener("fetch", fetchEvent => {
-  fetchEvent.respondWith(
-    caches.match(fetchEvent.request).then(res => {
-      return res || fetch(fetchEvent.request)
-    })
-  )
-})
+const staticAssets = [
+    "static/script.js",
+    "static/css/custom.css",
+];
 
-const staticdevfeed = "defe-site-v1"
-const assets = [
-  "/",
-  "/static/script.js",
-  "/static/js/materialize.js",
-  "/static/js/materialize.min.js",
-  "/static/css/materialize.css",
-  "/static/css/materialize.min.css",
-  "/static/css/custom.css",
-  "/static/images/email.png",
-  "/static/images/telegram.png",
-  "/static/images/twitter.png",
-]
+self.addEventListener('install', async event => {
+    const cache = await caches.open('defe-static');
+    cache.addAll(staticAssets);
+});
 
-self.addEventListener("install", installEvent => {
-  console.log('[ServiceWorker] Install');
-  installEvent.waitUntil(
-    caches.open(staticdevfeed).then(cache => {
-      cache.addAll(assets)
-    })
-  )
-})
+self.addEventListener('fetch', event => {
+    const {request} = event;
+    const url = new URL(request.url);
+    if(url.origin === location.origin) {
+        event.respondWith(cacheData(request));
+    } else {
+        event.respondWith(networkFirst(request));
+    }
+
+});
+
+async function cacheData(request) {
+    const cachedResponse = await caches.match(request);
+    return cachedResponse || fetch(request);
+}
+
+async function networkFirst(request) {
+    const cache = await caches.open('defe-dynamic');
+
+    try {
+        const response = await fetch(request);
+        cache.put(request, response.clone());
+        return response;
+    } catch (error){
+        return await cache.match(request);
+
+    }
+
+}
