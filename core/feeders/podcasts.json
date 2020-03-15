@@ -79,6 +79,61 @@
             "name": "Developer Tea",
             "link": "https://rss.simplecast.com/podcasts/363/rss",
             "web": "https://developertea.simplecast.fm/"
+        },
+        {
+            "name": "Programming Throwdown",
+            "link": "http://feeds.feedburner.com/ProgrammingThrowdown",
+            "web": "https://www.programmingthrowdown.com/"
+        },
+        {
+            "name": "Software Defined Talk",
+            "link": "https://www.softwaredefinedtalk.com/rss",
+            "web": "https://www.softwaredefinedtalk.com/"
+        },
+        {
+            "name": "Software Defined Talk",
+            "link": "https://feeds.feedburner.com/SoftSkillsEngineering",
+            "web": "https://softskills.audio/"
+        },
+        {
+            "name": "Eat Sleep Code",
+            "link": "http://feeds.feedburner.com/esc-podcast",
+            "web": "https://player.fm/series/eat-sleep-code-podcast"
+        },
+        {
+            "name": "The Cynical Developer",
+            "link": "https://cynicaldeveloper.com/feed/podcast",
+            "web": "https://cynicaldeveloper.com/"
+        },
+        {
+            "name": "Ladybug Podcast",
+            "link": "https://pinecast.com/feed/ladybug-podcast",
+            "web": "https://ladybug.dev/"
+        },
+        {
+            "name": "JAMstack Radio",
+            "link": "https://www.heavybit.com/category/library/podcasts/jamstack-radio/feed",
+            "web": "https://www.heavybit.com/library/podcasts/jamstack-radio/"
+        },
+        {
+            "name": "Code[ish]",
+            "link": "https://www.heroku.com/podcasts/codeish.rss",
+            "web": "https://www.heroku.com/podcasts/codeish"
+        },
+        {
+            "name": "Maintainable",
+            "link": "https://feeds.simplecast.com/7y1CbAbNs",
+            "web": "https://maintainable.fm/"
+        },
+        {
+            "name": "Software Engineering Unlocked",
+            "link": "https://feeds.simplecast.com/K1_mv0CJ",
+            "web": "https://www.software-engineering-unlocked.com/"
+        },
+        {
+            "name": "Self-Taught Or Not",
+            "link": "https://feeds.transistor.fm/self-taught-or-not",
+            "web": "http://selftaughtornot.com/"
         }
 
     ]
