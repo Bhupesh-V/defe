@@ -107,3 +107,11 @@ img {
   font-style: italic;
   font-weight: bolder;
 }
+.dropdown-content li>a, .dropdown-content li>span {
+  color: white;
+  font-weight: bold;
+}
+.dropdown-content {
+  background-color: black;
+  
+}

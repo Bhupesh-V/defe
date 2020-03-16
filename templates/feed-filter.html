@@ -1,9 +1,9 @@
 <div class="container">
   {% block feeders %}
     <div id="filter-feed">
-      <label class="darkmode-ignore" for="feed-input">Filter Feed</label>
-      <input class="input" id="feed-input" list="filter" placeholder="Filter By Website" >
-      <select id="filter" onchange="select_feed(event)">
+      <label class="darkmode-ignore" for="feed-input" list="filter" >Filter Feed</label>
+
+      <select id="filter" onchange="select_feed(event)" class='dropdown-content'>
       {% for feeder in feeder_sites %}
         <option value="{{ feeder }}">{{ feeder }}</option>
       {% endfor %}
