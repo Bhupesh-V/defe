@@ -19,9 +19,9 @@
 							<div class="card-content white-text">
 								<a class="card-title" href="{{ item['link']}}">{{ item["title"] }}</a>
 								{% if item['feeder_site'] %}
-									<a href="//{{ item['feeder_site'] }}">
-										<span id="feeder-site">{{ item["feeder_site"] }}</span>
-									</a>
+										<span id="feeder-site">
+                      <a style="color: yellowhref="//{{ item['feeder_site'] }}">{{ item["feeder_site"] }}</a>
+                    </span>
 								{% endif %}
 							</div>
 						</div>
