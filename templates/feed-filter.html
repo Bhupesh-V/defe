@@ -2,12 +2,12 @@
   {% block feeders %}
     <div id="filter-feed">
       <label class="darkmode-ignore" for="feed-input">Filter Feed</label>
-      <input class="input" id="feed-input" list="filter" placeholder="Filter By Website" onchange="select_feed(event)">
-      <datalist id="filter">
+      <input class="input" id="feed-input" list="filter" placeholder="Filter By Website" >
+      <select id="filter" onchange="select_feed(event)">
       {% for feeder in feeder_sites %}
-        <option value="{{ feeder }}">
+        <option value="{{ feeder }}">{{ feeder }}</option>
       {% endfor %}
-      </datalist>
+      </select>
         <a class="waves-effect waves-light btn" type="button" id="fetchfeed">Filter</a>
   {% endblock %}
     </div>
