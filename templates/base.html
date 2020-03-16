@@ -105,8 +105,8 @@
       </div>
     </nav>
     <ul class="sidenav" id="mobile-demo">
-      <li><a class='dropdown-trigger' data-target='dropdown2' href="/">Feed</a></li>
-      <ul id='dropdown2' class='dropdown-content'>
+      <li><a class="dropdown-trigger" data-target="dropdown2" href="/">Feed</a></li>
+      <ul id="dropdown2" class="dropdown-content">
         <li><a href="/">General</a></li>
         <li><a href="/news">News</a></li>
         <li><a href="/podcasts">Podcasts</a></li>
@@ -134,7 +134,7 @@
           <i class="large material-icons">menu</i>
         </a>
         <ul>
-          <li><a onclick="topFunction()"class="btn-floating red"><i class="material-icons">keyboard_arrow_up</i></a></li>
+          <li><a onclick="topFunction()" class="btn-floating red"><i class="material-icons">keyboard_arrow_up</i></a></li>
           <li><a onclick="switch_mode()" class="btn-floating yellow darken-1"><i class="material-icons">brightness_4</i></a></li>
           <li><a id="sharedefeIcon" onclick="share('devfeed', 'https://defe-app.herokuapp.com')" class="btn-floating green"><i class="material-icons">share</i></a></li>
         </ul>
@@ -186,25 +186,28 @@
       </script>
       <script>
       window.onload = function() {
-          registerSW();
           setTimeout(storycount, 200);
           setTimeout(rewrite_summary, 200);
           setTimeout(rewrite_description, 200);
           get_version_info();
       };      
       var input = document.getElementById("feed-input");
-      input.addEventListener("keyup", function(event) {
-          if (event.keyCode === 13) {
-              event.preventDefault();
-              document.getElementById("fetchfeed").click();
-          }
-      });
+        if(input != null){
+            input.addEventListener("keyup", function(event) {
+                if (event.keyCode === 13) {
+                    event.preventDefault();
+                    document.getElementById("fetchfeed").click();
+                }
+            });
+        }
       var filter_by = document.getElementById("feed-input");
-      filter_by.addEventListener("input", function(event) {
-          if (filter_by.value == "Reddit") {
-              show_subreddits();
-          }
-      });
+        if(filter_by != null){
+          filter_by.addEventListener("input", function(event) {
+              if (filter_by.value == "Reddit") {
+                  show_subreddits();
+              }
+          });
+        }
       </script>
     </body>
   </html>
