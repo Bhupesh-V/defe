@@ -8,6 +8,16 @@
   "background_color": "#36393F",
   "icons": [
     {
+     "src": "images/icons/icon-512x512.png",
+     "sizes": "512x512",
+     "type": "image/png"
+    },
+    {
+     "src": "images/icons/icon-384x384.png",
+     "sizes": "384x384",
+     "type": "image/png"
+    },
+    {
      "src": "images/icons/android-icon-36x36.png",
      "sizes": "36x36",
      "type": "image/png",
