@@ -3,7 +3,10 @@ import json
 import os
 import random
 from concurrent.futures import ThreadPoolExecutor
-from urllib.parse import urlparse
+try:
+    from urllib.parse import urlparse
+except ImportError:
+     from urlparse import urlparse
 
 from tqdm import tqdm
 from core.feed import get_feed, get_latest_feed
@@ -93,7 +96,7 @@ def news_feed(show_progress=False):
     return feed_result
 
 
-def feed(feeder_site_url: str):
+def feed(feeder_site_url):
     return get_feed(feeder_site_url)
 
 

@@ -2,7 +2,7 @@ from diskcache import Cache
 import feedparser
 
 
-def __manage_cache(url: str):
+def __manage_cache(url):
     cache = Cache(".feedcache")
     try:
         if url in cache:
@@ -17,9 +17,9 @@ def __manage_cache(url: str):
     return data
 
 
-def get_feed(url: str):
+def get_feed(url):
     return __manage_cache(url).entries
 
 
-def get_latest_feed(url: str):
+def get_latest_feed(url):
     return __manage_cache(url).entries[0]
