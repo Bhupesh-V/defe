@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content="width=device-width,height=device-height, initial-scale=1.0, shrink-to-fit=yes">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1.0, shrink-to-fit=yes">
     <meta name="author" content="Bhupesh Varshney" />
     <meta name="description" content="A Tech Aggregator for Developers">
     <meta name="keywords" content="devtools, defe, feed, devfeed, developers, podcasts, newsletters, tech news">
@@ -68,7 +68,17 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="screen" />
     <script defer src="https://use.fontawesome.com/releases/v4.7.0/js/all.js"></script>
-    
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function() {
+          navigator.serviceWorker.register("sw.js").then(function(registration) {
+            console.log("ServiceWorker registration successful with scope: ", registration.scope);
+          }).catch(function(err) {
+            console.log("ServiceWorker registration failed: ", err);
+          });
+        });
+      }
+	  </script>
     <title>{% block title %}{% endblock %}</title>
   </head>
   <body>
@@ -80,8 +90,8 @@
         </a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-          <li><a class='dropdown-trigger' data-target='dropdown1' href="/">Feed</a></li>
-          <ul id='dropdown1' class='dropdown-content'>
+          <li><a class="dropdown-trigger" data-target="dropdown1" href="/">Feed</a></li>
+          <ul id="dropdown1" class="dropdown-content">
             <li><a href="/">General</a></li>
             <li><a href="/news">News</a></li>
             <li><a href="/podcasts">Podcasts</a></li>
@@ -108,7 +118,7 @@
       <li><a href="/feedback">Feedback</a></li>
       <li style="background: linear-gradient(135deg, rgba(238,237,30,1) 2%, rgba(184,0,255,1) 100%);" class="divider" tabindex="-1"></li>
       <li><a id="version-info-nav" href="https://github.com/Bhupesh-V/devfeed/releases"></a>
-        <img style="height: 50px; padding-top: 14px;" src="static/images/pwa-light.svg">
+        <img alt="PWA Logo" style="height: 50px; padding-top: 14px;" src="static/images/pwa-light.svg">
       </li>
     </ul>
 
