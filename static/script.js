@@ -79,3 +79,32 @@ function select_feed(e) {
     console.log(curr_location);
     document.getElementById("fetchfeed").href = curr_location + "?filter=" + escape(e.target.value);
 }
+
+let pwaInstalled = localStorage.getItem('pwaInstalled') == 'yes'
+if (window.matchMedia('(display-mode: standalone)').matches) {
+	localStorage.setItem('pwaInstalled', 'yes')
+	pwaInstalled = true
+}
+if (window.navigator.standalone === true) {
+	localStorage.setItem('pwaInstalled', 'yes')
+	pwaInstalled = true
+}
+let deferredPrompt = null
+window.addEventListener('beforeinstallprompt', (e) => {
+	deferredPrompt = e
+})
+async function installPWA() {
+	if (deferredPrompt) {
+		deferredPrompt.prompt()
+		deferredPrompt.userChoice.then(({
+			outcome
+		}) => {
+			if (outcome === 'accepted') {
+				console.log('Your PWA has been installed')
+			} else {
+				console.log('User chose to not install your PWA')
+			}
+			deferredPrompt = null
+		})
+	}
+}
