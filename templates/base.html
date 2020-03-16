@@ -71,7 +71,7 @@
     <script>
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", function() {
-          navigator.serviceWorker.register("sw.js").then(function(registration) {
+          navigator.serviceWorker.register("static/sw.js").then(function(registration) {
             console.log("ServiceWorker registration successful with scope: ", registration.scope);
           }).catch(function(err) {
             console.log("ServiceWorker registration failed: ", err);
@@ -191,17 +191,7 @@
           setTimeout(rewrite_summary, 200);
           setTimeout(rewrite_description, 200);
           get_version_info();
-      };
-      async function registerSW() {
-          if ('serviceWorker' in navigator) {
-              try {
-                  await navigator.serviceWorker.register("static/sw.js");
-              } catch (e) {
-                  //SW registration failed, oh no :(
-              }
-          }
-      }
-      
+      };      
       var input = document.getElementById("feed-input");
       input.addEventListener("keyup", function(event) {
           if (event.keyCode === 13) {

@@ -1,6 +1,10 @@
 const staticAssets = [
     "static/script.js",
     "static/css/custom.css",
+    "/about",
+    "/feeders",
+    "/feedback",
+    "/support"
 ];
 
 self.addEventListener('install', async event => {
