@@ -14,6 +14,8 @@ def __manage_cache(url):
         cache.close()
     except ValueError:
         pass
+    except Exception as e:
+        pass
     return data
 
 
