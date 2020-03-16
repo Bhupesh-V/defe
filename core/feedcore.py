@@ -43,7 +43,7 @@ def get_domain(link):
 
 def podcasts_feeds(show_progress=False):
     podcasts = read_data("podcasts")
-    with ThreadPoolExecutor(max_workers=20) as executor:
+    with ThreadPoolExecutor(max_workers=27) as executor:
         results = list(
             tqdm(
                 executor.map(get_latest_feed, [key["link"] for key in podcasts]),
