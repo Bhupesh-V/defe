@@ -19,6 +19,17 @@ self.addEventListener('fetch', event => {
 
 });
 
+self.addEventListener('install', function(event) {
+  // Perform install steps
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then(function(cache) {
+        console.log('Opened cache');
+        return cache.addAll(staticAssets);
+      })
+  );
+});
+
 async function cacheData(request) {
     const cachedResponse = await caches.match(request);
     return cachedResponse || fetch(request);
