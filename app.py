@@ -4,7 +4,10 @@ from core import feedcore
 
 app = Flask(__name__)
 
-
+@app.route('/sw.js')
+def sw():
+    return app.send_static_file('sw.js')
+  
 @app.route("/general", methods=["GET"])
 def general():
     filter_feed = request.args.get("filter", default="*", type=str)
