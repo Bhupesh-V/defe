@@ -5,8 +5,8 @@ from core import feedcore
 app = Flask(__name__)
 
 
-@app.route("/", methods=["GET"])
-def feed():
+@app.route("/general", methods=["GET"])
+def general():
     filter_feed = request.args.get("filter", default="*", type=str)
     data_keys = feedcore.read_data("general")
     data_keys = [item["name"] for item in data_keys]
@@ -114,9 +114,9 @@ def feeder_sites_info():
     )
 
 
-@app.route("/about")
-def about():
-    return render_template("about.html")
+@app.route("/")
+def home():
+    return render_template("home.html")
 
 
 @app.route("/support")

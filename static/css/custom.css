@@ -44,6 +44,9 @@ img {
   #sharedefeIcon {
     display: inline-block;
   }
+  .responsive-img {
+    margin-top: 0px;
+  }
 }
 .patreon-logo {
   height: 50px;
@@ -114,4 +117,10 @@ img {
 .dropdown-content {
   background-color: black;
   
+}
+.select-wrapper input.select-dropdown:focus {
+    border-bottom: 1px solid #d68382;
+}
+.select-dropdown.dropdown-content li:hover {
+    background: linear-gradient(135deg, rgba(238,237,30,1) 2%, rgba(184,0,255,1) 100%);
 }
