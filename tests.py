@@ -2,22 +2,35 @@ import unittest
 from core import feedcore
 from app import app
 
+app.testing = True
 
-# class WebAppTest(unittest.TestCase):
-#     # function to set up testing connection
 
-#     def set_up(self):
-#         app.config["TESTING"] = True
-#         app.config["DEBUG"] = True
-#         self.app = app.test_client()
-#         self.assertEqual(app.debug, False)
+class WebAppTests(unittest.TestCase):
 
-#     def tear_down(self):
-#         pass
+    def test_main_page(self):
+        with app.test_client() as client:
+            response = client.get('/', follow_redirects=True)
+            self.assertEqual(response.status_code, 200)
 
-#     def test_about(self):
-#         response = self.app.get("/about", follow_redirects=True)
-#         self.assertEqual(response.status_code, 200)
+    def test_feeders(self):
+        with app.test_client() as client:
+            response = client.get('/feeders', follow_redirects=True)
+            self.assertEqual(response.status_code, 200)
+
+    def test_support(self):
+        with app.test_client() as client:
+            response = client.get('/support', follow_redirects=True)
+            self.assertEqual(response.status_code, 200)
+
+    def test_feedback(self):
+        with app.test_client() as client:
+            response = client.get('/feedback', follow_redirects=True)
+            self.assertEqual(response.status_code, 200)
+
+    def test_service_worker(self):
+        with app.test_client() as client:
+            response = client.get('/sw.js', follow_redirects=True)
+            self.assertEqual(response.status_code, 200)
 
 
 class TestRunGetDomain(unittest.TestCase):

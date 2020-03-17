@@ -22,8 +22,8 @@ setuptools.setup(
         "Tracker": "https://github.com/Bhupesh-V/defe/issues",
     },
     package_data={
-        # include any *.json files found in the "feeders" package
-        "core": ["static/*.json"],
+        # include any *.json files found in the "core" module
+        "core": ["feeders/*.json"],
     },
     install_requires=["feedparser", "colorama", "tqdm", "diskcache"],
     classifiers=[
