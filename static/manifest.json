@@ -4,6 +4,7 @@
   "description": "A Tech feed Aggregator for Developers",
   "display": "standalone",
   "start_url": "/",
+  "scope": "/",
   "theme_color": "#36393F",
   "background_color": "#36393F",
   "icons": [

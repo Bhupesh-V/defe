@@ -1,5 +1,13 @@
 var CACHE_NAME = 'defe-site-cache-v1';
 
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.0.0/workbox-sw.js');
+
+if (workbox) {
+  console.log(`Yay! Workbox is loaded 🎉`);
+} else {
+  console.log(`Boo! Workbox didn't load 😬`);
+}
+
 const staticAssets = [
     "/",
     "static/script.js",
