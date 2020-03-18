@@ -50,38 +50,27 @@ self.addEventListener('fetch', function(event) {
       })
     );
 });
-// self.addEventListener('install', async event => {
-//     const cache = await caches.open('defe-static');
-//     cache.addAll(staticAssets);
-// });
 
-// self.addEventListener('fetch', event => {
-//     const {request} = event;
-//     const url = new URL(request.url);
-//     if(url.origin === location.origin) {
-//         event.respondWith(cacheData(request));
-//     } else {
-//         event.respondWith(networkFirst(request));
-//     }
+let deferredPrompt;
+const btnAdd = document.querySelector('#btnAdd');
 
-// });
+window.addEventListener('beforeinstallprompt', (e) => {
+  console.log('beforeinstallprompt event fired');
+  e.preventDefault();
+  deferredPrompt = e;
+  btnAdd.style.visibility = 'visible';
+});
 
-
-// async function cacheData(request) {
-//     const cachedResponse = await caches.match(request);
-//     return cachedResponse || fetch(request);
-// }
-
-// async function networkFirst(request) {
-//     const cache = await caches.open('defe-dynamic');
-
-//     try {
-//         const response = await fetch(request);
-//         cache.put(request, response.clone());
-//         return response;
-//     } catch (error){
-//         return await cache.match(request);
-
-//     }
-
-// }
+btnAdd.addEventListener('click', (e) => {
+  btnAdd.style.visibility = 'hidden';
+  deferredPrompt.prompt();
+  deferredPrompt.userChoice
+    .then((choiceResult) => {
+      if (choiceResult.outcome === 'accepted') {
+        console.log('User accepted the A2HS prompt');
+      } else {
+        console.log('User dismissed the A2HS prompt');
+      }
+      deferredPrompt = null;
+    });
+});
