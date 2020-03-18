@@ -47,6 +47,9 @@ img {
   .responsive-img {
     margin-top: 0px;
   }
+  .sidenav li > a:hover {
+    background: transparent;
+  }
 }
 .patreon-logo {
   height: 50px;
