@@ -10,6 +10,11 @@ def sw():
     return app.send_static_file('sw.js')
 
 
+@app.route('/robots.txt')
+def robots():
+    return app.send_static_file('robots.txt')
+
+
 @app.route("/general", methods=["GET"])
 def general():
     filter_feed = request.args.get("filter", default="*", type=str)

@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /general/
+Disallow: /podcasts/
+Disallow: /news/
+Disallow: /newsletters/
