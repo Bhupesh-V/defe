@@ -92,10 +92,10 @@
         <ul class="right hide-on-med-and-down">
           <li><a class="dropdown-trigger" data-target="dropdown1" href="/">Feed</a></li>
           <ul id="dropdown1" class="dropdown-content">
-            <li><a href="/general">General</a></li>
-            <li><a href="/news">News</a></li>
-            <li><a href="/podcasts">Podcasts</a></li>
-            <li><a href="/newsletters">Newsletters</a></li>
+            <li><a href="/general" onclick="display_loading()">General</a></li>
+            <li><a href="/news" onclick="display_loading()">News</a></li>
+            <li><a href="/podcasts" onclick="display_loading()">Podcasts</a></li>
+            <li><a href="/newsletters" onclick="display_loading()">Newsletters</a></li>
           </ul>
           <li><a href="/feeders">Feeders</a></li>
           <li><a href="/support">Support</a></li>
@@ -103,14 +103,23 @@
         </ul>
       </div>
     </nav>
+    <div class="progress" style="
+      position: sticky;
+      top: 17.5%;
+      display: none;
+      background-color: #d7897d;
+      z-index: 5;
+      margin: 0;">
+        <div style="background-color: #eeeb21;" class="indeterminate"></div>
+    </div>
     <ul class="sidenav" id="mobile-demo">
       <li><a href="/">Home</a></li>
       <li><a class="dropdown-trigger" data-target="dropdown2" href="/">Feed</a></li>
       <ul id="dropdown2" class="dropdown-content">
-        <li><a href="/general">General</a></li>
-        <li><a href="/news">News</a></li>
-        <li><a href="/podcasts">Podcasts</a></li>
-        <li><a href="/newsletters">Newsletters</a></li>
+        <li><a href="/general" onclick="display_loading()">General</a></li>
+        <li><a href="/news" onclick="display_loading()">News</a></li>
+        <li><a href="/podcasts" onclick="display_loading()">Podcasts</a></li>
+        <li><a href="/newsletters" onclick="display_loading()">Newsletters</a></li>
       </ul>
       <li><a href="/feeders">Feeders</a></li>
       <li><a href="/support">Support</a></li>
@@ -120,6 +129,7 @@
         <img class="btn" id="btnAdd" alt="PWA Logo" style="height: 50px; padding-top: 14px;" src="static/images/pwa-light.svg">
       </li>
     </ul>
+
 
     {% block filterfeed %}
     {% endblock %}

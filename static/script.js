@@ -5,7 +5,7 @@ function storycount(argument) {
     scount.setAttribute("id", "story-count");
     scount.innerHTML = feed_cards.length + " stories fetched ✨";
     // attach after div="filter-feed"
-    if (ff != null){
+    if (ff != null) {
         ff.parentNode.insertBefore(scount, ff.nextSibling);
     }
 }
@@ -82,14 +82,19 @@ function select_feed(e) {
 
 let pwaInstalled = localStorage.getItem('pwaInstalled') == 'yes'
 if (window.matchMedia('(display-mode: standalone)').matches) {
-	localStorage.setItem('pwaInstalled', 'yes')
-	pwaInstalled = true
+    localStorage.setItem('pwaInstalled', 'yes')
+    pwaInstalled = true
 }
 if (window.navigator.standalone === true) {
-	localStorage.setItem('pwaInstalled', 'yes')
-	pwaInstalled = true
+    localStorage.setItem('pwaInstalled', 'yes')
+    pwaInstalled = true
 }
 let deferredPrompt = null
 window.addEventListener('beforeinstallprompt', (e) => {
-	deferredPrompt = e
+    deferredPrompt = e
 })
+
+function display_loading() {
+    var loading_element = document.querySelector(".progress");
+    loading_element.style.display = "block";
+}
