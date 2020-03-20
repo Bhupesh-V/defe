@@ -1,5 +1,6 @@
 feedparser==5.2.1
 Flask==1.1.1
+gunicorn
 colorama
 diskcache
 python-dotenv
