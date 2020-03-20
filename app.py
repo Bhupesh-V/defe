@@ -5,6 +5,16 @@ from core import feedcore
 app = Flask(__name__)
 
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('error.html', not_found=404)
+
+
+@app.errorhandler(500)
+def server_error(e):
+    return render_template('error.html', server_error=500)
+
+
 @app.route('/sw.js')
 def sw():
     return app.send_static_file('sw.js')

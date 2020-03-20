@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}
+	defe - Tech Feed Aggregator for developers
+{% endblock %}
+{% block container %}
+	<center>
+	{% if server_error %}
+		<h3>I'm Sorry, I will fix this</h3>
+		<img src="https://media.giphy.com/media/1EghTrigJJhq8/giphy.gif">
+	{% elif not_found %}
+		<h3>You lost ??</h3>
+		<img src="https://media.giphy.com/media/8m4R4pvViWtRzbloJ1/giphy.gif">
+	{% endif %}
+	</center>
+{% endblock %}

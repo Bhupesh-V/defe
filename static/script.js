@@ -1,3 +1,26 @@
+let deferredPrompt;
+const btnAdd = document.querySelector('#btnAdd');
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  console.log('beforeinstallprompt event fired');
+  e.preventDefault();
+  deferredPrompt = e;
+  btnAdd.style.visibility = 'visible';
+});
+
+btnAdd.addEventListener('click', (e) => {
+  btnAdd.style.visibility = 'hidden';
+  deferredPrompt.prompt();
+  deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === 'accepted') {
+        console.log('User accepted the A2HS prompt');
+      } else {
+        console.log('User dismissed the A2HS prompt');
+      }
+      deferredPrompt = null;
+    });
+});
+
 function storycount(argument) {
     feed_cards = document.getElementsByClassName("feed-card");
     var ff = document.getElementById("filter-feed");
@@ -76,23 +99,8 @@ function copyToClip(str) {
 
 function select_feed(e) {
     var curr_location = window.location.pathname;
-    console.log(curr_location);
     document.getElementById("fetchfeed").href = curr_location + "?filter=" + escape(e.target.value);
 }
-
-let pwaInstalled = localStorage.getItem('pwaInstalled') == 'yes'
-if (window.matchMedia('(display-mode: standalone)').matches) {
-    localStorage.setItem('pwaInstalled', 'yes')
-    pwaInstalled = true
-}
-if (window.navigator.standalone === true) {
-    localStorage.setItem('pwaInstalled', 'yes')
-    pwaInstalled = true
-}
-let deferredPrompt = null
-window.addEventListener('beforeinstallprompt', (e) => {
-    deferredPrompt = e
-})
 
 function display_loading() {
     var loading_element = document.querySelector(".progress");
