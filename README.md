@@ -10,11 +10,22 @@
 </p>
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/bhupesh-v/defe?logo=GitHub)
+![PyPI](https://img.shields.io/pypi/v/defe)
 ![GitHubLicense](https://img.shields.io/github/license/bhupesh-v/defe)
+![PyPI - Status](https://img.shields.io/pypi/status/defe)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/39926b7f89ab404d9d5a491fe2778db6)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Bhupesh-V/defe&amp;utm_campaign=Badge_Grade)
 
 
-
+## ✨ Features
+- PWA
+- Share Stories
+- Minimal UI
+- Command Line Interface
+- Feeds from more than 100 sources categorized in
+	- 📰 News
+	- 🎙️ Podcasts 
+	- 📧 Newsletters 
+	- _... And Much More_
 
 ## 🔮 Installation
 
@@ -29,7 +40,7 @@ pip install defe
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/Animesh-Ghosh/TripMoksha-Task.git
+git clone https://github.com/Bhupesh-V/defe.git
 ```
 2. Create virtual environment:
 ```bash
