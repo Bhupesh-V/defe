@@ -9,27 +9,30 @@ except ImportError:
      from urlparse import urlparse
 
 from tqdm import tqdm
-from core.feed import get_feed, get_latest_feed
+try:
+    from core.feed import get_feed, get_latest_feed
+except ModuleNotFoundError:
+    from defe.core.feed import get_feed, get_latest_feed
 
 
 def read_data(feed_type=None):
     if feed_type == "podcasts":
-        podcast_file = os.path.join(os.getcwd(), "core/feeders", "podcasts.json")
+        podcast_file = os.path.join(os.path.dirname(__file__), "feeders", "podcasts.json")
         with open(podcast_file) as json_file:
             data = json.load(json_file)
         return data["podcasts"]
     elif feed_type == "news":
-        news_file = os.path.join(os.getcwd(), "core/feeders", "news.json")
+        news_file = os.path.join(os.path.dirname(__file__), "feeders", "news.json")
         with open(news_file) as json_file:
             data = json.load(json_file)
         return data["news"]
     elif feed_type == "general":
-        general_file = os.path.join(os.getcwd(), "core/feeders", "general.json")
+        general_file = os.path.join(os.path.dirname(__file__), "feeders", "general.json")
         with open(general_file) as json_file:
             data = json.load(json_file)
         return data["general"]
     elif feed_type == "newsletters":
-        newsletter_file = os.path.join(os.getcwd(), "core/feeders", "newsletters.json")
+        newsletter_file = os.path.join(os.path.dirname(__file__), "feeders", "newsletters.json")
         with open(newsletter_file) as json_file:
             data = json.load(json_file)
         return data["newsletters"]

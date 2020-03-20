@@ -7,7 +7,10 @@ import sys
 
 from colorama import Fore, Style, init
 
-from core import feedcore
+try:
+    from defe.core import feedcore
+except ImportError:
+    from core import feedcore
 
 from .formatter import defy, defy_prompt
 
