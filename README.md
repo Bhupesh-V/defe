@@ -25,7 +25,8 @@
 	- 📰 News
 	- 🎙️ Podcasts 
 	- 📧 Newsletters 
-	- _... And Much More_
+	
+	 _... And Much More_
 
 ## 🔮 Installation
 
