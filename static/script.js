@@ -2,22 +2,22 @@ let deferredPrompt;
 const btnAdd = document.querySelector('#btnAdd');
 
 window.addEventListener('beforeinstallprompt', (e) => {
-  console.log('beforeinstallprompt event fired');
-  e.preventDefault();
-  deferredPrompt = e;
-  btnAdd.style.visibility = 'visible';
+    console.log('beforeinstallprompt event fired');
+    e.preventDefault();
+    deferredPrompt = e;
+    btnAdd.style.visibility = 'visible';
 });
 
 btnAdd.addEventListener('click', (e) => {
-  btnAdd.style.visibility = 'hidden';
-  deferredPrompt.prompt();
-  deferredPrompt.userChoice.then((choiceResult) => {
-      if (choiceResult.outcome === 'accepted') {
-        console.log('User accepted the A2HS prompt');
-      } else {
-        console.log('User dismissed the A2HS prompt');
-      }
-      deferredPrompt = null;
+    btnAdd.style.visibility = 'hidden';
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+            console.log('User accepted the A2HS prompt');
+        } else {
+            console.log('User dismissed the A2HS prompt');
+        }
+        deferredPrompt = null;
     });
 });
 
@@ -105,4 +105,29 @@ function select_feed(e) {
 function display_loading() {
     var loading_element = document.querySelector(".progress");
     loading_element.style.display = "block";
+}
+
+function media_notify(podcast, author, podcast_url) {
+/*    console.log(podcast);
+    var podcast_list = [];
+    var pod = document.querySelector("audio");
+    for (var podcast_ele = 0; podcast_ele < pod.link; podcast_ele++) {
+        podcast_list.push(podcast_ele[0].src);
+    }*/
+    // When audio starts playing...
+    if ('mediaSession' in navigator) {
+        navigator.mediaSession.metadata = new MediaMetadata({
+            title: podcast,
+            artist: author
+        });
+
+/*        navigator.mediaSession.setActionHandler('play', function() {});
+        navigator.mediaSession.setActionHandler('pause', function() {});
+        navigator.mediaSession.setActionHandler('previoustrack', function(podcast_list) {
+            current_podcast = podcast_list.indexOf(podcast_url);
+            index = (index - 1 + playlist.length) % playlist.length;
+            playAudio();
+        });
+        navigator.mediaSession.setActionHandler('nexttrack', function() {})*/
+    }
 }
