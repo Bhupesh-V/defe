@@ -7,22 +7,22 @@ app = Flask(__name__)
 
 @app.errorhandler(404)
 def page_not_found(e):
-    return render_template('error.html', not_found=404)
+    return render_template("error.html", not_found=404)
 
 
 @app.errorhandler(500)
 def server_error(e):
-    return render_template('error.html', server_error=500)
+    return render_template("error.html", server_error=500)
 
 
-@app.route('/sw.js')
+@app.route("/sw.js")
 def sw():
-    return app.send_static_file('sw.js')
+    return app.send_static_file("sw.js")
 
 
-@app.route('/robots.txt')
+@app.route("/robots.txt")
 def robots():
-    return app.send_static_file('robots.txt')
+    return app.send_static_file("robots.txt")
 
 
 @app.route("/general", methods=["GET"])
@@ -42,7 +42,7 @@ def general():
                     allfeed=data,
                     filterfeed=filter_feed,
                     feeder_sites=data_keys,
-                    filterfeed_link=item["web"]
+                    filterfeed_link=item["web"],
                 )
 
 
@@ -63,7 +63,7 @@ def news_feed():
                     news_feed_data=data,
                     feeder_sites=data_keys,
                     filterfeed=filter_feed,
-                    filterfeed_link=item["web"]
+                    filterfeed_link=item["web"],
                 )
 
 
@@ -87,7 +87,7 @@ def podcast():
                     podcast_feed=data,
                     feeder_sites=data_keys,
                     filterfeed=filter_feed,
-                    filterfeed_link=item["web"]
+                    filterfeed_link=item["web"],
                 )
 
 
@@ -111,7 +111,7 @@ def newsletter():
                     newsletter_feed=data,
                     feeder_sites=data_keys,
                     filterfeed=filter_feed,
-                    filterfeed_link=item["web"]
+                    filterfeed_link=item["web"],
                 )
 
 

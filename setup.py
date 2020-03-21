@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="defe",
-    version="1.0.0",
+    version="0.0.1",
     author="Bhupesh Varshney",
     author_email="varshneybhupesh@gmail.com",
     description="A Tech feed Aggregator for Developers.",

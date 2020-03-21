@@ -1,0 +1,16 @@
+site_name: defe
+site_url: https://defe-app.herokuapp.com/
+repo_url: https://github.com/Bhupesh-V/defe
+site_author: Bhupesh Varshney
+site_description: defe Documentation
+copyright: © 2020, Bhupesh Varshney
+nav:
+    - Documentation: index.md
+    - Installation: installation.md
+    - Usage: usage.md
+    - Changelog: changelog.md
+    - About: about.md
+theme: readthedocs
+markdown_extensions:
+    - toc:
+        permalink: "#"

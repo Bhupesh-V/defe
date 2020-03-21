@@ -3,12 +3,14 @@ import json
 import os
 import random
 from concurrent.futures import ThreadPoolExecutor
+
 try:
     from urllib.parse import urlparse
 except ImportError:
-     from urlparse import urlparse
+    from urlparse import urlparse
 
 from tqdm import tqdm
+
 try:
     from core.feed import get_feed, get_latest_feed
 except ModuleNotFoundError:
@@ -17,7 +19,9 @@ except ModuleNotFoundError:
 
 def read_data(feed_type=None):
     if feed_type == "podcasts":
-        podcast_file = os.path.join(os.path.dirname(__file__), "feeders", "podcasts.json")
+        podcast_file = os.path.join(
+            os.path.dirname(__file__), "feeders", "podcasts.json"
+        )
         with open(podcast_file) as json_file:
             data = json.load(json_file)
         return data["podcasts"]
@@ -27,12 +31,16 @@ def read_data(feed_type=None):
             data = json.load(json_file)
         return data["news"]
     elif feed_type == "general":
-        general_file = os.path.join(os.path.dirname(__file__), "feeders", "general.json")
+        general_file = os.path.join(
+            os.path.dirname(__file__), "feeders", "general.json"
+        )
         with open(general_file) as json_file:
             data = json.load(json_file)
         return data["general"]
     elif feed_type == "newsletters":
-        newsletter_file = os.path.join(os.path.dirname(__file__), "feeders", "newsletters.json")
+        newsletter_file = os.path.join(
+            os.path.dirname(__file__), "feeders", "newsletters.json"
+        )
         with open(newsletter_file) as json_file:
             data = json.load(json_file)
         return data["newsletters"]
@@ -44,9 +52,9 @@ def get_domain(link):
     return domain
 
 
-def podcasts_feeds(show_progress=False):
+def podcasts_feeds(show_progress=False, workers=27):
     podcasts = read_data("podcasts")
-    with ThreadPoolExecutor(max_workers=27) as executor:
+    with ThreadPoolExecutor(max_workers=workers) as executor:
         results = list(
             tqdm(
                 executor.map(get_latest_feed, [key["link"] for key in podcasts]),
@@ -60,9 +68,9 @@ def podcasts_feeds(show_progress=False):
     return results
 
 
-def newsletters_feeds(show_progress=False):
+def newsletters_feeds(show_progress=False, workers=30):
     newsletters = read_data("newsletters")
-    with ThreadPoolExecutor(max_workers=30) as executor:
+    with ThreadPoolExecutor(max_workers=workers) as executor:
         results = list(
             tqdm(
                 executor.map(get_latest_feed, [key["link"] for key in newsletters]),
@@ -76,9 +84,9 @@ def newsletters_feeds(show_progress=False):
     return results
 
 
-def news_feed(show_progress=False):
+def news_feed(show_progress=False, workers=20):
     news = read_data("news")
-    with ThreadPoolExecutor(max_workers=20) as executor:
+    with ThreadPoolExecutor(max_workers=workers) as executor:
         results = list(
             tqdm(
                 executor.map(get_feed, [key["link"] for key in news]),
@@ -103,9 +111,9 @@ def feed(feeder_site_url):
     return get_feed(feeder_site_url)
 
 
-def all_feed(show_progress=False):
+def all_feed(show_progress=False, workers=20):
     general = read_data("general")
-    with ThreadPoolExecutor(max_workers=20) as executor:
+    with ThreadPoolExecutor(max_workers=workers) as executor:
         results = list(
             tqdm(
                 executor.map(get_feed, [key["link"] for key in general]),
