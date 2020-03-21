@@ -9,9 +9,10 @@
   </p>
 </p>
 
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/bhupesh-v/defe?logo=GitHub)
-![PyPI](https://img.shields.io/pypi/v/defe)
-![GitHubLicense](https://img.shields.io/github/license/bhupesh-v/defe)
+[![defe](https://github.com/Bhupesh-V/defe/workflows/defe/badge.svg?branch=master)](https://github.com/Bhupesh-V/defe/actions)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/bhupesh-v/defe?logo=GitHub)](https://github.com/Bhupesh-V/defe/releases)
+[![PyPI](https://img.shields.io/pypi/v/defe)](https://pypi.org/project/defe/)
+[![GitHubLicense](https://img.shields.io/github/license/bhupesh-v/defe)](https://github.com/Bhupesh-V/defe/blob/master/LICENSE)
 ![PyPI - Status](https://img.shields.io/pypi/status/defe)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/39926b7f89ab404d9d5a491fe2778db6)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Bhupesh-V/defe&amp;utm_campaign=Badge_Grade)
 
@@ -25,8 +26,7 @@
 	- 📰 News
 	- 🎙️ Podcasts 
 	- 📧 Newsletters 
-	
-	 _... And Much More_
+- ... _And Much More_
 
 ## 🔮 Installation
 
