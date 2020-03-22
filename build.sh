@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # the following script generates defe package
 
 

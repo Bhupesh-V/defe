@@ -20,8 +20,6 @@ pprint.pprint(f.feeders("newsletters"))
 
 ```
 
-See [demo.py](https://github.com/codeclassroom/CodeRunner/blob/master/demo.py) for a more descriptive usage.
-
 
 Methods available in class `feed`.
 

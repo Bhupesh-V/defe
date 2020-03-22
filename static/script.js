@@ -22,26 +22,26 @@ btnAdd.addEventListener('click', (e) => {
 });
 
 function storycount(argument) {
-    feed_cards = document.getElementsByClassName("feed-card");
+    var feed_cards = document.getElementsByClassName("feed-card");
     var ff = document.getElementById("filter-feed");
     var scount = document.createElement("div");
     scount.setAttribute("id", "story-count");
     scount.innerHTML = feed_cards.length + " stories fetched ✨";
     // attach after div="filter-feed"
-    if (ff != null) {
+    if (ff !== null) {
         ff.parentNode.insertBefore(scount, ff.nextSibling);
     }
 }
 
 function rewrite_summary(argument) {
-    fs = document.getElementsByClassName("feed-summary");
+    var fs = document.getElementsByClassName("feed-summary");
     for (var i = 0; i < fs.length; i++) {
         fs[i].innerHTML = fs[i].textContent;
     }
 }
 
 function rewrite_description(argument) {
-    fs = document.getElementsByClassName("feed-description");
+    var fs = document.getElementsByClassName("feed-description");
     for (var i = 0; i < fs.length; i++) {
         fs[i].innerHTML = fs[i].textContent;
     }
@@ -51,36 +51,36 @@ function rewrite_description(argument) {
 function clear_previous_feed() {
     // remove all childs of "feed"
     const feed_div = document.getElementById("feed");
-    feed_div.innerHTML = '';
+    feed_div.innerHTML = "";
     const story_count = document.getElementById("story-count");
-    if (story_count != null) {
-        story_count.innerHTML = '';
+    if (story_count !== null) {
+        story_count.innerHTML = "";
     }
 }
 
 
-function share(title, link) {
+function share(feed_title, feed_link) {
     if (navigator.share) {
         navigator.share({
-                title: title,
-                url: link,
+                title: feed_title,
+                url: feed_link,
             })
-            .then(() => console.log('Successful Share'))
-            .catch((error) => console.log('Error sharing', error));
+            .then(() => console.log("Successful Share"))
+            .catch((error) => console.log("Error sharing", error));
     }
 }
 
 function get_version_info() {
-    const fetchPromise = fetch('https://api.github.com/repos/Bhupesh-V/defe/releases');
+    const fetchPromise = fetch("https://api.github.com/repos/Bhupesh-V/defe/releases");
     fetchPromise.then(response => {
         return response.json();
     }).then(releases => {
-        version_ref = document.getElementById("version-info");
-        if (version_ref != null) {
+        var version_ref = document.getElementById("version-info");
+        if (version_ref !== null) {
             version_ref.innerHTML = releases[0].name;
         }
-        version_ref_nav = document.getElementById("version-info-nav");
-        if (version_ref_nav != null) {
+        var version_ref_nav = document.getElementById("version-info-nav");
+        if (version_ref_nav !== null) {
             version_ref_nav.innerHTML = "Version " + releases[0].name;
         }
     });
@@ -95,7 +95,7 @@ function copyToClip(str) {
     document.addEventListener("copy", listener);
     document.execCommand("copy");
     document.removeEventListener("copy", listener);
-};
+}
 
 function select_feed(e) {
     var curr_location = window.location.pathname;

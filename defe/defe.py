@@ -9,7 +9,7 @@ except ImportError:
 
 
 class NoSuchFeederCategory(Exception):
-    """Custom Exception for Invalid feeder"""
+    """Custom Exception for Invalid feeder."""
 
 
 class feed:
