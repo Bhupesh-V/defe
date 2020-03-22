@@ -1,4 +1,4 @@
-name: defe
+name: build
 
 on:
   push:
