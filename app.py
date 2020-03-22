@@ -44,6 +44,7 @@ def general():
                     feeder_sites=data_keys,
                     filterfeed_link=item["web"],
                 )
+    return render_template("error.html", server_error=500)
 
 
 @app.route("/news", methods=["GET"])
@@ -65,6 +66,7 @@ def news_feed():
                     filterfeed=filter_feed,
                     filterfeed_link=item["web"],
                 )
+    return render_template("error.html", server_error=500)
 
 
 @app.route("/podcasts", methods=["GET"])
@@ -89,6 +91,7 @@ def podcast():
                     filterfeed=filter_feed,
                     filterfeed_link=item["web"],
                 )
+    return render_template("error.html", server_error=500)
 
 
 @app.route("/newsletters", methods=["GET"])
@@ -113,6 +116,7 @@ def newsletter():
                     filterfeed=filter_feed,
                     filterfeed_link=item["web"],
                 )
+    return render_template("error.html", server_error=500)
 
 
 @app.route("/feeders")

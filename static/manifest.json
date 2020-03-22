@@ -1,7 +1,7 @@
 {
   "name": "defe",
   "short_name": "defe",
-  "description": "A Tech feed Aggregator for Developers",
+  "description": "A Tech Feed Aggregator for Developers & Tech Enthusiasts",
   "display": "standalone",
   "start_url": "/",
   "scope": "/",

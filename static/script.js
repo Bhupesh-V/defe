@@ -71,7 +71,7 @@ function share(title, link) {
 }
 
 function get_version_info() {
-    const fetchPromise = fetch('https://api.github.com/repos/Bhupesh-V/tutorialdb/releases');
+    const fetchPromise = fetch('https://api.github.com/repos/Bhupesh-V/defe/releases');
     fetchPromise.then(response => {
         return response.json();
     }).then(releases => {

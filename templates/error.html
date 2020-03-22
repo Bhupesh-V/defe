@@ -5,11 +5,16 @@
 {% block container %}
 	<center>
 	{% if server_error %}
-		<h3>I'm Sorry, I will fix this</h3>
-		<img src="https://media.giphy.com/media/1EghTrigJJhq8/giphy.gif">
+		<h3>I'm Sorry 😟, I will fix this</h3>
+		<img alt="Kermit Panic 500 Error" src="https://media.giphy.com/media/1EghTrigJJhq8/giphy.gif">
+		<br>
+		<h4>Report this if the problem still persists after an hour</h4>
+		<br>
+		<a href="https://twitter.com/intent/tweet?screen_name=bhupeshimself&ref_src=twsrc%5Etfw" class="twitter-mention-button" data-size="large"data-related="bhupeshimself" data-show-count="false">Tweet to @bhupeshimself</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 	{% elif not_found %}
-		<h3>You lost ??</h3>
-		<img src="https://media.giphy.com/media/8m4R4pvViWtRzbloJ1/giphy.gif">
+		<h3>Kermit Says its 404, You lost ?</h3>
+		<img alt="Kermit Lost" src="https://media.giphy.com/media/8m4R4pvViWtRzbloJ1/giphy.gif">
 	{% endif %}
 	</center>
 {% endblock %}

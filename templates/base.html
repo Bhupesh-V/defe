@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1.0, shrink-to-fit=yes">
     <meta name="author" content="Bhupesh Varshney" />
-    <meta name="description" content="A Tech Aggregator for Developers">
-    <meta name="keywords" content="devtools, defe, feed, devfeed, developers, podcasts, newsletters, tech news">
+    <meta name="description" content="A Tech Feed Aggregator for Developers & Tech Enthusiasts">
+    <meta name="keywords" content="defe, devfeed, tech, devtools, developers, podcasts, newsletters, tech news, tutorials">
 
     <!-- Apple Meta Info -->
     <meta name="apple-mobile-web-app-status-bar-style" content="#36393F">
@@ -16,18 +16,18 @@
     
     <!-- Twitter Meta Info -->
     <meta name="twitter:title" content="defe">
-    <meta name="twitter:description" content="A Tech Aggregator for Developers">
+    <meta name="twitter:description" content="A Tech Feed Aggregator for Developers & Tech Enthusiasts">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@bhupeshimself">
     
     <!-- og meta info -->
     <meta property="og:title" content="defe" />
-    <meta property="og:description" content="A Tech Aggregator for Developers"/>
+    <meta property="og:description" content="A Tech Feed Aggregator for Developers & Tech Enthusiasts"/>
     <meta property="og:url" content="https://defe-app.herokuapp.com" >
     <meta property="og:image" content="static/images/icons/android-icon-192x192.png"/>
-    <meta name="twitter:image" content="">
-    <meta property="og:image:width" content="192" />
-    <meta property="og:image:height" content="192" />
+    <meta name="twitter:image" content="static/images/header-defe.png">
+    <meta property="og:image:width" content="640" />
+    <meta property="og:image:height" content="360" />
     
     <!-- Favicon -->
     <link rel="icon" href="static/images/icons/favicon-32x32.png" sizes="32x32">
@@ -40,7 +40,7 @@
     <!-- PWA Manifest -->
     <link rel="manifest" href="static/manifest.json">
 
-    <!-- PWA Icons -->
+    <!-- Apple Specific PWA Icons -->
     <link rel="apple-touch-icon-precomposed" href="static/images/icons/apple-icon-precomposed.png">
     <link rel="apple-touch-icon" sizes="57x57" href="static/images/icons/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="static/images/icons/apple-icon-60x60.png">
@@ -51,17 +51,20 @@
     <link rel="apple-touch-icon" sizes="144x144" href="static/images/icons/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="static/images/icons/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="static/images/icons/apple-icon-180x180.png">
+
+    <meta name="theme-color" content="#36393F">
     
-<!--     <link rel="icon" type="image/png" sizes="192x192"  href="static/images/icons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="static/images/icons/favicon-32x32.png">
+    <!-- <link rel="icon" type="image/png" sizes="192x192"  href="static/images/icons/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="96x96" href="static/images/icons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="static/images/icons/favicon-16x16.png">
-    <meta name="msapplication-TileColor" content="#ffffff"> -->
+    <link rel="icon" type="image/png" sizes="16x16" href="static/images/icons/favicon-16x16.png"> -->
+
+    <!-- Microsoft Sepecific Icons -->
+    <meta name="msapplication-TileColor" content="#36393F">
     <meta name="msapplication-TileImage" content="static/images/icons/ms-icon-70x70.png">
     <meta name="msapplication-TileImage" content="static/images/icons/ms-icon-144x144.png">
     <meta name="msapplication-TileImage" content="static/images/icons/ms-icon-150x150.png">
     <meta name="msapplication-TileImage" content="static/images/icons/ms-icon-310x310.png">
-    <meta name="theme-color" content="#36393F">
+    <meta name="application-name" content="defe" />
 
 
     <!-- Scripts -->
@@ -126,7 +129,7 @@
       <li><a href="/support">Support</a></li>
       <li><a href="/feedback">Feedback</a></li>
       <li style="background: linear-gradient(135deg, rgba(238,237,30,1) 2%, rgba(184,0,255,1) 100%);" class="divider" tabindex="-1"></li>
-      <li><a id="version-info-nav" href="https://github.com/Bhupesh-V/devfeed/releases"></a>
+      <li><a id="version-info-nav" href="https://github.com/Bhupesh-V/defe/releases"></a>
         <img id="btnAdd" alt="PWA Logo" style="height: 50px; padding-top: 14px;" src="static/images/pwa-light.svg">
       </li>
     </ul>
@@ -209,14 +212,6 @@
                     document.getElementById("fetchfeed").click();
                 }
             });
-        }
-      var filter_by = document.getElementById("feed-input");
-        if(filter_by != null){
-          filter_by.addEventListener("input", function(event) {
-              if (filter_by.value == "Reddit") {
-                  show_subreddits();
-              }
-          });
         }
       </script>
     </body>
