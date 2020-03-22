@@ -9,13 +9,18 @@
   </p>
 </p>
 
-[![defe](https://github.com/Bhupesh-V/defe/workflows/defe/badge.svg?branch=master)](https://github.com/Bhupesh-V/defe/actions)
+[![build](https://github.com/Bhupesh-V/defe/workflows/build/badge.svg?branch=master)](https://github.com/Bhupesh-V/defe/actions)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/bhupesh-v/defe?logo=GitHub)](https://github.com/Bhupesh-V/defe/releases)
 [![PyPI](https://img.shields.io/pypi/v/defe)](https://pypi.org/project/defe/)
 [![GitHubLicense](https://img.shields.io/github/license/bhupesh-v/defe)](https://github.com/Bhupesh-V/defe/blob/master/LICENSE)
 ![PyPI - Status](https://img.shields.io/pypi/status/defe)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/39926b7f89ab404d9d5a491fe2778db6)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Bhupesh-V/defe&amp;utm_campaign=Badge_Grade)
 
+  <p align="center">
+    <sub>Built with ❤︎ by
+      <a href="https://github.com/Bhupesh-V">Bhupesh Varshney</a>
+    </sub>
+  </p>
 
 ## ✨ Features
 - PWA
@@ -26,7 +31,31 @@
 	- 📰 News
 	- 🎙️ Podcasts 
 	- 📧 Newsletters 
-- ... _And Much More_
+ ... _And Much More_
+
+## :rainbow: Demo 
+### CLI
+
+<p align="center">
+<img height="500px" src="https://drive.google.com/uc?export=view&id=10JeY6x6Qyrikr9bLQZoX16UQrXZcztpM">
+</p>
+
+### :package: Package
+You can use the defe package to build bots :robot:
+```python
+
+from defe import defe
+import pprint
+
+f = defe.feed()
+
+pprint.pprint(f.news(3))
+pprint.pprint(f.feeders("newsletters"))
+
+```
+
+See [Dcoumetation](https://defe.readthedocs.io/en/latest/) for more.
+
 
 ## 🔮 Installation
 
