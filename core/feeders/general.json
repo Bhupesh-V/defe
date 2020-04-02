@@ -54,6 +54,36 @@
 			"name": "GIGAOM",
 			"link": "https://gigaom.com/feed",
 			"web": "https://gigaom.com/"
+		},
+		{
+			"name": "ITNEXT",
+			"link": "https://itnext.io/feed",
+			"web": "https://itnext.io/"
+		},
+		{
+			"name": "The Next Web",
+			"link": "https://thenextweb.com/feed",
+			"web": "https://thenextweb.com/"
+		},
+		{
+			"name": "DZone",
+			"link": "http://feeds.dzone.com/home",
+			"web": "https://dzone.com/"
+		},
+		{
+			"name": "design shack",
+			"link": "http://feedpress.me/designshack",
+			"web": "https://designshack.net/"
+		},
+		{
+			"name": "codeburst.io",
+			"link": "https://codeburst.io/feed",
+			"web": "https://codeburst.io"
+		},
+		{
+			"name": "Smashing Magazine",
+			"link": "https://www.smashingmagazine.com/feed",
+			"web": "https://www.smashingmagazine.com"
 		}
 
 	]
