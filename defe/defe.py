@@ -1,4 +1,4 @@
-"""defe package"""
+"""defe package."""
 
 try:
     from defe.core import feedcore

@@ -1,4 +1,4 @@
-"""defe CLI"""
+"""defe CLI."""
 
 import argparse
 import sys
