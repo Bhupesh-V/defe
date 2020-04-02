@@ -13,12 +13,12 @@ class cache:
             else:
                 parsed_feed = feedparser.parse(url)
                 data = parsed_feed
-                # cache expires in 1hr
+                # cache expires in 30 mins
                 self.feedCache.add(url, parsed_feed, expire=1800)
             self.feedCache.close()
         except ValueError:
             pass
-        except Exception as e:
+        except Exception:
             pass
         return data
 

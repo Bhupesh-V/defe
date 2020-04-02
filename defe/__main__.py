@@ -5,12 +5,14 @@ import sys
 
 from colorama import Fore, Style, init
 
+from . import __version__
+from .formatter import defy, defy_prompt
+
 try:
     from defe.core import feedcore
 except ImportError:
     from core import feedcore
 
-from .formatter import defy, defy_prompt
 
 contact = """
 
@@ -56,12 +58,16 @@ def home():
     """
     )
     print(
-        Fore.GREEN + Style.BRIGHT + "A Tech feed Aggregator for Developers.", end="\n"
+        Fore.GREEN
+        + Style.BRIGHT
+        + "A Tech feed Aggregator for Developers & Tech Enthusiasts",
+        end="\n",
     )
+    print(Fore.LIGHTBLUE_EX + "> ", end="")
     print(
         Fore.YELLOW
         + Style.BRIGHT
-        + "Tutorials, News, Podcasts & Newsletters at one place",
+        + "Tutorials, News, Podcasts & Newsletters all at one place",
         end="\n\n",
     )
     print(Style.BRIGHT + "Welcome to defe 👋", end="\n")
@@ -74,8 +80,11 @@ def main():
     parser = argparse.ArgumentParser(
         prog="defe",
         formatter_class=argparse.RawDescriptionHelpFormatter,
-        description="A Tech feed aggregator for developers",
+        description="A Tech feed Aggregator for Developers & Tech Enthusiasts",
         epilog=contact,
+    )
+    parser.add_argument(
+        "-v", "--version", action="version", version="%(prog)s {0}".format(__version__)
     )
     parser.add_argument("feed", type=str, help="Feed Category")
     parser.add_argument(
@@ -123,8 +132,7 @@ def main():
     if args.feed == "feeders":
         feeds = ["general", "news", "podcasts", "newsletters"]
         print(
-            Style.BRIGHT + "\ndefe fetches feeds of these popular & lovely sources 😃",
-            end="\n\n",
+            Style.BRIGHT + "\ndefe fetches feeds of these sources 😃", end="\n\n",
         )
         for f in feeds:
             print("\n" + Fore.BLUE + Style.BRIGHT + f.capitalize(), end=" ")

@@ -2,7 +2,24 @@ import unittest
 from core import feedcore
 from app import app
 
+# import urllib.request
+
 app.testing = True
+
+# HEADERS = {"User-Agent": "Mozilla/5.0"}
+
+
+# class TestFeeders(unittest.TestCase):
+#     def test_general_feeders(self):
+#         data = feedcore.read_data("general")
+#         for item in data:
+#             try:
+#                 req = urllib.request.Request(item["link"], headers=HEADERS)
+#                 with urllib.request.urlopen(req, timeout=4) as response:
+#                     response.read()
+#                     print(item["link"])
+#             except urllib.error.HTTPError as e:
+#                 print(e, item["link"])
 
 
 class WebAppTests(unittest.TestCase):

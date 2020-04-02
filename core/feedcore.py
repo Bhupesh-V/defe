@@ -60,7 +60,9 @@ def fetcher(category, latest=False, show_progress=False, workers=27):
         if latest:
             results = list(
                 tqdm(
-                    executor.map(feeddata.get_latest_feed, [key["link"] for key in data]),
+                    executor.map(
+                        feeddata.get_latest_feed, [key["link"] for key in data]
+                    ),
                     desc="Fetching Feeders",
                     total=len(data),
                     disable=show_progress,
