@@ -1,7 +1,4 @@
-"""
-defe CLI
-====================================
-"""
+"""defe CLI"""
 
 import argparse
 import sys
@@ -118,7 +115,10 @@ def main():
         data = feedcore.podcasts_feeds()
         for item in data[: args.max_feed_count]:
             print(Fore.RED + Style.BRIGHT + str(data.index(item) + 1), end=". ")
-            defy(item["title"], item.links[1].href)
+            if item:
+                defy(item["title"], item.links[1].href)
+            else:
+                pass
         defy_prompt(data)
     if args.feed == "feeders":
         feeds = ["general", "news", "podcasts", "newsletters"]

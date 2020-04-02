@@ -4,17 +4,18 @@ import os
 import random
 from concurrent.futures import ThreadPoolExecutor
 
+from tqdm import tqdm
+
 try:
     from urllib.parse import urlparse
 except ImportError:
     from urlparse import urlparse
 
-from tqdm import tqdm
 
 try:
-    from core.feed import get_feed, get_latest_feed
+    from core.feed import cache
 except ModuleNotFoundError:
-    from defe.core.feed import get_feed, get_latest_feed
+    from defe.core.feed import cache
 
 
 def read_data(feed_type=None):
@@ -52,52 +53,50 @@ def get_domain(link):
     return domain
 
 
-def podcasts_feeds(show_progress=False, workers=27):
-    podcasts = read_data("podcasts")
+def fetcher(category, latest=False, show_progress=False, workers=27):
+    data = read_data(category)
+    feeddata = cache()
     with ThreadPoolExecutor(max_workers=workers) as executor:
-        results = list(
-            tqdm(
-                executor.map(get_latest_feed, [key["link"] for key in podcasts]),
-                desc="Fetching Feeders",
-                total=len(podcasts),
-                disable=show_progress,
-                leave=False,
+        if latest:
+            results = list(
+                tqdm(
+                    executor.map(feeddata.get_latest_feed, [key["link"] for key in data]),
+                    desc="Fetching Feeders",
+                    total=len(data),
+                    disable=show_progress,
+                    leave=False,
+                )
             )
-        )
+        else:
+            results = list(
+                tqdm(
+                    executor.map(feeddata.get_feed, [key["link"] for key in data]),
+                    desc="Fetching Feeders",
+                    total=len(data),
+                    disable=show_progress,
+                    leave=False,
+                )
+            )
 
     return results
+
+
+def podcasts_feeds(show_progress=False, workers=27):
+    result = fetcher("podcasts", True, show_progress, workers)
+
+    return result
 
 
 def newsletters_feeds(show_progress=False, workers=30):
-    newsletters = read_data("newsletters")
-    with ThreadPoolExecutor(max_workers=workers) as executor:
-        results = list(
-            tqdm(
-                executor.map(get_latest_feed, [key["link"] for key in newsletters]),
-                desc="Fetching Feeders",
-                total=len(newsletters),
-                disable=show_progress,
-                leave=False,
-            )
-        )
+    result = fetcher("newsletters", True, show_progress, workers)
 
-    return results
+    return result
 
 
 def news_feed(show_progress=False, workers=20):
-    news = read_data("news")
-    with ThreadPoolExecutor(max_workers=workers) as executor:
-        results = list(
-            tqdm(
-                executor.map(get_feed, [key["link"] for key in news]),
-                desc="Fetching Feeders",
-                total=len(news),
-                disable=show_progress,
-                leave=False,
-            )
-        )
+    result = fetcher("news", False, show_progress, workers)
 
-    feed_result = [i for i in itertools.chain.from_iterable(results)]
+    feed_result = [i for i in itertools.chain.from_iterable(result)]
 
     random.shuffle(feed_result)
 
@@ -108,23 +107,14 @@ def news_feed(show_progress=False, workers=20):
 
 
 def feed(feeder_site_url):
-    return get_feed(feeder_site_url)
+    feeddata = cache()
+    return feeddata.get_feed(feeder_site_url)
 
 
 def all_feed(show_progress=False, workers=20):
-    general = read_data("general")
-    with ThreadPoolExecutor(max_workers=workers) as executor:
-        results = list(
-            tqdm(
-                executor.map(get_feed, [key["link"] for key in general]),
-                desc="Fetching Feeders",
-                total=len(general),
-                disable=show_progress,
-                leave=False,
-            )
-        )
+    result = fetcher("general", False, show_progress, workers)
 
-    feed_result = [i for i in itertools.chain.from_iterable(results)]
+    feed_result = [i for i in itertools.chain.from_iterable(result)]
 
     random.shuffle(feed_result)
 

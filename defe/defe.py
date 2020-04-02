@@ -1,7 +1,5 @@
-"""
-defe package
-====================================
-"""
+"""defe package"""
+
 try:
     from defe.core import feedcore
 except ImportError:
@@ -9,13 +7,13 @@ except ImportError:
 
 
 class NoSuchFeederCategory(Exception):
+
     """Custom Exception for Invalid feeder."""
 
 
 class feed:
     def __init__(self, progress=True):
-        """
-        Args:
+        """Args
             - progress
             - workers
         """

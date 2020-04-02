@@ -13,48 +13,58 @@
 	<div id="feed">
 		{% if podcast_feed %}
 			{% for item in podcast_feed %}
-				<div class="feed-card z-depth-5">
-					<div class="row card-panel darkmode-ignore">
-						<div class="card blue-grey darken-1">
-							<div class="card-content white-text">
-								<a class="card-title" href="{{ item['link']}}">{{ item["title"] }}</a>
-								{% if item['author'] %}
-									<span style="color: yellow; font-weight: bold;" id="feeder-site">
-										{{ item["author"] }}
-									</span>
-								{% endif %}
-							</div>
-						</div>
-						<p>
-							<img alt="Published Date" style="height: 20px;" src="static/images/calendar.svg">
-						{{ item["published_parsed"].tm_mday }}-{{ item["published_parsed"].tm_mon }}-{{ item["published_parsed"].tm_year }}</p>
-						<a href="{{ item.links[1].href }}" download="{{ item['title'] }}">
-							<img alt="Download Podcast" style="height: 25px;" src="static/images/download.svg">
-						</a>
-						<ul class="collapsible">
-							<li>
-								<div class="collapsible-header">Description</div>
-								<div class="collapsible-body">
-									<div class="feed-description">
-										{{ item["description"] }}
-									</div>
+				{% if item is not none %}
+					<div class="feed-card z-depth-5">
+						<div class="row card-panel darkmode-ignore">
+							<div class="card blue-grey darken-1">
+								<div class="card-content white-text">
+									<a class="card-title" href="{{ item['link']}}">{{ item["title"] }}</a>
+									{% if item['author'] %}
+										<span style="color: yellow; font-weight: bold;" id="feeder-site">
+											{{ item["author"] }}
+										</span>
+									{% endif %}
 								</div>
-							</li>
-						</ul>
-						<img alt="Copy Story Link" style="height: 50px; cursor: pointer;" class="copybutton" src="static/images/copy_button.png" onclick='copyToClip("{{ item["link"]}}"); M.toast({html: "Link Copied"})'><br>
-						<i class="fa fa-share-alt small" id="shareIcon" onclick='share("{{ item["title"] }}","{{ item["link"] }}")'></i>
-						<figure>
-							<figcaption>
-							<h5>🔊 Listen on devfeed 🎧</h5>
-							</figcaption><br>
-							<div class='audio-container'>
-								<audio onplay='media_notify("{{ item["title"] }}","{{ item["author"] }}", "{{ item.links[1].href }}")' controls src="{{ item.links[1].href }}">
-									Your browser does not support audio 😥
-								</audio>
 							</div>
-						</figure>
+							{% if item['published_parsed'] %}
+								<p>
+									<img alt="Published Date" style="height: 20px;" src="static/images/calendar.svg">
+								{{ item['published_parsed'].tm_mday }}-{{ item['published_parsed'].tm_mon }}-{{ item['published_parsed'].tm_year }}</p>
+							{% endif %}
+							{% if item.links[1].href %}
+								<a href="{{ item.links[1].href }}" download="{{ item['title'] }}">
+									<img alt="Download Podcast" style="height: 25px;" src="static/images/download.svg">
+								</a>
+							{% endif %}
+							<ul class="collapsible">
+								<li>
+									<div class="collapsible-header">Description</div>
+									{% if item["description"] %}
+										<div class="collapsible-body">
+											<div class="feed-description">
+												{{ item["description"] }}
+											</div>
+										</div>
+									{% endif %}
+								</li>
+							</ul>
+							<img alt="Copy Story Link" style="height: 50px; cursor: pointer;" class="copybutton" src="static/images/copy_button.png" onclick='copyToClip("{{ item["link"]}}"); M.toast({html: "Link Copied"})'><br>
+							<i class="fa fa-share-alt small" id="shareIcon" onclick='share("{{ item["title"] }}","{{ item["link"] }}")'></i>
+							{% if item.links[1].href %}
+								<figure>
+									<figcaption>
+									<h5>🔊 Listen on devfeed 🎧</h5>
+									</figcaption><br>
+									<div class='audio-container'>
+										<audio onplay='media_notify("{{ item["title"] }}","{{ item["author"] }}", "{{ item.links[1].href }}")' controls src="{{ item.links[1].href }}">
+											Your browser does not support audio 😥
+										</audio>
+									</div>
+								</figure>
+							{% endif %}
+						</div>
 					</div>
-				</div>
+				{% endif %}
 			{% endfor %}
 		{% endif %}
 	</div>

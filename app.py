@@ -77,6 +77,7 @@ def podcast():
 
     if filter_feed == "*":
         data = feedcore.podcasts_feeds(True)
+        print(len(data))
         return render_template(
             "podcast.html", podcast_feed=data, feeder_sites=data_keys
         )

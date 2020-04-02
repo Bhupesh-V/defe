@@ -68,15 +68,15 @@ pip install defe
 
 ## Development
 
-1. Clone the repository:
+1. Clone the repository
 ```bash
 git clone https://github.com/Bhupesh-V/defe.git
 ```
-2. Create virtual environment:
+2. Create virtual environment
 ```bash
 python3 -m venv venv
 ```
-3. Activate virtual environment:
+3. Activate virtual environment
 
 	**Linux/MacOS**
 	```bash
@@ -86,20 +86,19 @@ python3 -m venv venv
 	```pwsh
 	.\venv\Scripts\activate
 	```
-4. Install Dependencies.
+4. Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
 5. Lint the project with
 ```bash
-flake8 .
 black --check --diff .
 ```
-6. Run the Development Server (for *webapp*)
+6. Run the Development Server (for *WebApp*)
 ```bash
 flask run
 ```
-7. To Use **defe CLI**
+7. To Use the **defe CLI**, run
 ```bash
 python -m defe
 ```

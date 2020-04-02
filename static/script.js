@@ -1,69 +1,69 @@
 let deferredPrompt;
-const btnAdd = document.querySelector('#btnAdd');
+const btnAdd = document.querySelector("#btnAdd");
 
-window.addEventListener('beforeinstallprompt', (e) => {
-    console.log('beforeinstallprompt event fired');
+window.addEventListener("beforeinstallprompt", (e) => {
+    console.log("beforeinstallprompt event fired");
     e.preventDefault();
     deferredPrompt = e;
-    btnAdd.style.visibility = 'visible';
+    btnAdd.style.visibility = "visible";
 });
 
-btnAdd.addEventListener('click', (e) => {
-    btnAdd.style.visibility = 'hidden';
+btnAdd.addEventListener("click", (e) => {
+    btnAdd.style.visibility = "hidden";
     deferredPrompt.prompt();
     deferredPrompt.userChoice.then((choiceResult) => {
-        if (choiceResult.outcome === 'accepted') {
-            console.log('User accepted the A2HS prompt');
+        if (choiceResult.outcome === "accepted") {
+            console.log("User accepted the A2HS prompt");
         } else {
-            console.log('User dismissed the A2HS prompt');
+            console.log("User dismissed the A2HS prompt");
         }
         deferredPrompt = null;
     });
 });
 
-function storycount(argument) {
-    var feed_cards = document.getElementsByClassName("feed-card");
-    var ff = document.getElementById("filter-feed");
-    var scount = document.createElement("div");
-    scount.setAttribute("id", "story-count");
-    scount.innerHTML = feed_cards.length + " stories fetched ✨";
+function storyCount(argument) {
+    var feedCards = document.getElementsByClassName("feed-card");
+    var filterFeedElement = document.getElementById("filter-feed");
+    var storyCountElement = document.createElement("div");
+    storyCountElement.setAttribute("id", "story-count");
+    storyCountElement.innerHTML = feedCards.length + " stories fetched ✨";
     // attach after div="filter-feed"
-    if (ff !== null) {
-        ff.parentNode.insertBefore(scount, ff.nextSibling);
+    if (filterFeedElement !== null) {
+        filterFeedElement.parentNode.insertBefore(storyCountElement, filterFeedElement.nextSibling);
     }
 }
 
-function rewrite_summary(argument) {
-    var fs = document.getElementsByClassName("feed-summary");
-    for (var i = 0; i < fs.length; i++) {
-        fs[i].innerHTML = fs[i].textContent;
+function rewriteSummary(argument) {
+    var feedSummary = document.getElementsByClassName("feed-summary");
+    for (var i = 0; i < feedSummary.length; i++) {
+        feedSummary[i].innerHTML = feedSummary[i].textContent;
     }
 }
 
-function rewrite_description(argument) {
-    var fs = document.getElementsByClassName("feed-description");
-    for (var i = 0; i < fs.length; i++) {
-        fs[i].innerHTML = fs[i].textContent;
+function rewriteDescription(argument) {
+    var feedDescription = document.getElementsByClassName("feed-description");
+    for (var i = 0; i < feedDescription.length; i++) {
+        feedDescription[i].innerHTML = feedDescription[i].textContent;
     }
 }
 
 
 function clear_previous_feed() {
     // remove all childs of "feed"
-    const feed_div = document.getElementById("feed");
-    feed_div.innerHTML = "";
-    const story_count = document.getElementById("story-count");
-    if (story_count !== null) {
-        story_count.innerHTML = "";
+    const feed = document.getElementById("feed");
+    feed.innerHTML = "";
+    const storyCount = document.getElementById("story-count");
+    if (storyCount !== null) {
+        storyCount.innerHTML = "";
     }
 }
 
 
-function share(feed_title, feed_link) {
+function share(feedTitle, feedLink) {
     if (navigator.share) {
         navigator.share({
-                title: feed_title,
-                url: feed_link,
+                title: feedTitle,
+                url: feedLink,
             })
             .then(() => console.log("Successful Share"))
             .catch((error) => console.log("Error sharing", error));
@@ -75,13 +75,13 @@ function get_version_info() {
     fetchPromise.then(response => {
         return response.json();
     }).then(releases => {
-        var version_ref = document.getElementById("version-info");
-        if (version_ref !== null) {
-            version_ref.innerHTML = releases[0].name;
+        var versionElement = document.getElementById("version-info");
+        if (versionElement !== null) {
+            versionElement.innerHTML = releases[0].name;
         }
-        var version_ref_nav = document.getElementById("version-info-nav");
-        if (version_ref_nav !== null) {
-            version_ref_nav.innerHTML = "Version " + releases[0].name;
+        var versionNavElement = document.getElementById("version-info-nav");
+        if (versionNavElement !== null) {
+            versionNavElement.innerHTML = "Version " + releases[0].name;
         }
     });
 }
@@ -98,16 +98,16 @@ function copyToClip(str) {
 }
 
 function select_feed(e) {
-    var curr_location = window.location.pathname;
-    document.getElementById("fetchfeed").href = curr_location + "?filter=" + escape(e.target.value);
+    var currentPath = window.location.pathname;
+    document.getElementById("fetchfeed").href = currentPath + "?filter=" + escape(e.target.value);
 }
 
-function display_loading() {
+function displayLoading() {
     var loading_element = document.querySelector(".progress");
     loading_element.style.display = "block";
 }
 
-function media_notify(podcast, author, podcast_url) {
+function media_notify(podcast, author, url) {
 /*    console.log(podcast);
     var podcast_list = [];
     var pod = document.querySelector("audio");
@@ -115,7 +115,7 @@ function media_notify(podcast, author, podcast_url) {
         podcast_list.push(podcast_ele[0].src);
     }*/
     // When audio starts playing...
-    if ('mediaSession' in navigator) {
+    if ("mediaSession" in navigator) {
         navigator.mediaSession.metadata = new MediaMetadata({
             title: podcast,
             artist: author

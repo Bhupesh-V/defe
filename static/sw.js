@@ -1,4 +1,4 @@
-var CACHE_NAME = 'defe-site-cache-v1';
+var CACHE_NAME = "defe-site-cache-v1";
 
 const staticAssets = [
     "/",
@@ -6,18 +6,18 @@ const staticAssets = [
     "static/css/custom.css",
 ];
 
-self.addEventListener('install', function(event) {
+self.addEventListener("install", function(event) {
   // Perform install steps
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(function(cache) {
-        console.log('Opened cache');
+        console.log("Opened cache");
         return cache.addAll(staticAssets);
       })
   );
 });
 
-self.addEventListener('fetch', function(event) {
+self.addEventListener("fetch", function(event) {
   event.respondWith(
     caches.match(event.request)
       .then(function(response) {
@@ -29,7 +29,7 @@ self.addEventListener('fetch', function(event) {
         return fetch(event.request).then(
           function(response) {
             // Check if we received a valid response
-            if(!response || response.status !== 200 || response.type !== 'basic') {
+            if(!response || response.status !== 200 || response.type !== "basic") {
               return response;
             }
 
