@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1.0, shrink-to-fit=yes">
     <meta name="author" content="Bhupesh Varshney" />
-    <meta name="description" content="A Tech Feed Aggregator for Developers & Tech Enthusiasts">
+    <meta name="description" content="devfeed is a Tech Feed Aggregator for Developers & Tech Enthusiasts">
     <meta name="keywords" content="defe, devfeed, tech, devtools, developers, podcasts, newsletters, tech news, tutorials">
 
     <!-- Apple Meta Info -->
@@ -19,17 +19,18 @@
     <meta name="twitter:description" content="A Tech Feed Aggregator for Developers & Tech Enthusiasts">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@bhupeshimself">
-    
+    <meta name="twitter:image" content="static/images/header-defe.png">
+
     <!-- og meta info -->
     <meta property="og:title" content="defe" />
     <meta property="og:description" content="A Tech Feed Aggregator for Developers & Tech Enthusiasts"/>
-    <meta property="og:url" content="https://defe-app.herokuapp.com" >
-    <meta property="og:image" content="static/images/icons/android-icon-192x192.png"/>
-    <meta name="twitter:image" content="static/images/header-defe.png">
+    <meta property="og:url" content="https://defe-app.herokuapp.com">
     <meta property="og:image:width" content="640" />
     <meta property="og:image:height" content="360" />
+    <meta property="og:image" content="static/images/header-defe.png"/>
+
     
-    <!-- Favicon -->
+    <!-- Favicons -->
     <link rel="icon" href="static/images/icons/favicon-32x32.png" sizes="32x32">
     <link rel="shortcut icon" href="static/images/icons/logodefe.svg" type="image/svg">
 
@@ -58,7 +59,7 @@
     <link rel="icon" type="image/png" sizes="96x96" href="static/images/icons/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="static/images/icons/favicon-16x16.png"> -->
 
-    <!-- Microsoft Sepecific Icons -->
+    <!-- Microsoft Specific Icons -->
     <meta name="msapplication-TileColor" content="#36393F">
     <meta name="msapplication-TileImage" content="static/images/icons/ms-icon-70x70.png">
     <meta name="msapplication-TileImage" content="static/images/icons/ms-icon-144x144.png">
@@ -105,14 +106,8 @@
           <li><a href="/feedback">Feedback</a></li>
         </ul>
       </div>
-      <div class="progress" style="
-        position: sticky;
-        top: 17.5%;
-        display: none;
-        background-color: #d7897d;
-        z-index: 5;
-        margin: 0;">
-          <div style="background-color: #eeeb21;" class="indeterminate"></div>
+      <div class="progress">
+          <div class="indeterminate" style="background: #eeeb21;"></div>
       </div>
     </nav>
 
@@ -132,7 +127,21 @@
       <li><a id="version-info-nav" href="https://github.com/Bhupesh-V/defe/releases"></a>
         <img id="btnAdd" alt="PWA Logo" style="padding: 14px 16px 10px 16px; cursor: pointer;" src="static/images/PWAapp.png">
       </li>
+    <div style="position: sticky; margin-top: 320px;" class="social-share">
+      <center>
+      <a href="https://twitter.com/intent/tweet?url=https://defe-app.herokuapp.com">
+        <img alt="Share on Twitter" src="static/images/twitter.svg">
+      </a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://defe-app.herokuapp.com">
+        <img alt="Share on Facebook"src="static/images/fb.svg">
+      </a>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://defe-app.herokuapp.com">
+        <img alt="Share on LinkedIn" src="static/images/linkedin.svg">
+      </a>
+      </center>
+    </div>
     </ul>
+
 
 
     {% block filterfeed %}
@@ -149,7 +158,7 @@
         <ul>
           <li><a onclick="topFunction()" class="btn-floating red"><i class="material-icons">keyboard_arrow_up</i></a></li>
           <li><a onclick="switch_mode()" class="btn-floating yellow darken-1"><i class="material-icons">brightness_4</i></a></li>
-          <li><a id="sharedefeIcon" onclick="share('devfeed', 'https://defe-app.herokuapp.com')" class="btn-floating green"><i class="material-icons">share</i></a></li>
+          <li><a id="sharedefeIcon" onclick="share('devfeed', 'https://defe-app.herokuapp.com')" class="btn-floating green hide-on-large-only"><i class="material-icons">share</i></a></li>
         </ul>
       </div>
       <script defer src="/static/script.js"></script>
