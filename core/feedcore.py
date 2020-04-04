@@ -19,32 +19,14 @@ except ModuleNotFoundError:
 
 
 def read_data(feed_type=None):
-    if feed_type == "podcasts":
-        podcast_file = os.path.join(
-            os.path.dirname(__file__), "feeders", "podcasts.json"
+    if feed_type in ["podcasts", "news", "general", "newsletters"]:
+        feeders = os.path.join(
+            os.path.dirname(__file__), "feeders", feed_type + ".json"
         )
-        with open(podcast_file) as json_file:
+        with open(feeders) as json_file:
             data = json.load(json_file)
-        return data["podcasts"]
-    elif feed_type == "news":
-        news_file = os.path.join(os.path.dirname(__file__), "feeders", "news.json")
-        with open(news_file) as json_file:
-            data = json.load(json_file)
-        return data["news"]
-    elif feed_type == "general":
-        general_file = os.path.join(
-            os.path.dirname(__file__), "feeders", "general.json"
-        )
-        with open(general_file) as json_file:
-            data = json.load(json_file)
-        return data["general"]
-    elif feed_type == "newsletters":
-        newsletter_file = os.path.join(
-            os.path.dirname(__file__), "feeders", "newsletters.json"
-        )
-        with open(newsletter_file) as json_file:
-            data = json.load(json_file)
-        return data["newsletters"]
+        return data[feed_type]
+    return None
 
 
 def get_domain(link):
@@ -55,30 +37,17 @@ def get_domain(link):
 
 def fetcher(category, latest=False, show_progress=False, workers=27):
     data = read_data(category)
-    feeddata = cache()
+    feeddata = cache(latest)
     with ThreadPoolExecutor(max_workers=workers) as executor:
-        if latest:
-            results = list(
-                tqdm(
-                    executor.map(
-                        feeddata.get_latest_feed, [key["link"] for key in data]
-                    ),
-                    desc="Fetching Feeders",
-                    total=len(data),
-                    disable=show_progress,
-                    leave=False,
-                )
+        results = list(
+            tqdm(
+                executor.map(feeddata.get_feed, [key["link"] for key in data]),
+                desc="Fetching Feeders",
+                total=len(data),
+                disable=show_progress,
+                leave=False,
             )
-        else:
-            results = list(
-                tqdm(
-                    executor.map(feeddata.get_feed, [key["link"] for key in data]),
-                    desc="Fetching Feeders",
-                    total=len(data),
-                    disable=show_progress,
-                    leave=False,
-                )
-            )
+        )
 
     return results
 

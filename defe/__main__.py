@@ -105,27 +105,27 @@ def main():
         data = feedcore.all_feed()
         for item in data[: args.max_feed_count]:
             print(Fore.RED + Style.BRIGHT + str(data.index(item) + 1), end=". ")
-            defy(item["title"], item["link"])
+            defy(item["feed_src"], item["title"], item["link"])
         defy_prompt(data)
 
     if args.feed == "news":
         data = feedcore.news_feed()
         for item in data[: args.max_feed_count]:
             print(Fore.RED + Style.BRIGHT + str(data.index(item) + 1), end=". ")
-            defy(item["title"], item["link"], item["feeder_site"])
+            defy(item["feed_src"], item["title"], item["link"])
         defy_prompt(data)
     if args.feed == "newsletters":
         data = feedcore.newsletters_feeds()
         for item in data[: args.max_feed_count]:
             print(Fore.RED + Style.BRIGHT + str(data.index(item) + 1), end=". ")
-            defy(item["title"], item["link"])
+            defy(item["feed_src"], item["title"], item["link"])
         defy_prompt(data)
     if args.feed == "podcasts":
         data = feedcore.podcasts_feeds()
         for item in data[: args.max_feed_count]:
             print(Fore.RED + Style.BRIGHT + str(data.index(item) + 1), end=". ")
             if item:
-                defy(item["title"], item.links[1].href)
+                defy(item["feed_src"], item["title"], item.links[1].href)
             else:
                 pass
         defy_prompt(data)

@@ -6,13 +6,10 @@ import webbrowser
 import sys
 
 
-def defy(title, link, feeder=None):
+def defy(src, title, link):
     init(autoreset=True)
-    if feeder is not None:
-        print(Fore.YELLOW + Style.BRIGHT + title, end=" ")
-        print(Fore.GREEN + Style.BRIGHT + feeder, end="\n")
-    else:
-        print(Fore.YELLOW + Style.BRIGHT + title, end="\n")
+    print(Style.BRIGHT + src, end="\n")
+    print(Fore.YELLOW + Style.BRIGHT + title, end=" ")
     print(Fore.BLUE + Style.BRIGHT + link, end="\n\n")
 
 

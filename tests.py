@@ -48,6 +48,26 @@ class WebAppTests(unittest.TestCase):
             response = client.get("/sw.js", follow_redirects=True)
             self.assertEqual(response.status_code, 200)
 
+    def test_general(self):
+        with app.test_client() as client:
+            response = client.get("/general", follow_redirects=True)
+            self.assertEqual(response.status_code, 200)
+
+    def test_podcasts(self):
+        with app.test_client() as client:
+            response = client.get("/podcasts", follow_redirects=True)
+            self.assertEqual(response.status_code, 200)
+
+    def test_news(self):
+        with app.test_client() as client:
+            response = client.get("/news", follow_redirects=True)
+            self.assertEqual(response.status_code, 200)
+
+    def test_newsletters(self):
+        with app.test_client() as client:
+            response = client.get("/newsletters", follow_redirects=True)
+            self.assertEqual(response.status_code, 200)
+
 
 class TestRunGetDomain(unittest.TestCase):
     def test_run(self):
