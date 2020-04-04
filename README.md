@@ -14,6 +14,7 @@
 [![PyPI](https://img.shields.io/pypi/v/defe)](https://pypi.org/project/defe/)
 [![GitHubLicense](https://img.shields.io/github/license/bhupesh-v/defe)](https://github.com/Bhupesh-V/defe/blob/master/LICENSE)
 ![PyPI - Status](https://img.shields.io/pypi/status/defe)
+[![PyPI Downloads](https://img.shields.io/pypi/dm/coderunner.svg?label=pypi%20downloads&logo=PyPI&logoColor=white)](https://pypi.org/project/defe)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/39926b7f89ab404d9d5a491fe2778db6)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Bhupesh-V/defe&amp;utm_campaign=Badge_Grade)
 
   <p align="center">
@@ -37,7 +38,7 @@
 ### CLI
 
 <p align="center">
-<img height="500px" src="https://drive.google.com/uc?export=view&id=10JeY6x6Qyrikr9bLQZoX16UQrXZcztpM">
+<img height="500px" src="https://drive.google.com/uc?export=view&id=110y95mO2kvV9tH0U1gCroj2XYVecGdzP">
 </p>
 
 ### :package: Package

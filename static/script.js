@@ -107,27 +107,33 @@ function displayLoading() {
     loading_element.style.display = "block";
 }
 
-function media_notify(podcast, author, url) {
-/*    console.log(podcast);
-    var podcast_list = [];
-    var pod = document.querySelector("audio");
-    for (var podcast_ele = 0; podcast_ele < pod.link; podcast_ele++) {
-        podcast_list.push(podcast_ele[0].src);
-    }*/
+function media_notify(podcast, author, image, podcast_src) {
+    /*    console.log(podcast);
+        var podcast_list = [];
+        var pod = document.querySelector("audio");
+        for (var podcast_ele = 0; podcast_ele < pod.link; podcast_ele++) {
+            podcast_list.push(podcast_ele[0].src);
+        }*/
     // When audio starts playing...
     if ("mediaSession" in navigator) {
         navigator.mediaSession.metadata = new MediaMetadata({
             title: podcast,
-            artist: author
+            artist: author,
+            album: podcast_src,
+            artwork: [{
+                src: image,
+                sizes: '3000x3000',
+                type: 'image/jpg'
+            }]
         });
 
-/*        navigator.mediaSession.setActionHandler('play', function() {});
-        navigator.mediaSession.setActionHandler('pause', function() {});
-        navigator.mediaSession.setActionHandler('previoustrack', function(podcast_list) {
-            current_podcast = podcast_list.indexOf(podcast_url);
-            index = (index - 1 + playlist.length) % playlist.length;
-            playAudio();
-        });
-        navigator.mediaSession.setActionHandler('nexttrack', function() {})*/
+        /*        navigator.mediaSession.setActionHandler('play', function() {});
+                navigator.mediaSession.setActionHandler('pause', function() {});
+                navigator.mediaSession.setActionHandler('previoustrack', function(podcast_list) {
+                    current_podcast = podcast_list.indexOf(podcast_url);
+                    index = (index - 1 + playlist.length) % playlist.length;
+                    playAudio();
+                });
+                navigator.mediaSession.setActionHandler('nexttrack', function() {})*/
     }
 }

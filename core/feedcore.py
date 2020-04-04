@@ -78,6 +78,7 @@ def news_feed(show_progress=False, workers=20):
 
 
 def feed(feeder_site_url):
+    # feed for a single feeder source
     feeddata = cache()
     return feeddata.get_feed(feeder_site_url)
 
