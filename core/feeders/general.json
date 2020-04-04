@@ -84,6 +84,11 @@
 			"name": "Smashing Magazine",
 			"link": "https://www.smashingmagazine.com/feed",
 			"web": "https://www.smashingmagazine.com"
+		},
+		{
+			"name": "Lobsters",
+			"link": "https://lobste.rs/rss",
+			"web": "https://lobste.rs"
 		}
 
 	]

@@ -19,9 +19,9 @@
 							<div class="card blue-grey darken-1">
 								<div class="card-content white-text">
 									<a class="card-title" href="{{ item['link']}}">{{ item["title"] }}</a>
-									{% if item['author'] %}
+									{% if item['feed_src'] %}
 										<span style="color: yellow; font-weight: bold;" id="feeder-site">
-											{{ item["author"] }}
+											{{ item["feed_src"] }}
 										</span>
 									{% endif %}
 								</div>

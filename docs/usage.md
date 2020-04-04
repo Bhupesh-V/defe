@@ -1,11 +1,11 @@
 # Usage
 
-defe provides the following class constructors
+defe provides the following classes & methods.
 
 ### feed(progress)
 
 * **Parameters(type)** :
-	- proress : Show progress using tqdm
+	- progress : Show progress using tqdm
 
 **Demo**:
 ```python
@@ -15,7 +15,7 @@ import pprint
 
 f = defe.feed()
 
-pprint.pprint(f.news(3))
+pprint.pprint(f.news())
 pprint.pprint(f.feeders("newsletters"))
 
 ```

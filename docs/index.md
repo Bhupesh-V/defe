@@ -30,7 +30,7 @@ import pprint
 
 f = defe.feed()
 
-pprint.pprint(f.news(3))
+pprint.pprint(f.news())
 pprint.pprint(f.feeders("newsletters"))
 
 ```
@@ -48,7 +48,7 @@ virtualenv -p python3 venv && cd venv && source bin/activate
 ```
 2. Clone the repository.
 ```bash
-git https://github.com/codeclassroom/CodeRunner.git
+git clone https://github.com/Bhupesh-V/defe.git
 ```
 3. Install Dependencies.
 ```bash
