@@ -18,7 +18,7 @@
 [![lgtm alerts](https://img.shields.io/lgtm/alerts/github/Bhupesh-V/defe.svg?logo=lgtm&logoWidth=18&color=red)](https://lgtm.com/projects/g/Bhupesh-V/defe/)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/39926b7f89ab404d9d5a491fe2778db6)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Bhupesh-V/defe&amp;utm_campaign=Badge_Grade)
 [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/Bhupesh-V/defe.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Bhupesh-V/defe/context:python)
-
+[![Gitter](https://badges.gitter.im/devfeed/community.svg)](https://gitter.im/devfeed/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
   <p align="center">
     <sub>Built with ❤︎ by
