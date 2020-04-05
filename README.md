@@ -12,13 +12,15 @@
 [![build](https://github.com/Bhupesh-V/defe/workflows/build/badge.svg?branch=master)](https://github.com/Bhupesh-V/defe/actions)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/bhupesh-v/defe?logo=GitHub)](https://github.com/Bhupesh-V/defe/releases)
 [![PyPI](https://img.shields.io/pypi/v/defe)](https://pypi.org/project/defe/)
-[![GitHubLicense](![GitHub](https://img.shields.io/github/license/Bhupesh-V/defe?color=yellow))](https://github.com/Bhupesh-V/defe/blob/master/LICENSE)
+[![GitHub](https://img.shields.io/github/license/Bhupesh-V/defe?color=purple)](https://github.com/Bhupesh-V/defe/blob/master/LICENSE)
+[![PyPI Downloads](https://img.shields.io/pypi/dm/defe.svg?label=pypi%20downloads&logo=PyPI&logoColor=white)](https://pypi.org/project/defe/)
 ![PyPI - Status](https://img.shields.io/pypi/status/defe)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/39926b7f89ab404d9d5a491fe2778db6)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Bhupesh-V/defe&amp;utm_campaign=Badge_Grade)
 
   <p align="center">
     <sub>Built with ❤︎ by
-      <a href="https://github.com/Bhupesh-V">Bhupesh Varshney</a>
+      <a href="https://github.com/Bhupesh-V">Bhupesh Varshney</a><br>
+	    <sub align="center">The <a href="https://dev.to/bhupesh/defe-all-your-tech-updates-at-one-place-fih">story</a> behind defe</sub>
     </sub>
   </p>
 
