@@ -1,5 +1,6 @@
 # Changelog
 
 
-## [1.0.0] - Mar x, 2020
+## [0.0.1] - Apr 4, 2020
 - Initial Release
+- Everything Stable
