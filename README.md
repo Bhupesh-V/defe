@@ -10,11 +10,11 @@
 </p>
 
 [![build](https://github.com/Bhupesh-V/defe/workflows/build/badge.svg?branch=master)](https://github.com/Bhupesh-V/defe/actions)
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/bhupesh-v/defe?logo=GitHub)](https://github.com/Bhupesh-V/defe/releases)
-[![PyPI](https://img.shields.io/pypi/v/defe)](https://pypi.org/project/defe/)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/bhupesh-v/defe?logo=GitHub)](https://github.com/Bhupesh-V/defe/releases) 
+ [![Website](https://img.shields.io/website?down_color=red&down_message=down&up_color=blueviolet&up_message=up&url=https%3A%2F%2Fdefe-app.herokuapp.com)](https://kutt.it/defe) 
+ [![PyPI](https://img.shields.io/pypi/v/defe)](https://pypi.org/project/defe/)
 [![GitHub](https://img.shields.io/github/license/Bhupesh-V/defe?color=purple)](https://github.com/Bhupesh-V/defe/blob/master/LICENSE)
 [![PyPI Downloads](https://img.shields.io/pypi/dm/defe.svg?label=pypi%20downloads&logo=PyPI&logoColor=white)](https://pypi.org/project/defe/)
-![PyPI - Status](https://img.shields.io/pypi/status/defe)
 [![lgtm alerts](https://img.shields.io/lgtm/alerts/github/Bhupesh-V/defe.svg?logo=lgtm&logoWidth=18&color=red)](https://lgtm.com/projects/g/Bhupesh-V/defe/)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/39926b7f89ab404d9d5a491fe2778db6)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Bhupesh-V/defe&amp;utm_campaign=Badge_Grade)
 [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/Bhupesh-V/defe.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Bhupesh-V/defe/context:python)
