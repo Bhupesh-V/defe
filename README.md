@@ -23,6 +23,7 @@
   <p align="center">
     <sub>Built with ❤︎ by
       <a href="https://github.com/Bhupesh-V">Bhupesh Varshney</a><br>
+	    <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/bhupeshimself?style=social"><br>
 	    <sub align="center">The <a href="https://dev.to/bhupesh/defe-all-your-tech-updates-at-one-place-fih">story</a> behind defe</sub>
     </sub>
   </p>
