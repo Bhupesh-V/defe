@@ -5,7 +5,10 @@
     <b>A Tech feed Aggregator for Developers</b>
   </p>
   <p align="center">
-     <i>Read Stories which matter</i>
+     <i>Read Stories which matter</i><br>
+	<a href="https://twitter.com/intent/tweet?url=https://kutt.it/defe&text=Guys%20check%20this%20app%20called%20defe,%20its%20a%20Tech%20Feed%20aggregator%20for%20developers">
+	<img alt="Twitter URL" src="https://img.shields.io/twitter/url?label=Tweet%20defe&logoColor=%23D88F74&style=social&url=https%3A%2F%2Ftwitter.com%2Fintent%2Ftweet%3Furl%3Dhttps%3A%2F%2Fkutt.it%2Fdefe%26text%3DGuys%2520check%2520this%2520app%2520called%2520defe%2C%2520its%2520a%2520Tech%2520Feed%2520aggregator%2520for%2520developers">
+	</a>
   </p>
 </p>
 
@@ -24,26 +27,36 @@
     <sub>Built with ❤︎ by
       <a href="https://github.com/Bhupesh-V">Bhupesh Varshney</a><br>
 	    <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/bhupeshimself?style=social"><br>
-	    <sub align="center">The <a href="https://dev.to/bhupesh/defe-all-your-tech-updates-at-one-place-fih">story</a> behind defe</sub>
     </sub>
+	<sub align="center">The <a href="https://dev.to/bhupesh/defe-all-your-tech-updates-at-one-place-fih">story</a> behind defe</sub>
   </p>
 
 ## ✨ Features
-- PWA
-- Share Stories
-- Minimal UI
-- Command Line Interface
-- Feeds from more than 100 sources categorized in
+- **PWA**
+- **Share Stories**
+- **Minimal UI**
+- **Command Line Interface**
+- **Feeds from more than 100 sources categorized in**
 	- 📰 News
 	- 🎙️ Podcasts 
 	- 📧 Newsletters 
  ... _And Much More_
 
 ## :rainbow: Demo 
+
+### WebApp
+
+<p align="center">
+<img height="300px" src="https://user-images.githubusercontent.com/34342551/79066077-94d22d80-7cd2-11ea-95d9-e5806e6b3a50.png">
+<img height="300px" src="https://user-images.githubusercontent.com/34342551/79066085-a3204980-7cd2-11ea-92e4-841cf3997358.png">
+</p>
+
+
+
 ### CLI
 
 <p align="center">
-<img height="500px" src="https://drive.google.com/uc?export=view&id=110y95mO2kvV9tH0U1gCroj2XYVecGdzP">
+<img height="500px" src="https://user-images.githubusercontent.com/34342551/79066142-1b870a80-7cd3-11ea-9f78-dea868b43161.gif">
 </p>
 
 ### :package: Package
