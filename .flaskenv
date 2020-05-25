@@ -1,2 +1,3 @@
 FLASK_APP=app.py
 FLASK_ENV=development
+TEMPLATES_AUTO_RELOAD = True
