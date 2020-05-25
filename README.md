@@ -93,7 +93,7 @@ git clone https://github.com/Bhupesh-V/defe.git
 ```
 2. Create virtual environment
 ```bash
-python -m venv venv
+python3 -m venv venv
 ```
 3. Activate virtual environment
 
