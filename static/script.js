@@ -137,3 +137,58 @@ function media_notify(podcast, author, image, podcast_src) {
                 navigator.mediaSession.setActionHandler('nexttrack', function() {})*/
     }
 }
+
+function implement_dark_mode() {
+    document.querySelector('body').classList.add('dark');
+}
+
+function implement_light_mode() {
+    document.querySelector('body').classList.remove('dark');
+}
+
+function local_storage_supported() {
+    var test = 'test';
+    try {
+        localStorage.setItem(test, test);
+        localStorage.removeItem(test);
+        return true;
+    } catch(e) {
+        return false;
+    }
+}
+
+function toggle_darkmode() {
+    if (!local_storage_supported()) {
+        return;
+    }
+    const currentMode = localStorage.getItem('mode');
+    if (currentMode === 'dark') {
+        localStorage.setItem('mode', 'light');
+        implement_light_mode();
+    } else {
+        localStorage.setItem('mode', 'dark');
+        implement_dark_mode();
+    }
+}
+
+function apply_theme() {
+    if (!local_storage_supported()) {
+        return;
+    }
+    const theme_name = localStorage.getItem("mode");
+    if (theme_name === 'dark') {
+        implement_dark_mode();
+    } else {
+        implement_light_mode();
+    }
+}
+
+function add_service_worker() {
+    if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/sw.js").then(function(registration) {
+          console.log("ServiceWorker registration successful with scope: ", registration.scope);
+        }).catch(function(err) {
+          console.log("ServiceWorker registration failed: ", err);
+        });
+    }
+}

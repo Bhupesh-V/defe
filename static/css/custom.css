@@ -92,6 +92,7 @@ img {
 
 .collapsible {
   background-color: white;
+  color: black;
 }
 
 .audio-container {
@@ -130,4 +131,9 @@ img {
     height: 90px;
     width: 90px;
     padding: 5px;
+}
+
+body.dark {
+  background-color: rgb(30,34,39);
+  color: #fff;
 }
