@@ -3,92 +3,110 @@
 		{
 			"name": "HackerNoon",
 			"link": "https://hackernoon.com/feed",
-			"web": "https://www.hackernoon.com/"
+			"web": "https://www.hackernoon.com/",
+			"category": "Programming"
 		},
 		{
 			"name": "Producthunt",
 			"link": "https://www.producthunt.com/feed",
-			"web": "https://www.producthunt.com/"
+			"web": "https://www.producthunt.com/",
+			"category": "Software Development"
 		},
 		{
 			"name": "freeCodeCamp",
 			"link": "https://www.freecodecamp.org/news/rss/",
-			"web": "https://www.freecodecamp.org/news/"
+			"web": "https://www.freecodecamp.org/news/",
+			"category": "Programming"
 		},
 		{
 			"name": "opensource",
 			"link": "https://opensource.com/feed",
-			"web": "https://opensource.com/"
+			"web": "https://opensource.com/",
+			"category": "Programming"
 		},
 		{
 			"name": "changelog",
 			"link": "https://changelog.com/feed",
-			"web": "https://changelog.com/"
+			"web": "https://changelog.com/",
+			"category": "Software Development"
 		},
 		{
 			"name": "itsfoss",
 			"link": "https://itsfoss.com/category/news/feed",
-			"web": "https://itsfoss.com/"
+			"web": "https://itsfoss.com/",
+			"category": "Programming"
 		},
 		{
 			"name": "thenewstack",
 			"link": "https://thenewstack.io/feed",
-			"web": "https://thenewstack.io/"
+			"web": "https://thenewstack.io/",
+			"category": "Programming"
 		},
 		{
 			"name": "theverge" ,
 			"link": "https://www.theverge.com/tech/rss/index.xml",
-			"web": "https://www.theverge.com/tech"
+			"web": "https://www.theverge.com/tech",
+			"category": "Technology"
 		},
 		{
 			"name": "dev.to",
 			"link": "https://dev.to/feed",
-			"web": "https://dev.to/"
+			"web": "https://dev.to/",
+			"category": "Technology"
 		},
 		{
 			"name": "CSS Tricks",
 			"link": "https://css-tricks.com/feed/",
-			"web": "https://css-tricks.com"
+			"web": "https://css-tricks.com",
+			"category": "Programming"
 		},
 		{
 			"name": "GIGAOM",
 			"link": "https://gigaom.com/feed",
-			"web": "https://gigaom.com/"
+			"web": "https://gigaom.com/",
+			"category": "Technology"
 		},
 		{
 			"name": "ITNEXT",
 			"link": "https://itnext.io/feed",
-			"web": "https://itnext.io/"
+			"web": "https://itnext.io/",
+			"category": "Technology"
 		},
 		{
 			"name": "The Next Web",
 			"link": "https://thenextweb.com/feed",
-			"web": "https://thenextweb.com/"
+			"web": "https://thenextweb.com/",
+			"category": "Technology"
 		},
 		{
 			"name": "DZone",
 			"link": "http://feeds.dzone.com/home",
-			"web": "https://dzone.com/"
+			"web": "https://dzone.com/",
+			"category": "Software Development"
 		},
 		{
 			"name": "design shack",
 			"link": "http://feedpress.me/designshack",
-			"web": "https://designshack.net/"
+			"web": "https://designshack.net/",
+			"category": "Software Development"
 		},
 		{
 			"name": "codeburst.io",
 			"link": "https://codeburst.io/feed",
-			"web": "https://codeburst.io"
+			"web": "https://codeburst.io",
+			"category": "Programming"
 		},
 		{
 			"name": "Smashing Magazine",
 			"link": "https://www.smashingmagazine.com/feed",
-			"web": "https://www.smashingmagazine.com"
+			"web": "https://www.smashingmagazine.com",
+			"category": "Technology"
 		},
 		{
 			"name": "Lobsters",
 			"link": "https://lobste.rs/rss",
-			"web": "https://lobste.rs"
+			"web": "https://lobste.rs",
+			"category": "Software Development"
 		}
 
 	]

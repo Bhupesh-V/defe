@@ -3,137 +3,164 @@
         {
             "name": "Software Enginerring Daily",
             "link": "https://softwareengineeringdaily.com/feed/podcast/",
-            "web": "https://softwareengineeringdaily.com"
+            "web": "https://softwareengineeringdaily.com",
+			"category": "Software Engineering"
         },
         {
             "name": "Simple Programmer",
             "link": "http://simpleprogrammer.libsyn.com/rss",
-            "web": "http://simpleprogrammer.libsyn.com"
+            "web": "http://simpleprogrammer.libsyn.com",
+			"category": "Programming"
         },
         {
             "name": "Software Enginerring Radio",
             "link": "http://feeds.feedburner.com/se-radio",
-            "web": "https://www.se-radio.net/"
+            "web": "https://www.se-radio.net/",
+			"category": "Software Engineering"
         },
         {
             "name": "The Changelog",
             "link": "https://changelog.com/podcast/feed",
-            "web": "https://changelog.com"
+            "web": "https://changelog.com",
+			"category": "Software Engineering"
         },
         {
             "name": "Full Stack Radio",
             "link": "https://rss.simplecast.com/podcasts/279/rss",
-            "web": "http://www.fullstackradio.com/"
+            "web": "http://www.fullstackradio.com/",
+			"category": "Full stack development"
         },
         {
             "name": "codenewbie",
             "link": "http://feeds.codenewbie.org/cnpodcast.xml",
-            "web": "https://www.codenewbie.org/"
+            "web": "https://www.codenewbie.org/",
+			"category": "Programming"
         },
         {
             "name": "Coding Blocks",
             "link": "https://www.codingblocks.net/feed/podcast/",
-            "web": "https://www.codingblocks.net"
+            "web": "https://www.codingblocks.net",
+			"category": "Programming"
         },
         {
             "name": "Coder Radio",
             "link": "https://feeds.fireside.fm/coder/rss",
-            "web": "https://coder.show/"
+            "web": "https://coder.show/",
+			"category": "Software Engineering"
         },
         {
             "name": "Test and Code",
             "link": "https://feeds.fireside.fm/testandcode/rss",
-            "web": "https://testandcode.com/"
+            "web": "https://testandcode.com/",
+			"category": "Python"
         },
         {
             "name": "The StackOverflow Podcast",
             "link": "https://feeds.simplecast.com/XA_851k3",
-            "web": "https://stackoverflow.blog/podcast/"
+            "web": "https://stackoverflow.blog/podcast/",
+			"category": "Programming"
         },
         {
             "name": "Weekly Dev Tips",
             "link": "https://feeds.simplecast.com/W8bGHhCA",
-            "web": "https://www.weeklydevtips.com/"
+            "web": "https://www.weeklydevtips.com/",
+			"category": "Software Engineering"
         },
         {
             "name": "cpp.chat",
             "link": "https://feeds.fireside.fm/cppchat/rss",
-            "web": "https://cpp.chat/"
+            "web": "https://cpp.chat/",
+			"category": "Programming"
         },
         {
             "name": "devpath.fm",
             "link": "https://feeds.transistor.fm/devpath-fm",
-            "web": "https://www.devpath.fm/"
+            "web": "https://www.devpath.fm/",
+			"category": "Software Engineering"
         },
         {
             "name": "synatx.fm",
             "link": "https://feed.syntax.fm/rss",
-            "web": "https://syntax.fm/"
+            "web": "https://syntax.fm/",
+			"category": "Programming"
         },
         {
             "name": "Talk Python To Me",
             "link": "https://talkpython.fm/episodes/rss",
-            "web": "https://talkpython.fm/"
+            "web": "https://talkpython.fm/",
+			"category": "Programming"
         },
         {
             "name": "Developer Tea",
             "link": "https://rss.simplecast.com/podcasts/363/rss",
-            "web": "https://developertea.simplecast.fm/"
+            "web": "https://developertea.simplecast.fm/",
+			"category": "Software Engineering"
         },
         {
             "name": "Programming Throwdown",
             "link": "http://feeds.feedburner.com/ProgrammingThrowdown",
-            "web": "https://www.programmingthrowdown.com/"
+            "web": "https://www.programmingthrowdown.com/",
+			"category": "Programming"
         },
         {
             "name": "Software Defined Talk",
             "link": "https://www.softwaredefinedtalk.com/rss",
-            "web": "https://www.softwaredefinedtalk.com/"
+            "web": "https://www.softwaredefinedtalk.com/",
+			"category": "Software Engineering"
         },
         {
             "name": "Software Defined Talk",
             "link": "https://feeds.feedburner.com/SoftSkillsEngineering",
-            "web": "https://softskills.audio/"
+            "web": "https://softskills.audio/",
+			"category": "Software Engineering"
         },
         {
             "name": "Eat Sleep Code",
             "link": "http://feeds.feedburner.com/esc-podcast",
-            "web": "https://player.fm/series/eat-sleep-code-podcast"
+            "web": "https://player.fm/series/eat-sleep-code-podcast",
+			"category": "Programming"
         },
         {
             "name": "The Cynical Developer",
             "link": "https://cynicaldeveloper.com/feed/podcast",
-            "web": "https://cynicaldeveloper.com/"
+            "web": "https://cynicaldeveloper.com/",
+			"category": "Programming"
         },
         {
             "name": "Ladybug Podcast",
             "link": "https://pinecast.com/feed/ladybug-podcast",
-            "web": "https://ladybug.dev/"
+            "web": "https://ladybug.dev/",
+			"category": "Programming"
         },
         {
             "name": "JAMstack Radio",
             "link": "https://www.heavybit.com/category/library/podcasts/jamstack-radio/feed",
-            "web": "https://www.heavybit.com/library/podcasts/jamstack-radio/"
+            "web": "https://www.heavybit.com/library/podcasts/jamstack-radio/",
+			"category": "Software Engineering"
         },
         {
             "name": "Code[ish]",
             "link": "https://www.heroku.com/podcasts/codeish.rss",
-            "web": "https://www.heroku.com/podcasts/codeish"
+            "web": "https://www.heroku.com/podcasts/codeish",
+			"category": "Programming"
         },
         {
             "name": "Maintainable",
             "link": "https://feeds.simplecast.com/7y1CbAbN",
-            "web": "https://maintainable.fm/"
+            "web": "https://maintainable.fm/",
+			"category": "Programming"
         },
         {
             "name": "Software Engineering Unlocked",
             "link": "https://feeds.simplecast.com/K1_mv0CJ",
-            "web": "https://www.software-engineering-unlocked.com/"
+            "web": "https://www.software-engineering-unlocked.com/",
+			"category": "Software Engineering"
         },
         {
             "name": "Self-Taught Or Not",
             "link": "https://feeds.transistor.fm/self-taught-or-not",
-            "web": "http://selftaughtornot.com/"
+            "web": "http://selftaughtornot.com/",
+			"category": "Programming"
         }
 
     ]
