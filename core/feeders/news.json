@@ -3,57 +3,68 @@
 		{
 			"name": "TechCrunch",
 			"link": "https://techcrunch.com/feed/",
-			"web": "https://techcrunch.com/"
+			"web": "https://techcrunch.com/",
+			"category": "Technology"
 		},
 		{
 			"name": "HackerNews",
 			"link": "https://news.ycombinator.com/rss",
-			"web": "https://news.ycombinator.com"
+			"web": "https://news.ycombinator.com",
+			"category": "Technology"
 		},
 		{
 			"name": "Tech meme",
 			"link": "https://www.techmeme.com/feed.xml",
-			"web": "https://www.techmeme.com"
+			"web": "https://www.techmeme.com",
+			"category": "Technology"
 		},
 		{
 			"name": "GeekWire",
 			"link": "https://www.geekwire.com/feed/",
-			"web": "https://www.geekwire.com"
+			"web": "https://www.geekwire.com",
+			"category": "Technology"
 		},
 		{
 			"name": "Technology Org",
 			"link": "https://www.technology.org/feed/",
-			"web": "https://www.technology.org"
+			"web": "https://www.technology.org",
+			"category": "Technology"
 		},
 		{
 			"name": "Geek.com",
 			"link": "https://www.geek.com/tech/feed/",
-			"web": "https://www.geek.com/tech/"
+			"web": "https://www.geek.com/tech/",
+			"category": "Technology"
 		},
 		{
 			"name": "ZDNet",
 			"link": "https://www.zdnet.com/rss.xml",
-			"web": "https://www.zdnet.com"
+			"web": "https://www.zdnet.com",
+			"category": "Technology"
 		},
 		{
 			"name": "MIT Technology Review",
 			"link": "https://www.technologyreview.com/topnews.rss",
-			"web": "https://www.technologyreview.com"
+			"web": "https://www.technologyreview.com",
+			"category": "Technology"
 		},
 		{
 			"name": "Gigabit Magazine",
 			"link": "https://www.gigabitmagazine.com/rss.xml",
-			"web": "https://www.gigabitmagazine.com"
+			"web": "https://www.gigabitmagazine.com",
+			"category": "Technology"
 		},
 		{
 			"name": "Technology Intelligence",
 			"link": "https://www.telegraph.co.uk/technology/rss.xml",
-			"web": "https://www.telegraph.co.uk/technology"
+			"web": "https://www.telegraph.co.uk/technology",
+			"category": "Technology"
 		},
 		{
 			"name": "PCWorld News",
 			"link": "https://www.pcworld.com/news.rss",
-			"web": "https://www.pcworld.com"
+			"web": "https://www.pcworld.com",
+			"category": "Technology"
 		}
 	]
 }

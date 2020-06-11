@@ -3,262 +3,314 @@
         {
             "name": "Golang Weekly",
             "link": "https://golangweekly.com/rss",
-            "web": "https://golangweekly.com"
+            "web": "https://golangweekly.com",
+			"category": "Programming"
         },
         {
             "name": "Ruby Weekly",
             "link": "https://rubyweekly.com/rss",
-            "web": "https://rubyweekly.com"
+            "web": "https://rubyweekly.com",
+			"category": "Programming"
         },
         {
             "name": "Node Weekly",
             "link": "https://nodeweekly.com/rss",
-            "web": "https://nodeweekly.com"
+            "web": "https://nodeweekly.com",
+			"category": "Programming"
         },
         {
             "name": "PHP Weekly",
             "link": "http://www.phpweekly.com/rss.xml",
-            "web": "https://www.phpweekly.com"
+            "web": "https://www.phpweekly.com",
+			"category": "Programming"
         },
         {
             "name": "CSS Weekly",
             "link": "https://feeds.feedburner.com/CSS-Weekly",
-            "web": "https://css-weekly.com/"
+            "web": "https://css-weekly.com/",
+			"category": "Programming"
         },
         {
             "name": "Database Weekly",
             "link": "https://dbweekly.com/rss",
-            "web": "https://dbweekly.com"
+            "web": "https://dbweekly.com",
+			"category": "Programming"
         },
         {
             "name": "Mobile Dev Weekly",
             "link": "https://mobiledevweekly.com/rss",
-            "web": "https://mobiledevweekly.com"
+            "web": "https://mobiledevweekly.com",
+			"category": "Programming"
         },
         {
             "name": "Javascript Weekly",
             "link": "https://javascriptweekly.com/rss",
-            "web": "https://javascriptweekly.com"
+            "web": "https://javascriptweekly.com",
+			"category": "Programming"
         },
         {
             "name": "Frontend Focus",
             "link": "https://frontendfoc.us/rss",
-            "web": "https://frontendfoc.us"
+            "web": "https://frontendfoc.us",
+			"category": "Programming"
         },
         {
             "name": "StatusCode Weekly",
             "link": "http://webopsweekly.com/rss",
-            "web": "http://webopsweekly.com"
+            "web": "http://webopsweekly.com",
+			"category": "Programming"
         },
         {
             "name": "Postgres Weekly",
             "link": "https://postgresweekly.com/rss",
-            "web": "https://postgresweekly.com"
+            "web": "https://postgresweekly.com",
+			"category": "Programming"
         },
         {
             "name": "Android Weekly",
             "link": "http://us2.campaign-archive1.com/feed?u=887caf4f48db76fd91e20a06d&id=4eb677ad19",
-            "web": "https://androidweekly.net/"
+            "web": "https://androidweekly.net/",
+			"category": "Programming"
         },
         {
             "name": "PyCoder",
             "link": "https://pycoders.com/feed",
-            "web": "https://pycoders.com"
+            "web": "https://pycoders.com",
+			"category": "Programming"
         },
         {
             "name": "Awesome Android",
             "link": "https://android.libhunt.com/newsletter/feed",
-            "web": "https://android.libhunt.com"
+            "web": "https://android.libhunt.com",
+			"category": "Programming"
         },
         {
             "name": "Awesome C++",
             "link": "https://cpp.libhunt.com/newsletter/feed",
-            "web": "https://cpp.libhunt.com"
+            "web": "https://cpp.libhunt.com",
+			"category": "Programming"
         },
         {
             "name": "Awesome Go",
             "link": "https://go.libhunt.com/newsletter/feed",
-            "web": "https://go.libhunt.com"
+            "web": "https://go.libhunt.com",
+			"category": "Programming"
         },
         {
             "name": "Awesome Javascript",
             "link": "https://js.libhunt.com/newsletter/feed",
-            "web": "https://js.libhunt.com"
+            "web": "https://js.libhunt.com",
+			"category": "Programming"
         },
         {
             "name": "Awesome Python",
             "link": "https://python.libhunt.com/newsletter/feed",
-            "web": "https://python.libhunt.com"
+            "web": "https://python.libhunt.com",
+			"category": "Programming"
         },
         {
             "name": "Awesome .NET",
             "link": "https://dotnet.libhunt.com/newsletter/feed",
-            "web": "https://dotnet.libhunt.com"
+            "web": "https://dotnet.libhunt.com",
+			"category": "Programming"
         },
         {
             "name": "Awesome php" ,
             "link": "https://php.libhunt.com/newsletter/feed",
-            "web": "https://php.libhunt.com"
+            "web": "https://php.libhunt.com",
+			"category": "Programming"
         },
         {
             "name": "Awesome Rust",
             "link": "https://rust.libhunt.com/newsletter/feed",
-            "web": "https://rust.libhunt.com"
+            "web": "https://rust.libhunt.com",
+			"category": "Programming"
         },
         {
             "name": "Awesome Ruby",
             "link": "https://ruby.libhunt.com/newsletter/feed",
-            "web": "https://ruby.libhunt.com"
+            "web": "https://ruby.libhunt.com",
+			"category": "Programming"
         },
         {
             "name": "Awesome Swift",
             "link": "https://swift.libhunt.com/newsletter/feed",
-            "web": "https://swift.libhunt.com"
+            "web": "https://swift.libhunt.com",
+			"category": "Programming"
         },
         {
             "name": "Awesome Scala",
             "link": "https://scala.libhunt.com/newsletter/feed",
-            "web": "https://scala.libhunt.com"
+            "web": "https://scala.libhunt.com",
+			"category": "Programming"
         },
         {
             "name": "Awesome Nodejs",
             "link": "https://nodejs.libhunt.com/newsletter/feed",
-            "web": "https://nodejs.libhunt.com"
+            "web": "https://nodejs.libhunt.com",
+			"category": "Programming"
         },
         {
             "name": "Awesome Kotlin",
             "link": "https://kotlin.libhunt.com/newsletter/feed",
-            "web": "https://kotlin.libhunt.com"
+            "web": "https://kotlin.libhunt.com",
+			"category": "Programming"
         },
         {
             "name": "Awesome Elixir",
             "link": "https://elixir.libhunt.com/newsletter/feed",
-            "web": "https://elixir.libhunt.com"
+            "web": "https://elixir.libhunt.com",
+			"category": "Programming"
         },
         {
             "name": "Awesome iOS",
             "link": "https://ios.libhunt.com/newsletter/feed",
-            "web": "https://ios.libhunt.com"
+            "web": "https://ios.libhunt.com",
+			"category": "Programming"
         },
         {
             "name": "Awesome Java",
             "link": "https://java.libhunt.com/newsletter/feed",
-            "web": "https://java.libhunt.com"
+            "web": "https://java.libhunt.com",
+			"category": "Programming"
         },
         {
             "name": "Awesome Sysadmin",
             "link": "https://sysadmin.libhunt.com/newsletter/feed",
-            "web": "https://sysadmin.libhunt.com"
+            "web": "https://sysadmin.libhunt.com",
+			"category": "Programming"
         },
         {
             "name": "Web Development Reading List (WDRL)",
             "link": "https://wdrl.info/feed",
-            "web": "https://wdrl.info/"
+            "web": "https://wdrl.info/",
+			"category": "Programming"
         },
         {
             "name": "Pony Foo Weekly",
             "link": "https://feeds.feedburner.com/ponyfooweekly",
-            "web": "https://ponyfoo.com/weekly"
+            "web": "https://ponyfoo.com/weekly",
+			"category": "Programming"
         },
         {
             "name": "R Weekly",
             "link": "https://rweekly.org/atom.xml",
-            "web": "https://rweekly.org"
+            "web": "https://rweekly.org",
+			"category": "Programming"
         },
         {
             "name": "mongoDB Memo",
             "link": "https://mongodb.email/rss",
-            "web": "https://mongodb.email/"
+            "web": "https://mongodb.email/",
+			"category": "Programming"
         },
         {
             "name": "Azure Weekly",
             "link": "https://azureweekly.info/rss.xml",
-            "web": "https://azureweekly.info"
+            "web": "https://azureweekly.info",
+			"category": "Programming"
         },
         {
             "name": "Serverless Status",
             "link": "https://serverless.email/rss",
-            "web": "https://serverless.email"
+            "web": "https://serverless.email",
+			"category": "Programming"
         },
         {
             "name": "Last Week in AWS" ,
             "link": "https://www.lastweekinaws.com/newsletter/feed",
-            "web": "https://www.lastweekinaws.com"
+            "web": "https://www.lastweekinaws.com",
+			"category": "Programming"
         },
         {
             "name": "artificial intelligence digest",
             "link": "https://feeds.feedburner.com/digest-ai",
-            "web": "https://aidigest.net/"
+            "web": "https://aidigest.net/",
+			"category": "Programming"
         },
         {
             "name": "Inside AI",
             "link": "https://inside.com/ai/rss",
-            "web": "https://inside.com/ai"
+            "web": "https://inside.com/ai",
+			"category": "Programming"
         },
         {
             "name": "Inside Security",
             "link": "https://inside.com/security/rss",
-            "web": "https://inside.com/security"
+            "web": "https://inside.com/security",
+			"category": "Programming"
         },
         {
             "name": "Inside Cloud",
             "link": "https://inside.com/cloud/rss",
-            "web": "https://inside.com/cloud"
+            "web": "https://inside.com/cloud",
+			"category": "Programming"
         },
         {
             "name": "Inside Dev",
             "link": "https://inside.com/dev/rss",
-            "web": "https://inside.com/dev"
+            "web": "https://inside.com/dev",
+			"category": "Programming"
         },
         {
             "name": "Inside IoT",
             "link": "https://inside.com/iot/rss",
-            "web": "https://inside.com/iot"
+            "web": "https://inside.com/iot",
+			"category": "Programming"
         },
         {
             "name": "TLDR" ,
             "link": "https://www.tldrnewsletter.com/rss",
-            "web": "https://www.tldrnewsletter.com"
+            "web": "https://www.tldrnewsletter.com",
+			"category": "Programming"
         },
         {
             "name": "Security Newsletter",
             "link": "https://securitynewsletter.co/issues?format=rss",
-            "web": "https://securitynewsletter.co"
+            "web": "https://securitynewsletter.co",
+			"category": "Programming"
         },
         {
             "name": "Better Dev Link" ,
             "link": "https://betterdev.link/rss.xml",
-            "web": "https://betterdev.link"
+            "web": "https://betterdev.link",
+			"category": "Programming"
         },
         {
             "name": "DiscoverDev",
             "link": "https://www.discoverdev.io/rss.xml",
-            "web": "https://www.discoverdev.io"
+            "web": "https://www.discoverdev.io",
+			"category": "Programming"
         },
         {
             "name": "DevOps Weekly",
             "link": "https://us2.campaign-archive.com/feed?u=b6635e37e35fa5eff0c2a947a&id=a63f24d068",
-            "web": "https://www.devopsweekly.com/"
+            "web": "https://www.devopsweekly.com/",
+			"category": "Programming"
         },
         {
             "name": "Jakub Programming Digest",
             "link": "https://feeds.feedburner.com/digest-programming",
-            "web": "https://programmingdigest.net/"
+            "web": "https://programmingdigest.net/",
+			"category": "Programming"
         },
         {
             "name": "This Week In DevOps",
             "link": "https://thisweekindevops.com/feed",
-            "web": "https://thisweekindevops.com"
+            "web": "https://thisweekindevops.com",
+			"category": "Programming"
         },
         {
             "name": "cron.weekly",
             "link": "https://ma.ttias.be/cronweekly/index.xml",
-            "web": "https://ma.ttias.be/cronweekly"
+            "web": "https://ma.ttias.be/cronweekly",
+			"category": "Programming"
         },
         {
             "name": "SRE Weekly",
             "link": "http://sreweekly.com/feed/",
-            "web": "https://sreweekly.com/"
+            "web": "https://sreweekly.com/",
+			"category": "Programming"
         }
     ]
 }
