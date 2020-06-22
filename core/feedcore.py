@@ -52,7 +52,6 @@ def fetcher(category, latest=False, show_progress=False, workers=27):
     return results
 
 def filter_mpeg_link(result):
-    mpegLink = None
     for item in result:
         # filter only mp3 links
         item["links"] = [link for link in item["links"] if link["type"] == "audio/mpeg"]
