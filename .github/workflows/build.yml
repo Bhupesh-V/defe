@@ -36,3 +36,5 @@ jobs:
       run: |
         coverage run tests.py
         codecov
+      env: # Or as an environment variable
+        super_secret: ${{ secrets.CODECOV_TOKEN }}
