@@ -31,8 +31,8 @@
 									<img alt="Published Date" style="height: 20px;" src="static/images/calendar.svg">
 								{{ item['published_parsed'].tm_mday }}-{{ item['published_parsed'].tm_mon }}-{{ item['published_parsed'].tm_year }}</p>
 							{% endif %}
-							{% if item.links[1].href %}
-								<a href="{{ item.links[1].href }}" download="{{ item['title'] }}">
+							{% if item.links[0].href %}
+								<a href="{{ item.links[0].href }}" download="{{ item['title'] }}">
 									<img alt="Download Podcast" style="height: 25px;" src="static/images/download.svg">
 								</a>
 							{% endif %}
@@ -50,13 +50,13 @@
 							</ul>
 							<img alt="Copy Story Link" style="height: 50px; cursor: pointer;" class="copybutton" src="static/images/copy_button.png" onclick='copyToClip("{{ item["link"]}}"); M.toast({html: "Link Copied"})'><br>
 							<i class="fa fa-share-alt small" id="shareIcon" onclick='share("{{ item["title"] }}","{{ item["link"] }}")'></i>
-							{% if item.links[1].href %}
+							{% if item.links[0].href %}
 								<figure>
 									<figcaption>
 									<h5>🔊 Listen on devfeed 🎧</h5>
 									</figcaption><br>
 									<div class='audio-container'>
-										<audio onplay='media_notify("{{ item["title"] }}","{{ item["author"] }}", "{{ item["image"] }}", "item["feed_src"])' controls src="{{ item.links[1].href }}">
+										<audio onplay='media_notify("{{ item["title"] }}","{{ item["author"] }}", "{{ item["image"] }}", "item["feed_src"])' controls src="{{ item.links[0].href }}">
 											Your browser does not support audio 😥
 										</audio>
 									</div>

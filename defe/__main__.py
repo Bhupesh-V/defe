@@ -125,7 +125,7 @@ def main():
         for item in data[: args.max_feed_count]:
             print(Fore.RED + Style.BRIGHT + str(data.index(item) + 1), end=". ")
             if item:
-                defy(item["feed_src"], item["title"], item.links[1].href)
+                defy(item["feed_src"], item["title"], item["link"])
             else:
                 pass
         defy_prompt(data)
