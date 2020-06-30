@@ -25,15 +25,16 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-        pip install codecov
     - name: Lint with Black
       run: |
         pip install black
+        black --check --diff defe
     - name: Run Tests
       run: |
         python tests.py
     - name: Test Coverage
       run: |
+        pip install codecov
         coverage run tests.py
         codecov
-        bash <(curl -s https://codecov.io/bash)
+        bash <(curl -s https://codecov.io/bash) || echo "Codecov did not collect coverage reports"
