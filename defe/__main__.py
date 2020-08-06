@@ -128,7 +128,7 @@ def main():
                 defy(item["feed_src"], item["title"], item["link"])
             else:
                 pass
-        defy_prompt(data)
+        defy_prompt(data, podcasts=True)
     if args.feed == "feeders":
         feeds = ["general", "news", "podcasts", "newsletters"]
         print(
