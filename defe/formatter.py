@@ -30,8 +30,8 @@ def defy_prompt(feed, podcasts=False):
                 print(Style.RESET_ALL)
                 if podcasts:
                 	player = vlc.MediaPlayer(feed[int(feed_to_open) -1]["links"][0]["href"])
+                	print(Fore.GREEN + Style.BRIGHT + "Now playing: " + Fore.YELLOW + Style.BRIGHT + feed[int(feed_to_open)-1]["title"])
                 	player.play()
-					#VLC module throws errors very often while using; the try-except block catches them
                 	while 1:
                 		action = str(input(Fore.GREEN + Style.BRIGHT + "pause/stop [p/s] : ")).lower()
                 		if action == "p":
