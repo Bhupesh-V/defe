@@ -102,14 +102,15 @@ def main():
         sys.exit(1)
 
     args = parser.parse_args()
-    
+
     hotkey_listener()
     set_feed(args.feed, args.max_feed_count, False)
+
 
 def set_feed(feed_arg, max_feed_count, refresh):
     if feed_arg == "general":
         data = feedcore.all_feed()
-        for item in data[: max_feed_count]:
+        for item in data[:max_feed_count]:
             print(Fore.RED + Style.BRIGHT + str(data.index(item) + 1), end=". ")
             defy(item["feed_src"], item["title"], item["link"])
         if not refresh:
@@ -118,7 +119,7 @@ def set_feed(feed_arg, max_feed_count, refresh):
             return data
     if feed_arg == "news":
         data = feedcore.news_feed()
-        for item in data[: max_feed_count]:
+        for item in data[:max_feed_count]:
             print(Fore.RED + Style.BRIGHT + str(data.index(item) + 1), end=". ")
             defy(item["feed_src"], item["title"], item["link"])
         if not refresh:
@@ -127,7 +128,7 @@ def set_feed(feed_arg, max_feed_count, refresh):
             return data
     if feed_arg == "newsletters":
         data = feedcore.newsletters_feeds()
-        for item in data[: max_feed_count]:
+        for item in data[:max_feed_count]:
             print(Fore.RED + Style.BRIGHT + str(data.index(item) + 1), end=". ")
             defy(item["feed_src"], item["title"], item["link"])
         if not refresh:
@@ -136,7 +137,7 @@ def set_feed(feed_arg, max_feed_count, refresh):
             return data
     if feed_arg == "podcasts":
         data = feedcore.podcasts_feeds()
-        for item in data[: max_feed_count]:
+        for item in data[:max_feed_count]:
             print(Fore.RED + Style.BRIGHT + str(data.index(item) + 1), end=". ")
             if item:
                 defy(item["feed_src"], item["title"], item["link"])
@@ -164,12 +165,15 @@ def set_feed(feed_arg, max_feed_count, refresh):
             Style.BRIGHT + "Open a PR at https://github.com/Bhupesh-V/defe", end="\n\n",
         )
 
+
 def on_press():
     controller = pynput.keyboard.Controller()
-    controller.type('REFRESH\n')
+    controller.type("REFRESH\n")
+
 
 def hotkey_listener():
-  keyboard.add_hotkey('alt+r', on_press)
+    keyboard.add_hotkey("alt+r", on_press)
+
 
 if __name__ == "__main__":
     main()
