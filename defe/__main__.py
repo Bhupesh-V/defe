@@ -2,6 +2,8 @@
 
 import argparse
 import sys
+import keyboard
+import pynput
 
 from colorama import Fore, Style, init
 
@@ -101,35 +103,51 @@ def main():
 
     args = parser.parse_args()
 
-    if args.feed == "general":
-        data = feedcore.all_feed()
-        for item in data[: args.max_feed_count]:
-            print(Fore.RED + Style.BRIGHT + str(data.index(item) + 1), end=". ")
-            defy(item["feed_src"], item["title"], item["link"])
-        defy_prompt(data)
+    hotkey_listener()
+    set_feed(args.feed, args.max_feed_count, False)
 
-    if args.feed == "news":
+
+def set_feed(feed_arg, max_feed_count, refresh):
+    if feed_arg == "general":
+        data = feedcore.all_feed()
+        for item in data[:max_feed_count]:
+            print(Fore.RED + Style.BRIGHT + str(data.index(item) + 1), end=". ")
+            defy(item["feed_src"], item["title"], item["link"])
+        if not refresh:
+            defy_prompt(data, feed_arg, max_feed_count)
+        else:
+            return data
+    if feed_arg == "news":
         data = feedcore.news_feed()
-        for item in data[: args.max_feed_count]:
+        for item in data[:max_feed_count]:
             print(Fore.RED + Style.BRIGHT + str(data.index(item) + 1), end=". ")
             defy(item["feed_src"], item["title"], item["link"])
-        defy_prompt(data)
-    if args.feed == "newsletters":
+        if not refresh:
+            defy_prompt(data, feed_arg, max_feed_count)
+        else:
+            return data
+    if feed_arg == "newsletters":
         data = feedcore.newsletters_feeds()
-        for item in data[: args.max_feed_count]:
+        for item in data[:max_feed_count]:
             print(Fore.RED + Style.BRIGHT + str(data.index(item) + 1), end=". ")
             defy(item["feed_src"], item["title"], item["link"])
-        defy_prompt(data)
-    if args.feed == "podcasts":
+        if not refresh:
+            defy_prompt(data, feed_arg, max_feed_count)
+        else:
+            return data
+    if feed_arg == "podcasts":
         data = feedcore.podcasts_feeds()
-        for item in data[: args.max_feed_count]:
+        for item in data[:max_feed_count]:
             print(Fore.RED + Style.BRIGHT + str(data.index(item) + 1), end=". ")
             if item:
                 defy(item["feed_src"], item["title"], item["link"])
             else:
                 pass
-        defy_prompt(data)
-    if args.feed == "feeders":
+        if not refresh:
+            defy_prompt(data, feed_arg, max_feed_count)
+        else:
+            return data
+    if feed_arg == "feeders":
         feeds = ["general", "news", "podcasts", "newsletters"]
         print(
             Style.BRIGHT + "\ndefe fetches feeds of these sources 😃", end="\n\n",
@@ -146,6 +164,15 @@ def main():
         print(
             Style.BRIGHT + "Open a PR at https://github.com/Bhupesh-V/defe", end="\n\n",
         )
+
+
+def on_press():
+    controller = pynput.keyboard.Controller()
+    controller.type("REFRESH\n")
+
+
+def hotkey_listener():
+    keyboard.add_hotkey("alt+r", on_press)
 
 
 if __name__ == "__main__":

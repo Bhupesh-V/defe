@@ -13,7 +13,7 @@ def defy(src, title, link):
     print(Fore.BLUE + Style.BRIGHT + link, end="\n\n")
 
 
-def defy_prompt(feed):
+def defy_prompt(feed, feed_type, max_feed_count):
     init(autoreset=True)
     while 1:
         try:
@@ -27,10 +27,17 @@ def defy_prompt(feed):
                     input(Fore.GREEN + Style.BRIGHT + "Enter Feed Index to open : ")
                 )
                 print(Style.RESET_ALL)
-                print(Style.BRIGHT + "Opening Link in your default browser ...")
-                webbrowser.open(feed[int(feed_to_open) - 1].link)
+                if "REFRESH" not in feed_to_open:
+                    print(Style.BRIGHT + "Opening Link in your default browser ...")
+                    webbrowser.open(feed[int(feed_to_open) - 1].link)
+                else:
+                    print(chr(27) + "[2J")  # clear the output
+                    feed = set_feed(feed_type, max_feed_count, True)
         except ValueError:
             print(Style.BRIGHT + "Enter Valid Index 😟")
         except KeyboardInterrupt:
             # Oh no!, come back again :(
             sys.exit()
+
+
+from defe.__main__ import set_feed
