@@ -2,6 +2,8 @@
 
 import argparse
 import sys
+import keyboard
+import pynput
 
 from colorama import Fore, Style, init
 
@@ -101,6 +103,7 @@ def main():
 
     args = parser.parse_args()
     
+    hotkey_listener()
     set_feed(args.feed, args.max_feed_count, False)
 
 def set_feed(feed_arg, max_feed_count, refresh):
@@ -161,6 +164,12 @@ def set_feed(feed_arg, max_feed_count, refresh):
             Style.BRIGHT + "Open a PR at https://github.com/Bhupesh-V/defe", end="\n\n",
         )
 
+def on_press():
+    controller = pynput.keyboard.Controller()
+    controller.type('REFRESH\n')
+
+def hotkey_listener():
+  keyboard.add_hotkey('alt+r', on_press)
 
 if __name__ == "__main__":
     main()
