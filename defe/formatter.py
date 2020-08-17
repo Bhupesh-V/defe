@@ -12,7 +12,7 @@ def defy(src, title, link):
     print(Fore.BLUE + Style.BRIGHT + link, end="\n\n")
 
 
-def defy_prompt(feed):
+def defy_prompt(feed, feed_type, max_feed_count):
     init(autoreset=True)
     while 1:
         try:
