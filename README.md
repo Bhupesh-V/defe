@@ -156,6 +156,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://github.com/AyushRawal"><img src="https://avatars2.githubusercontent.com/u/32910415?v=4" width="100px;" alt=""/><br /><sub><b>AyushRawal</b></sub></a><br /><a href="https://github.com/Bhupesh-V/defe/issues?q=author%3AAyushRawal" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/Zedex7"><img src="https://avatars3.githubusercontent.com/u/14003108?v=4" width="100px;" alt=""/><br /><sub><b>Jahir</b></sub></a><br /><a href="https://github.com/Bhupesh-V/defe/issues?q=author%3AZedex7" title="Bug reports">🐛</a> <a href="https://github.com/Bhupesh-V/defe/commits?author=Zedex7" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/arunaaabh95"><img src="https://avatars2.githubusercontent.com/u/15111263?v=4" width="100px;" alt=""/><br /><sub><b>Arunaabh Pant</b></sub></a><br /><a href="https://github.com/Bhupesh-V/defe/commits?author=arunaaabh95" title="Code">💻</a> <a href="#design-arunaaabh95" title="Design">🎨</a></td>
   </tr>
 </table>
 
