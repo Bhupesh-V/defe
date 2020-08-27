@@ -13,6 +13,16 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "Zedex7",
+      "name": "Jahir",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/14003108?v=4",
+      "profile": "https://github.com/Zedex7",
+      "contributions": [
+        "bug",
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
