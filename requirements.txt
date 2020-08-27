@@ -5,3 +5,4 @@ colorama
 diskcache
 python-dotenv
 tqdm
+python-vlc
