@@ -51,6 +51,24 @@
 			"web": "https://www.telegraph.co.uk/technology"
 		},
 		{
+			"name": "AI Trends",
+			"link": "https://www.aitrends.com/feed/",
+			"web": "https://www.aitrends.com/",
+			"category":"Artificial Intelligence "
+		},
+		{
+			"name": "ScienceDaily - Artificial Intelligence News",
+			"link": "https://www.sciencedaily.com/rss/computers_math/artificial_intelligence.xml",
+			"web": "https://www.sciencedaily.com/news/computers_math/artificial_intelligence/",
+			"category":"Artificial Intelligence "
+		},
+		{
+			"name": "MIT News - Artificial intelligence",
+			"link": "https://news.mit.edu/rss/topic/artificial-intelligence2",
+			"web": "https://www.sciencedaily.com/news/computers_math/artificial_intelligence/",
+			"category":"Artificial Intelligence "
+		},
+		{
 			"name": "PCWorld News",
 			"link": "https://www.pcworld.com/news.rss",
 			"web": "https://www.pcworld.com"
