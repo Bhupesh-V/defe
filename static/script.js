@@ -127,14 +127,24 @@ function media_notify(podcast, author, image, podcast_src) {
             }]
         });
 
-        /*        navigator.mediaSession.setActionHandler('play', function() {});
-                navigator.mediaSession.setActionHandler('pause', function() {});
-                navigator.mediaSession.setActionHandler('previoustrack', function(podcast_list) {
-                    current_podcast = podcast_list.indexOf(podcast_url);
-                    index = (index - 1 + playlist.length) % playlist.length;
-                    playAudio();
-                });
-                navigator.mediaSession.setActionHandler('nexttrack', function() {})*/
+        navigator.mediaSession.setActionHandler('play', function() { 
+            audio.play();
+            navigator.mediaSession.playbackState = "playing";
+        });
+        navigator.mediaSession.setActionHandler('pause', function() { 
+            audio.pause();
+            navigator.mediaSession.playbackState = "paused"; 
+        });
+        navigator.mediaSession.setActionHandler('previoustrack', function(podcast_list) {
+            current_podcast = podcast_list.indexOf(podcast_url);
+            index = (index - 1 + playlist.length) % playlist.length;
+            playAudio();
+        });
+        navigator.mediaSession.setActionHandler('nexttrack', function(podcast_list) {
+            current_podcast = podcast_list.indexOf(podcast_url);
+            index = (index + 1) % playlist.length;
+            playAudio();
+        })
     }
 }
 
