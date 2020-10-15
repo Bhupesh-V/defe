@@ -33,6 +33,15 @@
         "code",
         "design"
       ]
+    },
+    {
+      "login": "ovielma",
+      "name": "Ozy Vielma",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/28913071?v=4",
+      "profile": "https://www.ozyvielma.com",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
