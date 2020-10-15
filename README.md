@@ -125,8 +125,7 @@ python -m defe
 
 ## 📝 Changelog
 
-See the [CHANGELOG.md](CHANGELOG.md) file for details.
-
+See the [CHANGELOG.md](https://github.com/Bhupesh-V/defe/blob/master/docs/changelog.md) file for details.
 
 ## Author
 
@@ -135,7 +134,16 @@ See the [CHANGELOG.md](CHANGELOG.md) file for details.
 - Twitter: [@bhupeshimself](https://twitter.com/bhupeshimself)
 - DEV: [bhupesh](https://dev.to/bhupesh)
 
-[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
+## ☺️ Show your support
+
+Support me by giving a ⭐️ if this project helped you! or just [![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2FBhupesh-V%2F.Varshney%2F)](https://twitter.com/intent/tweet?url=https://github.com/Bhupesh-V/.Varshney&text=.Varshney%20via%20@bhupeshimself)
+
+<a href="https://liberapay.com/bhupesh/donate">
+  <img title="librepay/bhupesh" alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg" width="100">
+</a>
+<a href="https://ko-fi.com/bhupesh">
+  <img title="ko-fi/bhupesh" alt="Support on ko-fi" src="https://user-images.githubusercontent.com/34342551/88784787-12507980-d1ae-11ea-82fe-f55753340168.png" width="185">
+</a>
 
 ## 📜 License
 
