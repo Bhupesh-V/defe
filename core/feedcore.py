@@ -38,6 +38,8 @@ def get_domain(link):
 def fetcher(category, latest=False, show_progress=False, workers=27):
     data = read_data(category)
     feeddata = cache(latest)
+    colour = "%06x" % random.randint(0, 0xFFFFFF)
+
     with ThreadPoolExecutor(max_workers=workers) as executor:
         results = list(
             tqdm(
@@ -46,6 +48,7 @@ def fetcher(category, latest=False, show_progress=False, workers=27):
                 total=len(data),
                 disable=show_progress,
                 leave=False,
+                colour="#" + str(colour)
             )
         )
 
