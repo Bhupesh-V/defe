@@ -48,11 +48,12 @@ def fetcher(category, latest=False, show_progress=False, workers=27):
                 total=len(data),
                 disable=show_progress,
                 leave=False,
-                colour="#" + str(colour)
+                colour="#" + str(colour),
             )
         )
 
     return results
+
 
 def filter_mpeg_link(result):
     for item in result:
@@ -62,6 +63,7 @@ def filter_mpeg_link(result):
             result.remove(item)
 
     return result
+
 
 def podcasts_feeds(show_progress=False, workers=27):
     result = fetcher("podcasts", True, show_progress, workers)
