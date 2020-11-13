@@ -34,7 +34,7 @@ def get_header_image(item):
     try:
         for i in item['links']: #Loop not a performance problem, 1-2 links max
             if (i['type'] in img_types):
-                return item['links'][1]['href']
+                return i['href']
 
     except KeyError:
         pass # No 'links' key in item
