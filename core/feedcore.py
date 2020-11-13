@@ -37,16 +37,14 @@ def get_header_image(item):
                 return item['links'][1]['href']
 
     except KeyError:
-        # No 'links' key in item
-        pass
+        pass # No 'links' key in item
 
     try:
         if item['media_content'][0]['medium'] == 'image':
             return item['media_content'][0]['url']
 
     except KeyError:
-        # No 'media_content' key in item
-        pass
+        pass # No 'media_content' key in item
 
 
 def get_domain(link):
