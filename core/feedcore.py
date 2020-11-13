@@ -29,11 +29,11 @@ def read_data(feed_type=None):
     return None
 
 def get_header_image(item):
-    try:
-        if len(item['links']) > 1:
-            link_type = item['links'][1]['type']
+    img_types = ['image/png', 'image/jpeg', 'image/gif']
 
-            if (link_type == 'image/png' or link_type == 'image/jpeg'):
+    try:
+        for i in item['links']: #Loop not a performance problem, 1-2 links max
+            if (i['type'] in img_types):
                 return item['links'][1]['href']
 
     except KeyError:
@@ -42,7 +42,6 @@ def get_header_image(item):
 
     try:
         if item['media_content'][0]['medium'] == 'image':
-            print('media content success')
             return item['media_content'][0]['url']
 
     except KeyError:

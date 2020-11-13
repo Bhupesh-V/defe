@@ -139,8 +139,8 @@ body.dark {
 }
 
 .card-image-holder img {
-  width: 80%;
+  width: 90%;
   height: auto;
-  padding-top: 10%;
+  padding-top: 5%;
   object-fit: cover;
 }
