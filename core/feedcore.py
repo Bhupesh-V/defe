@@ -40,7 +40,7 @@ def get_header_image(item):
         pass # No 'links' key in item
 
     try:
-        if item['media_content'][0]['medium'] == 'image':
+        if item['media_content'][0]['medium'] == 'image': #List is always a single item
             return item['media_content'][0]['url']
 
     except KeyError:
