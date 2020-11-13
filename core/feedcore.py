@@ -35,8 +35,18 @@ def get_header_image(item):
 
             if (link_type == 'image/png' or link_type == 'image/jpeg'):
                 return item['links'][1]['href']
-    except:
-        # no image link found
+
+    except KeyError:
+        # No 'links' key in item
+        pass
+
+    try:
+        if item['media_content'][0]['medium'] == 'image':
+            print('media content success')
+            return item['media_content'][0]['url']
+
+    except KeyError:
+        # No 'media_content' key in item
         pass
 
 
