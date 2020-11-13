@@ -17,6 +17,13 @@
 					<div class="feed-card z-depth-5">
 						<div class="row card-panel darkmode-ignore">
 							<div class="card blue-grey darken-1">
+								<!-- If the image exists -->
+								{% if item['image'] %}
+									<div class="card-image-holder">
+										<!-- Insert the image link -->
+										<img src="{{ item['image'] }}" style="height: 50%;"/>
+									</div>
+								{% endif %}
 								<div class="card-content white-text">
 									<a class="card-title" href="{{ item['link']}}">{{ item["title"] }}</a>
 									{% if item['feed_src'] %}

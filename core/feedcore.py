@@ -81,11 +81,25 @@ def filter_mpeg_link(result):
 def podcasts_feeds(show_progress=False, workers=27):
     result = fetcher("podcasts", True, show_progress, workers)
 
+    for r in result:
+        try:
+            r["image"] = get_header_image(r)
+
+        except TypeError: #Fetcher return contains empty lists sometimes?
+            pass
+
     return filter_mpeg_link(result)
 
 
 def newsletters_feeds(show_progress=False, workers=30):
     result = fetcher("newsletters", True, show_progress, workers)
+
+    for r in result:
+        try:
+            r["image"] = get_header_image(r)
+
+        except TypeError: #Fetcher return contains empty lists sometimes?
+            pass
 
     return result
 
