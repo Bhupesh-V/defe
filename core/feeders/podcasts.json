@@ -134,7 +134,11 @@
             "name": "Self-Taught Or Not",
             "link": "https://feeds.transistor.fm/self-taught-or-not",
             "web": "http://selftaughtornot.com/"
+        },
+        {
+            "name": "Python Bytes",
+            "link": "https://pythonbytes.fm/episodes/rss",
+            "web": "https://pythonbytes.fm/"
         }
-
     ]
 }
