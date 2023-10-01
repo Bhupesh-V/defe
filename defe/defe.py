@@ -14,8 +14,8 @@ class NoSuchFeederCategory(Exception):
 class feed:
     def __init__(self, progress=True):
         """Args
-            - progress
-            - workers
+        - progress
+        - workers
         """
         self.show_progress = progress
         self.feeder_categories = ["general", "news", "podcasts", "newsletters"]
