@@ -7,11 +7,14 @@ import sys
 import vlc  ##
 
 
-def defy(src, title, link):
+def defy(src, title, link, summary):
     init(autoreset=True)
     print(Style.BRIGHT + src, end="\n")
     print(Fore.YELLOW + Style.BRIGHT + title, end=" ")
     print(Fore.BLUE + Style.BRIGHT + link, end="\n\n")
+    print(" ".join(summary))
+    print()
+    print()
 
 
 def defy_prompt(feed, podcasts=False):

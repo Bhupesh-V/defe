@@ -2,6 +2,7 @@
 
 import argparse
 import sys
+import re
 
 from colorama import Fore, Style, init
 
@@ -105,27 +106,43 @@ def main():
         data = feedcore.all_feed()
         for item in data[: args.max_feed_count]:
             print(Fore.RED + Style.BRIGHT + str(data.index(item) + 1), end=". ")
-            defy(item["feed_src"], item["title"], item["link"])
+            summary = item["summary"]
+            clean = re.compile('<.*?>')
+            summary= re.sub(clean, '', summary).split(" ")
+            summary = (summary[:50] + ["..."]) if len(summary) > 50 else summary
+            defy(item["feed_src"], item["title"], item["link"], summary)
         defy_prompt(data)
 
     if args.feed == "news":
         data = feedcore.news_feed()
         for item in data[: args.max_feed_count]:
             print(Fore.RED + Style.BRIGHT + str(data.index(item) + 1), end=". ")
-            defy(item["feed_src"], item["title"], item["link"])
+            try:
+            	summary = item["summary"]
+            	clean = re.compile('<.*?>')
+            	summary= re.sub(clean, '', summary).split(" ")
+            	summary = (summary[:50] + ["..."]) if len(summary) > 50 else summary
+            except:
+            	summary = []
+            defy(item["feed_src"], item["title"], item["link"], summary)
         defy_prompt(data)
     if args.feed == "newsletters":
         data = feedcore.newsletters_feeds()
         for item in data[: args.max_feed_count]:
             print(Fore.RED + Style.BRIGHT + str(data.index(item) + 1), end=". ")
-            defy(item["feed_src"], item["title"], item["link"])
+            summary = []
+            defy(item["feed_src"], item["title"], item["link"], summary)
         defy_prompt(data)
     if args.feed == "podcasts":
         data = feedcore.podcasts_feeds()
         for item in data[: args.max_feed_count]:
             print(Fore.RED + Style.BRIGHT + str(data.index(item) + 1), end=". ")
             if item:
-                defy(item["feed_src"], item["title"], item["link"])
+                summary = item["summary"]
+                clean = re.compile('<.*?>')
+                summary= re.sub(clean, '', summary).split(" ")
+                summary = (summary[:50] + ["..."]) if len(summary) > 50 else summary
+                defy(item["feed_src"], item["title"], item["link"], summary)
             else:
                 pass
         defy_prompt(data, podcasts=True)
