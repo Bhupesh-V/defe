@@ -59,6 +59,11 @@
             "name": "Ars Technica News",
             "link": "https://arstechnica.com/rss.xml",
             "web": "https://arstechnica.com"
-        }
+        },
+		{
+			"name": "BleepingComputer",
+			"link": "https://www.bleepingcomputer.com/feed/",
+			"web": "https://www.bleepingcomputer.com"
+		}
 	]
 }

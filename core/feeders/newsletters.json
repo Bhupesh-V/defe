@@ -151,24 +151,9 @@
             "web": "https://sysadmin.libhunt.com"
         },
         {
-            "name": "Web Development Reading List (WDRL)",
-            "link": "https://wdrl.info/feed",
-            "web": "https://wdrl.info/"
-        },
-        {
-            "name": "Pony Foo Weekly",
-            "link": "https://feeds.feedburner.com/ponyfooweekly",
-            "web": "https://ponyfoo.com/weekly"
-        },
-        {
             "name": "R Weekly",
             "link": "https://rweekly.org/atom.xml",
             "web": "https://rweekly.org"
-        },
-        {
-            "name": "mongoDB Memo",
-            "link": "https://mongodb.email/rss",
-            "web": "https://mongodb.email/"
         },
         {
             "name": "Azure Weekly",
@@ -176,44 +161,9 @@
             "web": "https://azureweekly.info"
         },
         {
-            "name": "Serverless Status",
-            "link": "https://serverless.email/rss",
-            "web": "https://serverless.email"
-        },
-        {
             "name": "Last Week in AWS" ,
             "link": "https://www.lastweekinaws.com/newsletter/feed",
             "web": "https://www.lastweekinaws.com"
-        },
-        {
-            "name": "artificial intelligence digest",
-            "link": "https://feeds.feedburner.com/digest-ai",
-            "web": "https://aidigest.net/"
-        },
-        {
-            "name": "Inside AI",
-            "link": "https://inside.com/ai/rss",
-            "web": "https://inside.com/ai"
-        },
-        {
-            "name": "Inside Security",
-            "link": "https://inside.com/security/rss",
-            "web": "https://inside.com/security"
-        },
-        {
-            "name": "Inside Cloud",
-            "link": "https://inside.com/cloud/rss",
-            "web": "https://inside.com/cloud"
-        },
-        {
-            "name": "Inside Dev",
-            "link": "https://inside.com/dev/rss",
-            "web": "https://inside.com/dev"
-        },
-        {
-            "name": "Inside IoT",
-            "link": "https://inside.com/iot/rss",
-            "web": "https://inside.com/iot"
         },
         {
             "name": "TLDR" ,
@@ -231,11 +181,6 @@
             "web": "https://betterdev.link"
         },
         {
-            "name": "DiscoverDev",
-            "link": "https://www.discoverdev.io/rss.xml",
-            "web": "https://www.discoverdev.io"
-        },
-        {
             "name": "DevOps Weekly",
             "link": "https://us2.campaign-archive.com/feed?u=b6635e37e35fa5eff0c2a947a&id=a63f24d068",
             "web": "https://www.devopsweekly.com/"
@@ -244,16 +189,6 @@
             "name": "Jakub Programming Digest",
             "link": "https://feeds.feedburner.com/digest-programming",
             "web": "https://programmingdigest.net/"
-        },
-        {
-            "name": "This Week In DevOps",
-            "link": "https://thisweekindevops.com/feed",
-            "web": "https://thisweekindevops.com"
-        },
-        {
-            "name": "cron.weekly",
-            "link": "https://ma.ttias.be/cronweekly/index.xml",
-            "web": "https://ma.ttias.be/cronweekly"
         },
         {
             "name": "SRE Weekly",
