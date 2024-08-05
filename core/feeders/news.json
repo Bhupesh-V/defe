@@ -46,14 +46,19 @@
 			"web": "https://www.gigabitmagazine.com"
 		},
 		{
-			"name": "Technology Intelligence",
-			"link": "https://www.telegraph.co.uk/technology/rss.xml",
-			"web": "https://www.telegraph.co.uk/technology"
-		},
-		{
 			"name": "PCWorld News",
 			"link": "https://www.pcworld.com/news.rss",
 			"web": "https://www.pcworld.com"
-		}
+		},
+		{
+			"name": "TechRadar",
+			"link": "https://www.techradar.com/feeds/articletype/news",
+			"web": "https://www.techradar.com/news"
+		},
+		{
+            "name": "Ars Technica News",
+            "link": "https://arstechnica.com/rss.xml",
+            "web": "https://arstechnica.com"
+        }
 	]
 }
