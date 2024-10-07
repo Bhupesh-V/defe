@@ -74,6 +74,11 @@
 			"name": "The Register",
 			"link": "https://www.theregister.co.uk/headlines.rss",
 			"web": "https://www.theregister.co.uk"
+		},
+		{
+			"name": "TheHackerNews",
+			"link": "https://feeds.feedburner.com/TheHackersNews",
+			"web": "https://thehackernews.com"
 		}
 	]
 }
