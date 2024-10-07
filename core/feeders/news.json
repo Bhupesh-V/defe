@@ -64,6 +64,16 @@
 			"name": "BleepingComputer",
 			"link": "https://www.bleepingcomputer.com/feed/",
 			"web": "https://www.bleepingcomputer.com"
+		},
+		{
+			"name": "Phoronix",
+			"link": "https://www.phoronix.com/rss.php",
+			"web": "https://www.phoronix.com"
+		},
+		{
+			"name": "The Register",
+			"link": "https://www.theregister.co.uk/headlines.rss",
+			"web": "https://www.theregister.co.uk"
 		}
 	]
 }
