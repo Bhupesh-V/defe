@@ -79,6 +79,11 @@
 			"name": "TheHackerNews",
 			"link": "https://feeds.feedburner.com/TheHackersNews",
 			"web": "https://thehackernews.com"
+		},
+		{
+			"name":"DevClass",
+			"link":"https://devclass.com/feed/",
+			"web":"https://devclass.com"
 		}
 	]
 }
