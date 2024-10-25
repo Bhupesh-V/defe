@@ -6,4 +6,4 @@ diskcache
 python-dotenv
 tqdm
 python-vlc
-Werkzeug==2.2.2
+Werkzeug==3.0.6
