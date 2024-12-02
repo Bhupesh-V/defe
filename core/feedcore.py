@@ -28,6 +28,24 @@ def read_data(feed_type=None):
         return data[feed_type]
     return None
 
+def get_header_image(item):
+    img_types = ['image/png', 'image/jpeg', 'image/gif']
+
+    try:
+        for i in item['links']: #Loop not a performance problem, 1-2 links max
+            if (i['type'] in img_types):
+                return i['href']
+
+    except KeyError:
+        pass # No 'links' key in item
+
+    try:
+        if item['media_content'][0]['medium'] == 'image': #List is always a single item
+            return item['media_content'][0]['url']
+
+    except KeyError:
+        pass # No 'media_content' key in item
+
 
 def get_domain(link):
     domain = urlparse(link).netloc
@@ -81,6 +99,7 @@ def news_feed(show_progress=False, workers=20):
 
     for f in feed_result:
         f["feeder_site"] = get_domain(f["link"])
+        f["image"] = get_header_image(f)
 
     return feed_result
 
@@ -100,5 +119,6 @@ def all_feed(show_progress=False, workers=20):
 
     for f in feed_result:
         f["feeder_site"] = get_domain(f["link"])
+        f["image"] = get_header_image(f)
 
     return feed_result
