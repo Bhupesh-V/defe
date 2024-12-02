@@ -132,7 +132,8 @@ def main():
     if args.feed == "feeders":
         feeds = ["general", "news", "podcasts", "newsletters"]
         print(
-            Style.BRIGHT + "\ndefe fetches feeds of these sources 😃", end="\n\n",
+            Style.BRIGHT + "\ndefe fetches feeds of these sources 😃",
+            end="\n\n",
         )
         for f in feeds:
             print("\n" + Fore.BLUE + Style.BRIGHT + f.capitalize(), end=" ")
@@ -144,7 +145,8 @@ def main():
 
         print("\n\n" + Style.BRIGHT + "Want to add more ? 🤔")
         print(
-            Style.BRIGHT + "Open a PR at https://github.com/Bhupesh-V/defe", end="\n\n",
+            Style.BRIGHT + "Open a PR at https://github.com/Bhupesh-V/defe",
+            end="\n\n",
         )
 
 
