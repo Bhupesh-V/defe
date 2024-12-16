@@ -1,5 +1,12 @@
-body {margin:0;font-family:"Lato", sans-serif}
-html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 nav {
   position: -webkit-sticky;
   position: sticky;
@@ -7,87 +14,108 @@ nav {
   z-index: 10;
   background-color: #36393F;
 }
+
 nav ul a:hover {
-  background-color: rgba(0,0,0,0.1);
-  background: linear-gradient(135deg, rgba(238,237,30,1) 2%, rgba(184,0,255,1) 100%);
+  background-color: rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, rgba(238, 237, 30, 1) 2%, rgba(184, 0, 255, 1) 100%);
 }
+
 .sidenav {
   background-color: #36393F;
 }
-.sidenav li > a {
-    color: rgb(253, 253, 253);
+
+.sidenav li>a {
+  color: rgb(253, 253, 253);
 }
-.sidenav li > a:hover {
-    background: linear-gradient(135deg, rgba(238,237,30,1) 2%, rgba(184,0,255,1) 100%);
+
+.sidenav li>a:hover {
+  background: linear-gradient(135deg, rgba(238, 237, 30, 1) 2%, rgba(184, 0, 255, 1) 100%);
 }
+
 .btn {
   background: #36393F;
 }
+
 .btn:hover {
-  background: linear-gradient(135deg, rgba(238,237,30,1) 2%, rgba(184,0,255,1) 100%);
+  background: linear-gradient(135deg, rgba(238, 237, 30, 1) 2%, rgba(184, 0, 255, 1) 100%);
 }
 
 img {
   height: 100%;
   width: 100%;
 }
+
 #shareIcon {
   display: none;
 }
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
   #shareIcon {
     display: inline;
   }
+
   .responsive-img {
     margin-top: 0px;
   }
 }
+
 .patreon-logo {
   height: 50px;
   width: 200px;
 }
+
 .social-logo {
-    height: 50px;
-    width: 50px;
+  height: 50px;
+  width: 50px;
 }
+
 .card-title {
-    color: white !important;
-    font-weight: bold !important;
+  color: white !important;
+  font-weight: bold !important;
 }
+
 #dropdown2 {
-  background: linear-gradient(135deg, rgba(238,237,30,1) 2%, rgba(184,0,255,1) 100%);
+  background: linear-gradient(135deg, rgba(238, 237, 30, 1) 2%, rgba(184, 0, 255, 1) 100%);
   border-radius: 25px;
 }
+
 #dropdown1 {
   background: #36393F;
   color: rgb(132, 88, 157);
 }
-#dropdown1 li > a {
+
+#dropdown1 li>a {
   background: #36393F;
   color: white;
 }
-#dropdown1 li > a:hover {
-  background: linear-gradient(135deg, rgba(238,237,30,1) 2%, rgba(184,0,255,1) 100%);
+
+#dropdown1 li>a:hover {
+  background: linear-gradient(135deg, rgba(238, 237, 30, 1) 2%, rgba(184, 0, 255, 1) 100%);
 }
-.dropdown-content li > a, .dropdown-content li > span {
-    font-size: 14px;
+
+.dropdown-content li>a,
+.dropdown-content li>span {
+  font-size: 14px;
 }
 
 .copybutton {
   all: initial;
+
   * {
     all: unset;
   }
 }
+
 .darkmode--activated {
   background-color: #282923;
 }
+
 .btn:focus {
   background-color: black;
 }
 
 .card-panel {
-  background: linear-gradient(135deg, rgba(238,237,30,1) 2%, rgba(184,0,255,1) 100%);
+  background: linear-gradient(135deg, rgba(238, 237, 30, 1) 2%, rgba(184, 0, 255, 1) 100%);
 }
 
 .collapsible {
@@ -98,28 +126,35 @@ img {
 .audio-container {
   display: flex;
   justify-content: center;
-  align-items: center 
+  align-items: center
 }
+
 #story-count {
   text-align: center;
   font-style: italic;
   font-weight: bolder;
 }
-.dropdown-content li>a, .dropdown-content li>span {
+
+.dropdown-content li>a,
+.dropdown-content li>span {
   color: white;
   font-weight: bold;
 }
+
 .dropdown-content {
   background-color: black;
-  
+
 }
+
 .select-wrapper input.select-dropdown:focus {
   border-bottom: 1px solid #d68382;
 }
+
 .select-dropdown.dropdown-content li:hover {
-  background: linear-gradient(135deg, rgba(238,237,30,1) 2%, rgba(184,0,255,1) 100%);
+  background: linear-gradient(135deg, rgba(238, 237, 30, 1) 2%, rgba(184, 0, 255, 1) 100%);
 }
-.progress {
+
+.progress {~
   position: sticky;
   top: 17.5%;
   display: none;
@@ -127,13 +162,14 @@ img {
   z-index: 5;
   margin: 0;
 }
+
 .social-share img {
-    height: 90px;
-    width: 90px;
-    padding: 5px;
+  height: 90px;
+  width: 90px;
+  padding: 5px;
 }
 
 body.dark {
-  background-color: rgb(30,34,39);
+  background-color: rgb(30, 34, 39);
   color: #fff;
 }

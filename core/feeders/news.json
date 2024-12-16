@@ -6,11 +6,6 @@
 			"web": "https://techcrunch.com/"
 		},
 		{
-			"name": "HackerNews",
-			"link": "https://news.ycombinator.com/rss",
-			"web": "https://news.ycombinator.com"
-		},
-		{
 			"name": "Tech meme",
 			"link": "https://www.techmeme.com/feed.xml",
 			"web": "https://www.techmeme.com"
@@ -24,16 +19,6 @@
 			"name": "Technology Org",
 			"link": "https://www.technology.org/feed/",
 			"web": "https://www.technology.org"
-		},
-		{
-			"name": "Geek.com",
-			"link": "https://www.geek.com/tech/feed/",
-			"web": "https://www.geek.com/tech/"
-		},
-		{
-			"name": "ZDNet",
-			"link": "https://www.zdnet.com/rss.xml",
-			"web": "https://www.zdnet.com"
 		},
 		{
 			"name": "MIT Technology Review",
@@ -57,7 +42,7 @@
 		},
 		{
             "name": "Ars Technica News",
-            "link": "https://arstechnica.com/rss.xml",
+            "link": "https://feeds.arstechnica.com/arstechnica/technology-lab",
             "web": "https://arstechnica.com"
         },
 		{
